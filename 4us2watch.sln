@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4us2watch.Android", "4us2watch\4us2watch.Android\4us2watch.Android.csproj", "{578F49C3-A159-43D7-B33B-EDC0BC3FC472}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4us2watch", "4us2watch\4us2watch\4us2watch.csproj", "{2C550643-EC89-4DEB-B874-CC16BC5181C8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{578F49C3-A159-43D7-B33B-EDC0BC3FC472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{578F49C3-A159-43D7-B33B-EDC0BC3FC472}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{578F49C3-A159-43D7-B33B-EDC0BC3FC472}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{578F49C3-A159-43D7-B33B-EDC0BC3FC472}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{578F49C3-A159-43D7-B33B-EDC0BC3FC472}.Release|Any CPU.Build.0 = Release|Any CPU
+		{578F49C3-A159-43D7-B33B-EDC0BC3FC472}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2C550643-EC89-4DEB-B874-CC16BC5181C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C550643-EC89-4DEB-B874-CC16BC5181C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C550643-EC89-4DEB-B874-CC16BC5181C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C550643-EC89-4DEB-B874-CC16BC5181C8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E5D0A98-E6A7-4DB7-80D3-E41FC5215C3E}
+	EndGlobalSection
+EndGlobal

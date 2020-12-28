@@ -12,3 +12,5 @@ C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\ne
 C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\4us2watch.dll
 C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\ref\4us2watch.dll
 C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\4us2watch.pdb
+C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
+C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\Views\RegestrationPage.xaml.g.cs

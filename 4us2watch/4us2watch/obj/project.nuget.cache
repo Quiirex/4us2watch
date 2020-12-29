@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "3Y1N0ws9OWm+YKv59xO+hd2zNRBbbnSlXDX67zTaxgrHxQJSwiffVZ0OVKgyhT2jdQaLvf6qYuA5GOiLcVQLWg==",
+  "dgSpecHash": "NZdeFboYxw9CaQ2XUjctYtO+UX7wKzQ3iikVfk+/Qh2D+2kyGqvdHeRbddmVK7sbDqOSZjw5WA0sgQUCChMnLw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PunisherTFB\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj",
+  "projectFilePath": "C:\\Users\\j6bou\\Desktop\\GH\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\PunisherTFB\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\PunisherTFB\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\PunisherTFB\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
-    "C:\\Users\\PunisherTFB\\.nuget\\packages\\xamarin.forms\\4.6.0.1141\\xamarin.forms.4.6.0.1141.nupkg.sha512"
+    "C:\\Users\\j6bou\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\j6bou\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\j6bou\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\j6bou\\.nuget\\packages\\xamarin.essentials\\1.6.0\\xamarin.essentials.1.6.0.nupkg.sha512",
+    "C:\\Users\\j6bou\\.nuget\\packages\\xamarin.forms\\4.8.0.1821\\xamarin.forms.4.8.0.1821.nupkg.sha512"
   ],
   "logs": []
 }

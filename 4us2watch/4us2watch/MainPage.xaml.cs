@@ -14,6 +14,7 @@ namespace _4us2watch
         public MainPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
 
         private async void Login_Clicked(object sender, EventArgs e)

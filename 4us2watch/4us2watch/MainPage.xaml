@@ -3,26 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="_4us2watch.MainPage">
 
-    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
-        <Image Source="https://c0.klipartz.com/pngpicture/779/81/sticker-png-logo-brand-random-icons-angle-text.png" Margin="100,50,100,0"/>
-        <Label VerticalOptions="Center" HorizontalOptions="Center" Text="4us2watch" FontSize="50" FontAttributes="Bold" TextColor="White"/>
-        <Label VerticalOptions="Center" HorizontalOptions="Center" Text="Welcome" FontSize="40" FontAttributes="Bold" TextColor="White" Margin="50,10,50,0"/>
-        <Label TextColor="White" VerticalOptions="Center" Margin="50,0,50,0">
+    <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Vertical">
+        <!--Placeholder logo, čeprav je kr seksi-->
+        <Image Source="https://c0.klipartz.com/pngpicture/779/81/sticker-png-logo-brand-random-icons-angle-text.png" Margin="100,50,100,0" WidthRequest="150" HeightRequest="150"/>
+        <Label VerticalOptions="Center" HorizontalOptions="Center" Text="4us2watch" FontSize="50" FontAttributes="Bold" TextColor="Black"/>
+        <!--<Label FontFamily="Montserrat" VerticalOptions="Center" HorizontalOptions="Center" Text="Welcome" FontSize="40" FontAttributes="Bold" TextColor="Black" Margin="50,30,50,0"/>-->
+        <Label TextColor="Black" VerticalOptions="Center" Margin="50,40,50,0" HorizontalTextAlignment="Center" FontSize="20">
             <Label.Text>
-                Have you ever struggled to find movies with yourdate and your friends, say no more and welcome4us2watch to your lives.
+                <!--Landing page welcome text-->
+                Struggle finding movies with your date? Your friends? This is the solution for you!
             </Label.Text>
         </Label>
-        <Button Text="Login" VerticalOptions="Center" MinimumHeightRequest="50" MinimumWidthRequest="20" Margin="50,10,50,0" x:Name="Login" Clicked="Login_Clicked" CornerRadius="20" BackgroundColor="#ff3399"/>
-        <Button Text="Register" VerticalOptions="Center" MinimumHeightRequest="50" MinimumWidthRequest="20" Margin="50,10,50,0" x:Name="Register" Clicked="Register_Clicked" CornerRadius="20" BackgroundColor="#ff3399"/>
+        <Button BorderWidth="1" BorderColor="Black" Text="Login" VerticalOptions="Center" MinimumHeightRequest="50" MinimumWidthRequest="20" Margin="50,40,50,0" x:Name="Login" Clicked="Login_Clicked" CornerRadius="20" BackgroundColor="White"/>
+        <Button BorderWidth="1" BorderColor="Black" Text="Register" VerticalOptions="Center" MinimumHeightRequest="50" MinimumWidthRequest="20" Margin="50,10,50,0" x:Name="Register" Clicked="Register_Clicked" CornerRadius="20" BackgroundColor="White"/>
 
-        <StackLayout HorizontalOptions="FillAndExpand">
-            <Label HorizontalOptions="Center"
-       VerticalOptions="CenterAndExpand" Margin="50,10,50,0">
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <Label HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Margin="50,10,50,0">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="Login with facebook"
-                  TextColor="#33ccff"
-                  TextDecorations="Underline">
+                        <Span Text="Log in with Facebook" TextColor="Blue" TextDecorations="Underline">
                             <Span.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding ClickCommand}"
                                           CommandParameter="https://xamarin.com" />
@@ -32,13 +31,10 @@
                 </Label.FormattedText>
             </Label>
 
-            <Label HorizontalOptions="Center"
-       VerticalOptions="CenterAndExpand">
+            <Label HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="Login with google"
-                  TextColor="#00ff00"
-                  TextDecorations="Underline">
+                        <Span Text="Log in with Google" TextColor="Blue" TextDecorations="Underline">
                             <Span.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding ClickCommand}"
                                           CommandParameter="https://xamarin.com" />

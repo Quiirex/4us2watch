@@ -7,26 +7,23 @@
              x:Class="_4us2watch.Views.RegistrationPage">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="FillAndExpand">
-            <Label Text="4us2watch" TextColor="#ff3399" FontAttributes="Bold" FontSize="30" VerticalOptions="Center" HorizontalOptions="Center" Margin="10,10,10,0"/>
-            <StackLayout HorizontalOptions="FillAndExpand" Margin="0,100,0,0">
-                <Label Text="Username" TextColor="#ff3399" Margin="10,0,0,0"/>
-                <Entry x:Name="username" Placeholder="Username" Margin="10,0,10,0"/>
-                <Label Text="Email:" TextColor="#ff3399" Margin="10,0,0,0"/>
-                <Entry x:Name="Email" Placeholder="Username" Margin="10,0,10,0"/>
-                <Label Text="Password" TextColor="#ff3399" Margin="10,0,0,0"/>
-                <Entry x:Name="password" IsPassword="True" Placeholder="Password" Margin="10,0,10,0"/>
-                <Label Text="Retype Password" TextColor="#ff3399" Margin="10,0,0,0"/>
-                <Entry x:Name="retyoedPassword" IsPassword="True" Placeholder="Password" Margin="10,0,10,0"/>
-                <Label x:Name="Opozorilo" Text="Neveljavna prijava" TextColor="Red" Margin="10" IsVisible="Hidden"/>
-                <Button x:Name="BtnLogIn" Text="Register" BackgroundColor="#ff3399" Margin="100,25,100,10" TextColor="White" CornerRadius="20"/>
+            <Label Text="Register" TextColor="Black" FontAttributes="Bold" FontSize="30" VerticalOptions="Center" HorizontalOptions="Center" Margin="10,90,10,0"/>
+            <StackLayout HorizontalOptions="FillAndExpand" Margin="20,20,20,0">
+                <Label FontSize="18" Text="Username" TextColor="Black" Margin="10,0,0,0"/>
+                <Entry x:Name="username" Margin="5,0,5,0"/>
+                <Label FontSize="18" Text="Email" TextColor="Black" Margin="10,0,0,0"/>
+                <Entry x:Name="Email" Margin="5,0,5,0"/>
+                <Label FontSize="18" Text="Password" TextColor="Black" Margin="10,0,0,0"/>
+                <Entry x:Name="password" IsPassword="True" Margin="5,0,5,0"/>
+                <Label FontSize="18" Text="Retype password" TextColor="Black" Margin="10,0,0,0"/>
+                <Entry x:Name="retypedPassword" IsPassword="True" Margin="5,0,5,0"/>
+                <Label FontSize="18" x:Name="warning" Text="Invalid credentials" TextColor="Red" Margin="10" IsVisible="Hidden"/>
+                <Button BorderColor="Black" BorderWidth="1" x:Name="BtnLogIn" Text="Register" BackgroundColor="White" Margin="100,25,100,10" TextColor="Black" CornerRadius="20"/>
 
-                <Label HorizontalOptions="Center"
-       VerticalOptions="CenterAndExpand">
+                <Label HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="Already have an account?"
-                  TextColor="#ff3399"
-                  TextDecorations="Underline">
+                            <Span Text="Already have an account?" TextColor="blue" TextDecorations="Underline">
                                 <Span.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding ClickCommand}"
                                           CommandParameter="https://xamarin.com" />

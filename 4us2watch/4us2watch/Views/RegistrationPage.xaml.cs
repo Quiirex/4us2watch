@@ -12,10 +12,34 @@ namespace _4us2watch.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegistrationPage : ContentPage
     {
+        IAuth auth;
         public RegistrationPage()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+            auth = DependencyService.Get<IAuth>();
+        }
+
+        private async void BtnRegister_Clicked(object sender, EventArgs e)
+        {
+            if(password.Text != retypedPassword.Text)
+            {
+                await DisplayAlert("Error", "Passwords do not match", "OK");
+                return;
+            }
+
+            bool created = await auth.SignUpWithEmailPassword(Email.Text, password.Text);
+           // Console.WriteLine(created);
+            if (created)
+            {
+                await DisplayAlert("Success", "Registracija uspešna!", "OK");
+                //await Navigation.PopAsync();
+            }
+            else
+            {
+                await DisplayAlert("Registracija neuspešna", "Napaka!", "OK");
+            }
+
         }
     }
 }

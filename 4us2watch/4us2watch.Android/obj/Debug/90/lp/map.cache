@@ -37,5 +37,13 @@ Xamarin.Android.Support.Vector.Drawable
 Xamarin.Android.Support.VersionedParcelable
 Xamarin.Android.Support.ViewPager
 Xamarin.Essentials
+Xamarin.Firebase.Analytics
+Xamarin.Firebase.Analytics.Impl
+Xamarin.Firebase.Auth
+Xamarin.Firebase.Common
+Xamarin.Firebase.Iid
 Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
+Xamarin.GooglePlayServices.Base
+Xamarin.GooglePlayServices.Basement
+Xamarin.GooglePlayServices.Tasks

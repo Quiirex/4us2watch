@@ -47,6 +47,9 @@
           "lib/netstandard2.0/Xamarin.Essentials.dll": {}
         }
       },
+      "Xamarin.Firebase.Core/60.1142.1": {
+        "type": "package"
+      },
       "Xamarin.Forms/4.8.0.1821": {
         "type": "package",
         "compile": {
@@ -307,6 +310,17 @@
         "readme.txt",
         "xamarin.essentials.1.6.0.nupkg.sha512",
         "xamarin.essentials.nuspec"
+      ]
+    },
+    "Xamarin.Firebase.Core/60.1142.1": {
+      "sha512": "dXGjtHNv17haUk3XjliKXYraHTjO29dmfvjKLpnobZh+UY09QxmHPdcMNxDgtMqxFiV2Roikr05XwCzhl/0GpA==",
+      "type": "package",
+      "path": "xamarin.firebase.core/60.1142.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "xamarin.firebase.core.60.1142.1.nupkg.sha512",
+        "xamarin.firebase.core.nuspec"
       ]
     },
     "Xamarin.Forms/4.8.0.1821": {
@@ -630,30 +644,34 @@
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
       "Xamarin.Essentials >= 1.6.0",
+      "Xamarin.Firebase.Core >= 60.1142.1",
       "Xamarin.Forms >= 4.8.0.1821"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\j6bou\\.nuget\\packages\\": {},
+    "C:\\Users\\PunisherTFB\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\j6bou\\Desktop\\GH\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj",
+      "projectUniqueName": "C:\\Users\\PunisherTFB\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj",
       "projectName": "4us2watch",
-      "projectPath": "C:\\Users\\j6bou\\Desktop\\GH\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj",
-      "packagesPath": "C:\\Users\\j6bou\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\j6bou\\Desktop\\GH\\4us2watch\\4us2watch\\4us2watch\\obj\\",
+      "projectPath": "C:\\Users\\PunisherTFB\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj",
+      "packagesPath": "C:\\Users\\PunisherTFB\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\PunisherTFB\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\j6bou\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PunisherTFB\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -661,11 +679,12 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Projekti\\RokTkalcic\\Turi The Discord Bot\\TuriTheDiscordBot\\TuriTheDiscordBot": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.emzi0767.com/api/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
           "projectReferences": {}
         }
       },
@@ -677,7 +696,6 @@
     },
     "frameworks": {
       "netstandard2.0": {
-        "targetAlias": "netstandard2.0",
         "dependencies": {
           "NETStandard.Library": {
             "suppressParent": "All",
@@ -688,6 +706,10 @@
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.6.0, )"
+          },
+          "Xamarin.Firebase.Core": {
+            "target": "Package",
+            "version": "[60.1142.1, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
@@ -704,7 +726,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

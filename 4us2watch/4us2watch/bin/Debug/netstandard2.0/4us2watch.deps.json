@@ -11,6 +11,7 @@
         "dependencies": {
           "NETStandard.Library": "2.0.3",
           "Xamarin.Essentials": "1.6.0",
+          "Xamarin.Firebase.Core": "60.1142.1",
           "Xamarin.Forms": "4.8.0.1821"
         },
         "runtime": {
@@ -42,6 +43,7 @@
           }
         }
       },
+      "Xamarin.Firebase.Core/60.1142.1": {},
       "Xamarin.Forms/4.8.0.1821": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
@@ -93,6 +95,13 @@
       "sha512": "sha512-geJYnjTyPv2npClIkBxLXk9cOV9CPwj/oayA8I4+6NpZc/dIiYxax36m25SW8TrCMR/rvyY44fZBjWBvj7BCQQ==",
       "path": "xamarin.essentials/1.6.0",
       "hashPath": "xamarin.essentials.1.6.0.nupkg.sha512"
+    },
+    "Xamarin.Firebase.Core/60.1142.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dXGjtHNv17haUk3XjliKXYraHTjO29dmfvjKLpnobZh+UY09QxmHPdcMNxDgtMqxFiV2Roikr05XwCzhl/0GpA==",
+      "path": "xamarin.firebase.core/60.1142.1",
+      "hashPath": "xamarin.firebase.core.60.1142.1.nupkg.sha512"
     },
     "Xamarin.Forms/4.8.0.1821": {
       "type": "package",

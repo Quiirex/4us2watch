@@ -3,8 +3,8 @@
 	.section	.rodata.env.str.1,"aMS",@progbits,1
 	.type	.L.env.str.1, @object
 .L.env.str.1:
-	.asciz	"com.companyname.x_4us2watch"
-	.size	.L.env.str.1, 28
+	.asciz	"com.cicibani_forus2watch"
+	.size	.L.env.str.1, 25
 	.section	.data.application_config,"aw",@progbits
 	.type	application_config, @object
 	.p2align	3
@@ -73,7 +73,7 @@ mono_aot_mode_name:
 	.section	.rodata.env.str.8,"aMS",@progbits,1
 	.type	.L.env.str.8, @object
 .L.env.str.8:
-	.asciz	"dd31efb0-705f-44d1-8482-c75f15022cff"
+	.asciz	"9cd9ac01-f80b-40ae-8a55-81af9d1ec03b"
 	.size	.L.env.str.8, 37
 	.section	.rodata.env.str.9,"aMS",@progbits,1
 	.type	.L.env.str.9, @object

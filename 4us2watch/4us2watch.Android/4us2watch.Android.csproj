@@ -58,10 +58,17 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Xamarin.Firebase.Auth">
+      <Version>60.1142.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Firebase.Core">
+      <Version>60.1142.1</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1821" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.0" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthDroid.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +104,9 @@
       <Project>{2CA6F265-2A0F-4153-AC29-E36B2A8E0184}</Project>
       <Name>4us2watch</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <GoogleServicesJson Include="google-services.json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

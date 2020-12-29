@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "821665553450",
+    "project_id": "us2watch-a3e6d",
+    "storage_bucket": "us2watch-a3e6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:821665553450:android:0bf75836e7190d021b7753",
+        "android_client_info": {
+          "package_name": "com.cicibani_forus2watch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "821665553450-jpmnnc3agk4k5722bbin4i89ur99uqmt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCm9fEjFjNrbitHOPwPwyMHRkJ2oN2uCS0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "821665553450-jpmnnc3agk4k5722bbin4i89ur99uqmt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

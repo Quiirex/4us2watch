@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace _4us2watch.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-public partial class RegestrationPage : ContentPage
+public partial class RegistrationPage : ContentPage
 {
-    public RegestrationPage()
+    public RegistrationPage()
     {
         InitializeComponent();
     }

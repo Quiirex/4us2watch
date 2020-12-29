@@ -8,13 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("4us2watch.Views.RegistrationPage.xaml", "Views/RegistrationPage.xaml", typeof(global::_4us2watch.Views.RegestrationPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("4us2watch.Views.RegistrationPage.xaml", "Views/RegistrationPage.xaml", typeof(global::_4us2watch.Views.RegistrationPage))]
 
 namespace _4us2watch.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\RegistrationPage.xaml")]
-    public partial class RegestrationPage : global::Xamarin.Forms.ContentPage {
+    public partial class RegistrationPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Entry username;
@@ -36,7 +36,7 @@ namespace _4us2watch.Views {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(RegestrationPage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(RegistrationPage));
             username = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "username");
             Email = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "Email");
             password = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "password");

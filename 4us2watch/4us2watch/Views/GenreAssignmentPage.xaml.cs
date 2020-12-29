@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace 4us2watch.Views
+namespace _4us2watch.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 public partial class GenreAssignmentPage : ContentPage

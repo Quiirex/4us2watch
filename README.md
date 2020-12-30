@@ -39,12 +39,6 @@ and would compare genres liked by one user with another and then recommend movie
 * [C#](https://docs.microsoft.com/en-us/dotnet/csharp/)
 
 
-<!-- CONTACT -->
-## Contact
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/Quiirex/4us2watch.svg?style=for-the-badge

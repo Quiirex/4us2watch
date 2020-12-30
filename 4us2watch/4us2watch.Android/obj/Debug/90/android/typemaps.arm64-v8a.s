@@ -18254,9 +18254,9 @@ map_java_to_managed:
 	.xword	.L.java_type_name.1706
 	.xword	0
 	.xword	.L.java_type_name.1707
-	.xword	0
+	.xword	.L.managed_type_name.1920
 	.xword	.L.java_type_name.1708
-	.xword	0
+	.xword	.L.managed_type_name.1921
 	.xword	.L.java_type_name.1709
 	.xword	.L.managed_type_name.1918
 	.xword	.L.java_type_name.1710
@@ -22800,7 +22800,7 @@ map_java_to_managed:
 	.xword	.L.java_type_name.3979
 	.xword	.L.managed_type_name.4336
 	.xword	.L.java_type_name.3980
-	.xword	0
+	.xword	.L.managed_type_name.4337
 	.xword	.L.java_type_name.3981
 	.xword	0
 	.xword	.L.java_type_name.3982
@@ -23592,7 +23592,7 @@ map_java_to_managed:
 	.xword	.L.java_type_name.4375
 	.xword	.L.managed_type_name.4781
 	.xword	.L.java_type_name.4376
-	.xword	.L.managed_type_name.4789
+	.xword	0
 	.xword	.L.java_type_name.4377
 	.xword	.L.managed_type_name.4791
 	.xword	.L.java_type_name.4378
@@ -23620,7 +23620,7 @@ map_java_to_managed:
 	.xword	.L.java_type_name.4389
 	.xword	0
 	.xword	.L.java_type_name.4390
-	.xword	0
+	.xword	.L.managed_type_name.4797
 	.xword	.L.java_type_name.4391
 	.xword	.L.managed_type_name.4802
 	.xword	.L.java_type_name.4392
@@ -23630,9 +23630,9 @@ map_java_to_managed:
 	.xword	.L.java_type_name.4394
 	.xword	0
 	.xword	.L.java_type_name.4395
-	.xword	0
+	.xword	.L.managed_type_name.4804
 	.xword	.L.java_type_name.4396
-	.xword	0
+	.xword	.L.managed_type_name.4803
 	.xword	.L.java_type_name.4397
 	.xword	.L.managed_type_name.4807
 	.xword	.L.java_type_name.4398
@@ -26784,7 +26784,7 @@ map_java_to_managed:
 	.xword	.L.java_type_name.5971
 	.xword	.L.managed_type_name.6048
 	.xword	.L.java_type_name.5972
-	.xword	.L.managed_type_name.2570
+	.xword	0
 	.xword	.L.java_type_name.5973
 	.xword	.L.managed_type_name.2571
 	.xword	.L.java_type_name.5974
@@ -26806,7 +26806,7 @@ map_java_to_managed:
 	.xword	.L.java_type_name.5982
 	.xword	.L.managed_type_name.6054
 	.xword	.L.java_type_name.5983
-	.xword	.L.managed_type_name.2565
+	.xword	0
 	.xword	.L.java_type_name.5984
 	.xword	.L.managed_type_name.2566
 	.xword	.L.java_type_name.5985
@@ -26870,11 +26870,11 @@ map_java_to_managed:
 	.xword	.L.java_type_name.6014
 	.xword	.L.managed_type_name.2567
 	.xword	.L.java_type_name.6015
-	.xword	.L.managed_type_name.2568
+	.xword	0
 	.xword	.L.java_type_name.6016
 	.xword	.L.managed_type_name.2569
 	.xword	.L.java_type_name.6017
-	.xword	.L.managed_type_name.2577
+	.xword	0
 	.xword	.L.java_type_name.6018
 	.xword	.L.managed_type_name.2575
 	.xword	.L.java_type_name.6019

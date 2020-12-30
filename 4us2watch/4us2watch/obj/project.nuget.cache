@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "88cV226KJ+mkxS8WPHWF14JuasFIqZPmw26h9KJHeoJiK/nOS94PeIz7S2Wjp9GW2k5fVz4bxA8EYW0VtAfyaQ==",
+  "dgSpecHash": "vqqo1RMZT4jPNIOHLShxZsxkjg156tUHZQMex0Nmt8GpvDKG3ro724V2SUqAip6Zv4JkoIifoOZvi63QACtoWg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\j6bou\\Desktop\\GH\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj",
+  "projectFilePath": "C:\\Users\\PunisherTFB\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\j6bou\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\j6bou\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\j6bou\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\j6bou\\.nuget\\packages\\xamarin.essentials\\1.6.0\\xamarin.essentials.1.6.0.nupkg.sha512",
-    "C:\\Users\\j6bou\\.nuget\\packages\\xamarin.firebase.core\\60.1142.1\\xamarin.firebase.core.60.1142.1.nupkg.sha512",
-    "C:\\Users\\j6bou\\.nuget\\packages\\xamarin.forms\\4.8.0.1821\\xamarin.forms.4.8.0.1821.nupkg.sha512"
+    "C:\\Users\\PunisherTFB\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\PunisherTFB\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\PunisherTFB\\.nuget\\packages\\xamarin.essentials\\1.6.0\\xamarin.essentials.1.6.0.nupkg.sha512",
+    "C:\\Users\\PunisherTFB\\.nuget\\packages\\xamarin.firebase.core\\60.1142.1\\xamarin.firebase.core.60.1142.1.nupkg.sha512",
+    "C:\\Users\\PunisherTFB\\.nuget\\packages\\xamarin.forms\\4.8.0.1821\\xamarin.forms.4.8.0.1821.nupkg.sha512"
   ],
   "logs": []
 }

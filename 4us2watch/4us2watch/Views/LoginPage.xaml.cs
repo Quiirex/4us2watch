@@ -25,7 +25,7 @@ namespace _4us2watch.Views
 
         private async void BtnLogIn_Clicked(object sender, EventArgs e)
         {
-            string Token = await auth.LoginWithEmailPassword(Email.Text, Password.Text); //Ne vrne tokena, ampak vrže exception, zato crashne
+            string Token = await auth.LoginWithEmailPassword(Email.Text.Replace(" ", string.Empty), Password.Text); //Cleared the error with .Replace that replaces all white spaces in string
             if (Token != "")
             {
                 await DisplayAlert("Authentication Succseeded", "You logged in successfully", "OK");

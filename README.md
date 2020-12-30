@@ -13,6 +13,7 @@
 
   <p align="center">
     Android mobile application for movie and tv series suggestions amidst users.
+  <br/>
     ·
     <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
     ·

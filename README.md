@@ -19,7 +19,7 @@ to decide what you would like to watch with your friends, family or partners,
 for every person has their own taste and desires. We decided to design and make this
 an application that would work in the way so that a user would pick movies/tv series that they enjoy
 which would then be passed to the recommender algorithm, which would in turn store genres liked by the user
-and would compare genres liked by one user with another.
+and would compare genres liked by one user with another and then recommend movies based on the genre to said users.
     </p>
   <br/>
     <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>

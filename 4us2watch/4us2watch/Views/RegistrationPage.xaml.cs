@@ -32,12 +32,13 @@ namespace _4us2watch.Views
            // Console.WriteLine(created);
             if (created)
             {
-                await DisplayAlert("Success", "Registracija uspešna!", "OK");
+                await DisplayAlert("Success", "Registration successful", "OK");
+                await Navigation.PushAsync(new LoginPage()); //vrni na login, ko je registracija uspešna
                 //await Navigation.PopAsync();
             }
             else
             {
-                await DisplayAlert("Registracija neuspešna", "Napaka!", "OK");
+                await DisplayAlert("Failed", "Registration unsuccessful, check the credentials", "OK");
             }
 
         }

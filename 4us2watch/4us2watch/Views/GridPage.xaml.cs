@@ -9,12 +9,13 @@ using Xamarin.Forms.Xaml;
 
 namespace _4us2watch.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-public partial class GridPage : ContentPage
-{
-    public GridPage()
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class GridPage : ContentPage
     {
-        InitializeComponent();
+        public GridPage()
+        {
+            InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
     }
-}
 }

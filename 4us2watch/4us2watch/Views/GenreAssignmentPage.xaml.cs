@@ -9,12 +9,13 @@ using Xamarin.Forms.Xaml;
 
 namespace _4us2watch.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-public partial class GenreAssignmentPage : ContentPage
-{
-    public GenreAssignmentPage()
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class GenreAssignmentPage : ContentPage
     {
-        InitializeComponent();
+        public GenreAssignmentPage()
+        {
+            InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
     }
-}
 }

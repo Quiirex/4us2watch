@@ -21,6 +21,7 @@ namespace _4us2watch.Droid
             catch (FirebaseAuthInvalidUserException e)
             {
                 //e.PrintStackTrace();
+                Console.WriteLine(e); //da ne javlja warninga, drugače se itak ne prikaže
                 return "";
             }
         }
@@ -33,6 +34,7 @@ namespace _4us2watch.Droid
             }
             catch (Exception e)
             {
+                Console.WriteLine(e); //da ne javlja warninga, drugače se itak ne prikaže
                 return false;
             }
         }

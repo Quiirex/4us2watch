@@ -25,21 +25,20 @@ namespace _4us2watch.Views
 
         private async void BtnLogIn_Clicked(object sender, EventArgs e)
         {
-            string Token = await auth.LoginWithEmailPassword(Email.Text, Password.Text);
+            string Token = await auth.LoginWithEmailPassword(Email.Text, Password.Text); //Ne vrne tokena, ampak vrže exception, zato crashne
             if (Token != "")
             {
-                //await Navigation.PushAsync(new LoggedPage());
                 await DisplayAlert("Authentication Succseeded", "You logged in successfully", "OK");
+                Email.Text = string.Empty; //da ni že vpisano, v primeru da gre nazaj
+                Password.Text = string.Empty;
+                await Navigation.PushAsync(new GenreAssignmentPage());
             }
             else
             {
-                ShowError();
+                Email.Text = string.Empty;
+                Password.Text = string.Empty;
+                await DisplayAlert("Authentication Failed", "E-mail or password are incorrect. Try again!", "OK");
             }
         }
-        async private void ShowError()
-        {
-            await DisplayAlert("Authentication Failed", "E-mail or password are incorrect. Try again!", "OK");
-        }
-
     }
 }

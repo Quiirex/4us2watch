@@ -1,8 +1,8 @@
-<p align="center">
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-</p>
+
 <br />
 <p align="center">
   <a href="https://github.com/Quiirex/4us2watch">

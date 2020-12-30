@@ -2,11 +2,10 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
-<!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/Quiirex/4us2watch">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://c0.klipartz.com/pngpicture/779/81/sticker-png-logo-brand-random-icons-angle-text.png" alt="Logo" width="150" height="150">
   </a>
 
   <h3 align="center">4us2watch</h3>
@@ -14,7 +13,6 @@
   <p align="center">
     Android mobile application for movie and tv series suggestions amidst users.
   <br/>
-    ·
     <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
     ·
     <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>

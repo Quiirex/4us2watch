@@ -5,15 +5,14 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/Quiirex/4us2watch">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">4us2watch</h3>
 
   <p align="center">
-    An Android Xamarin framework based mobile application for movie and tv series suggestions amidst users.
-    Written in C# and a touch of xaml.
+    Android mobile application for movie and tv series suggestions amidst users.
     ·
     <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
     ·
@@ -26,14 +25,11 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
-
 
 ### Built With
 
 * [Xamarin](https://dotnet.microsoft.com/apps/xamarin)
+* [C#](https://docs.microsoft.com/en-us/dotnet/csharp/)
 
 
 <!-- CONTACT -->

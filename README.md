@@ -8,10 +8,19 @@
     <img src="https://c0.klipartz.com/pngpicture/779/81/sticker-png-logo-brand-random-icons-angle-text.png" alt="Logo" width="150" height="150">
   </a>
 
-  <h3 align="center">4us2watch</h3>
+  <h1 align="center">4us2watch</h1>
 
   <p align="center">
     Android mobile application for movie and tv series suggestions amidst users.
+  <br/> 
+  <p align="center">
+Our idea was born out of a problem that many people face. It is sometimes (or often) hard
+to decide what you would like to watch with your friends, family or partners,
+for every person has their own taste and desires. We decided to design and make this
+an application that would work in the way so that a user would pick movies/tv series that they enjoy
+which would then be passed to the recommender algorithm, which would in turn store genres liked by the user
+and would compare genres liked by one user with another.
+    </p>
   <br/>
     <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
     ·

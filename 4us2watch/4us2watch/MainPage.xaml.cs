@@ -19,13 +19,11 @@ namespace _4us2watch
 
         private async void Login_Clicked(object sender, EventArgs e)
         {
-            // Login in to be implemented
-            await Navigation.PushAsync(new LoginPage());
+            await Navigation.PushAsync(new GridPage()); //temporary
         }
 
         private async void Register_Clicked(object sender, EventArgs e)
         {
-            // Register to be implemented (add async)
             await Navigation.PushAsync(new RegistrationPage());
         }
     }

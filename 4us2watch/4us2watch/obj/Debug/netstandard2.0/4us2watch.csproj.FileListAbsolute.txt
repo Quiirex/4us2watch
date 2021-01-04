@@ -15,7 +15,6 @@ C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch\bin\Debug\netstandard2.0
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch\bin\Debug\netstandard2.0\4us2watch.dll
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch\bin\Debug\netstandard2.0\ref\4us2watch.dll
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch\bin\Debug\netstandard2.0\4us2watch.pdb
-C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\4us2watch.csprojAssemblyReference.cache
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
@@ -34,3 +33,4 @@ C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\ne
 C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\Views\GenreAssignmentPage.xaml.g.cs
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\Views\GridPage.xaml.g.cs
+C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\4us2watch.csprojAssemblyReference.cache

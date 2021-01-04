@@ -1,4 +1,4 @@
-IsIncrementalBuild=true
+IsIncrementalBuild=false
 AndroidUseAapt2=True
 UseSharedRuntime=true
 UseFastDeployment=false
@@ -22,7 +22,12 @@ CodegenTarget=
 AndroidDexTool=d8
 AndroidLinkTool=
 AndroidEnableProfiledAot=false
+<<<<<<< Updated upstream
 AndroidInstallAfterBuild=True
 AndroidSessionId=a2d69d95-1f96-4bcc-8d60-413a3bd91558
+=======
+AndroidInstallAfterBuild=False
+AndroidSessionId=
+>>>>>>> Stashed changes
 BuildConfiguration=Debug
 TemplateName={c9e5eea5-ca05-42a1-839b-61506e0a37df}

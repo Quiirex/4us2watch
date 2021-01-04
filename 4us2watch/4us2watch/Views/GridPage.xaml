@@ -6,11 +6,135 @@
              mc:Ignorable="d"
              x:Class="_4us2watch.Views.GridPage">
     <ContentPage.Content>
+        <!--Redirectaj iz logina sem (ne iz prvega! prvi login gre na GenreAssignmentPage!-->
         <StackLayout>
-            <!--Nič še zaenkrat, redirectaj iz logina sem (ne iz prvega! prvi login gre na GenreAssignmentPage!-->
-            <Label Text="Grid layout"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <!--Help, log out-->
+            <Grid ColumnSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Text="Help"
+               FontSize="Medium"
+               TextDecorations="Underline"
+               TextColor="Black"
+               HorizontalTextAlignment="Start"
+               Padding="50,0,0,0"/>
+                <Label Grid.Column="1" Text="Log out"
+               FontSize="Medium"
+               TextDecorations="Underline"
+               TextColor="Black"
+               HorizontalTextAlignment="End"
+               Padding="0,0,50,0"/>
+            </Grid>
+
+            <!--Home, Friends, Profile-->
+            <Grid ColumnSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Home"
+               FontSize="27"
+               FontAttributes="Bold"
+               TextColor="Black"
+               HorizontalTextAlignment="Start"
+               Padding="30,0,0,0"/>
+                <Label Grid.Column="1" Text="Friends"
+               FontSize="27"
+               TextColor="Black"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               Padding="0,0,0,0"/>
+                <Label Grid.Column="2" Text="Profile"
+               FontSize="27"
+               TextColor="Black"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="End"
+               Padding="0,0,30,0"/>
+
+                <BoxView
+                             Grid.ColumnSpan="3" 
+                             BackgroundColor="Black" 
+                             HeightRequest="1" 
+                             VerticalOptions="End" 
+                             HorizontalOptions="FillAndExpand"
+                             Margin="28,0,28,-3"/>
+            </Grid>
+
+            <!--Movies, TV Series, Documentaries, Anime-->
+            <Grid ColumnSpacing="0" Margin="0,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Movies"
+               FontSize="16"
+               FontAttributes="Bold"
+               TextColor="Black"
+               HorizontalTextAlignment="Start"
+               Padding="30,0,0,0"/>
+                <Label Grid.Column="1" Text="TV Series"
+               FontSize="16"
+               TextColor="Black"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               Padding="-30,0,0,0"/>
+                <Label Grid.Column="2" Text="Documentaries"
+               FontSize="16"
+               TextColor="Black"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               Padding="-10,0,0,0"/>
+                <Label Grid.Column="3" Text="Anime"
+               FontSize="16"
+               TextColor="Black"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="End"
+               Padding="0,0,30,0"/>
+            </Grid>
+            <ScrollView Padding="0,10,0,10">
+                <Grid Margin="30,0,30,0">
+                    <!--TO DO: Opcija za več vrstic. Trenutno ob dodajanju novih vrstic se spacing breaka.-->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200" />
+                        <RowDefinition Height="200" />
+                        <RowDefinition Height="200" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Frame Grid.Row="0" Grid.Column="0" BorderColor="Black" HasShadow="True">
+                        <Label Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
+                    </Frame>
+
+                    <Frame Grid.Row="0" Grid.Column="1" BorderColor="Black" HasShadow="True">
+                        <Label Grid.Column="1" Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
+                    </Frame>
+
+                    <Frame Grid.Row="1" Grid.Column="0" BorderColor="Black" HasShadow="True">
+                        <Label Grid.Row="1" Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
+                    </Frame>
+
+                    <Frame Grid.Row="1" Grid.Column="1" BorderColor="Black" HasShadow="True">
+                        <Label Grid.Row="1" Grid.Column="1" Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
+                    </Frame>
+
+                    <Frame Grid.Row="2" Grid.Column="0" BorderColor="Black" HasShadow="True">
+                        <Label Grid.Row="2" Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
+                    </Frame>
+
+                    <Frame Grid.Row="2" Grid.Column="1" BorderColor="Black" HasShadow="True">
+                        <Label Grid.Row="2" Grid.Column="1" Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
+                    </Frame>
+
+                </Grid>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

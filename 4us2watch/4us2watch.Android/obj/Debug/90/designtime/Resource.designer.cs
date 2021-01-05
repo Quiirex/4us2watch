@@ -8493,10 +8493,13 @@ namespace _4us2watch.Droid
 			public const int notify_panel_notification_icon_bg = 2131165314;
 			
 			// aapt resource value: 0x7F070083
-			public const int tooltip_frame_dark = 2131165315;
+			public const int profile = 2131165315;
 			
 			// aapt resource value: 0x7F070084
-			public const int tooltip_frame_light = 2131165316;
+			public const int tooltip_frame_dark = 2131165316;
+			
+			// aapt resource value: 0x7F070085
+			public const int tooltip_frame_light = 2131165317;
 			
 			static Drawable()
 			{

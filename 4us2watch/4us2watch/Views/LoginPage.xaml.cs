@@ -31,7 +31,7 @@ namespace _4us2watch.Views
                 await DisplayAlert("Authentication Succseeded", "You logged in successfully", "OK");
                 Email.Text = string.Empty; //da ni že vpisano, v primeru da gre nazaj
                 Password.Text = string.Empty;
-                await Navigation.PushAsync(new GridPage()); //spremeni na GenreAssignmentPage, ko vemo, da je prvi login
+                await Navigation.PushAsync(new ProfilePage()); //spremeni na GenreAssignmentPage, ko vemo, da je prvi login
             }
             else
             {

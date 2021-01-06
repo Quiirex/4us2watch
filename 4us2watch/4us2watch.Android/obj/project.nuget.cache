@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "N0mT1DwOiGHuEQVrJ206N19woof/llskgV7Tp+QkN76KA2minJ6cU9VM2aKKKTEOL76zXyP9G6MZD9tHyqG2Aw==",
+  "dgSpecHash": "xIv/kw4eRKe0bKd+TP1i9QIVsvA2kxoniU1pOrl9+cHzCpgfhQA7nZTtBXOCeK/ajPF8Q8/53Sufxbr2KI0AFg==",
   "success": true,
   "projectFilePath": "C:\\Users\\j6bou\\Desktop\\GH\\4us2watch\\4us2watch\\4us2watch.Android\\4us2watch.Android.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\j6bou\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\j6bou\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\j6bou\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.common\\1.1.1.3\\xamarin.android.arch.core.common.1.1.1.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.runtime\\1.1.1.3\\xamarin.android.arch.core.runtime.1.1.1.3.nupkg.sha512",
@@ -38,6 +40,8 @@
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.v4\\28.0.0.3\\xamarin.android.support.v4.28.0.0.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.v7.appcompat\\28.0.0.3\\xamarin.android.support.v7.appcompat.28.0.0.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.v7.cardview\\28.0.0.3\\xamarin.android.support.v7.cardview.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\j6bou\\.nuget\\packages\\xamarin.android.support.v7.mediarouter\\28.0.0.3\\xamarin.android.support.v7.mediarouter.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\j6bou\\.nuget\\packages\\xamarin.android.support.v7.palette\\28.0.0.3\\xamarin.android.support.v7.palette.28.0.0.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.v7.recyclerview\\28.0.0.3\\xamarin.android.support.v7.recyclerview.28.0.0.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.vector.drawable\\28.0.0.3\\xamarin.android.support.vector.drawable.28.0.0.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.versionedparcelable\\28.0.0.3\\xamarin.android.support.versionedparcelable.28.0.0.3.nupkg.sha512",

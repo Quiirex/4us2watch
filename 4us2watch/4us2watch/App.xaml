@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="_4us2watch.App">
     <Application.Resources>
-
+        <Color x:Key="PrimaryColor">#61AADB</Color>
+        <Color x:Key="TitleTextColor">#FFFFFF</Color>
     </Application.Resources>
 </Application>

@@ -11,6 +11,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="service.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="service.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Cloud.Firestore" Version="2.3.0" />
     <PackageReference Include="Xamarin.Firebase.Core" Version="60.1142.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1821" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.0" />

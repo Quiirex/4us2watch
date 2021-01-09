@@ -29,9 +29,11 @@ C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0
 C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\Views\GenreAssignmentPage.xaml.g.cs
 C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\Views\GridPage.xaml.g.cs
 C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\Views\RegistrationPage.xaml.g.cs
-C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\4us2watch.csproj.CoreCompileInputs.cache
-C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\Views\GenreAssignmentPage.xaml.g.cs
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\Views\GridPage.xaml.g.cs
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\Views\ProfilePage.xaml.g.cs
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\4us2watch.csprojAssemblyReference.cache
+C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\Views\ProfilePage.xaml.g.cs
+C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\4us2watch.csproj.CoreCompileInputs.cache
+C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\bin\Debug\netstandard2.0\service.json

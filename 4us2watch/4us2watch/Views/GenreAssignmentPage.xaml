@@ -10,6 +10,7 @@
             <!--Tukaj se bo prikazalo npr. 20 začetnih filmov/serij (oz. kolko jih recommender rabi) in se bo samo sproti menjavalo-->
             <!--TO DO: Implementiraj logiko, da vemo, da je prvi login, po tem redirectaj sem.-->
             <!--TO DO: To se prikaže samo ob prvem loginu, torej moremo keepat track keri login je.-->
+            
             <Label Text="Genre assignment per user"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />

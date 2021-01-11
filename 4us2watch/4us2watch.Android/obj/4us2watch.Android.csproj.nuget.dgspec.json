@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PunisherTFB\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch.Android\\4us2watch.Android.csproj": {}
+    "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch.Android\\4us2watch.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PunisherTFB\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch.Android\\4us2watch.Android.csproj": {
+    "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch.Android\\4us2watch.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PunisherTFB\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch.Android\\4us2watch.Android.csproj",
+        "projectUniqueName": "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch.Android\\4us2watch.Android.csproj",
         "projectName": "4us2watch.Android",
-        "projectPath": "C:\\Users\\PunisherTFB\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch.Android\\4us2watch.Android.csproj",
-        "packagesPath": "C:\\Users\\PunisherTFB\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PunisherTFB\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch.Android\\obj\\",
+        "projectPath": "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch.Android\\4us2watch.Android.csproj",
+        "packagesPath": "C:\\Users\\tadej\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\PunisherTFB\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tadej\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,15 +27,13 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Projekti\\RokTkalcic\\Turi The Discord Bot\\TuriTheDiscordBot\\TuriTheDiscordBot": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.emzi0767.com/api/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "C:\\Users\\PunisherTFB\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj": {
-                "projectPath": "C:\\Users\\PunisherTFB\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj"
+              "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj": {
+                "projectPath": "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj"
               }
             }
           }
@@ -46,9 +42,9 @@
       "frameworks": {
         "monoandroid90": {
           "dependencies": {
-            "Google.Cloud.Firestore": {
+            "FirebaseDatabase.net": {
               "target": "Package",
-              "version": "[2.3.0, )"
+              "version": "[4.0.4, )"
             },
             "NETStandard.Library": {
               "target": "Package",
@@ -94,24 +90,21 @@
         }
       }
     },
-    "C:\\Users\\PunisherTFB\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj": {
+    "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PunisherTFB\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj",
+        "projectUniqueName": "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj",
         "projectName": "4us2watch",
-        "projectPath": "C:\\Users\\PunisherTFB\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj",
-        "packagesPath": "C:\\Users\\PunisherTFB\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PunisherTFB\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\obj\\",
+        "projectPath": "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj",
+        "packagesPath": "C:\\Users\\tadej\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\PunisherTFB\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tadej\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -119,9 +112,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Projekti\\RokTkalcic\\Turi The Discord Bot\\TuriTheDiscordBot\\TuriTheDiscordBot": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.emzi0767.com/api/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
@@ -137,9 +128,9 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
-            "Google.Cloud.Firestore": {
+            "FirebaseDatabase.net": {
               "target": "Package",
-              "version": "[2.3.0, )"
+              "version": "[4.0.4, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",
@@ -170,7 +161,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

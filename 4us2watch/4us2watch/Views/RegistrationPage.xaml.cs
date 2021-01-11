@@ -1,4 +1,7 @@
-﻿using Google.Cloud.Firestore;
+﻿using Firebase.Database;
+using Firebase.Database.Query;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,6 +12,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using _4us2watch.Components;
 
 namespace _4us2watch.Views
 {
@@ -16,7 +20,6 @@ namespace _4us2watch.Views
     public partial class RegistrationPage : ContentPage
     {
         IAuth auth;
-        static FirestoreDb db;
         public RegistrationPage()
         {
             InitializeComponent();
@@ -38,25 +41,15 @@ namespace _4us2watch.Views
            // Console.WriteLine(created);
             if (created)
             {
+                List<string> filmi = new List<string>();
+                List<string> frendi = new List<string>();
+                await ReaderWriter.AddPerson(Username.Text, Email.Text, filmi, frendi);
+                //await ReaderWriter.UpdatePerson(Username.Text, Email.Text, filmi, frendi);
+
                 await DisplayAlert("Success", "Registration successful", "OK");
                 await Navigation.PushAsync(new LoginPage()); //vrni na login, ko je registracija uspešna
-                //await Navigation.PopAsync();
-                // Firebase
-                //string path = Path.Combine(Xamarin.Essentials.FileSystem.AppDataDirectory, "count.txt"); ;
-                //Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
-
-                
-
-                //db = FirestoreDb.Create("us2watch-a3e6d");
-                //// Console.WriteLine("Uspelo: " + db.ProjectId);
-
-                //DocumentReference doc = db.Collection("Users").Document(Email.Text);
-                //Dictionary<string, object> user = new Dictionary<string, object>()
-                //{
-                //    { "username",Username.Text }
-                //};
-                //await doc.SetAsync(user);
-
+                                                             //await Navigation.PopAsync();
+                                                             // Firebase
             }
             else
             {

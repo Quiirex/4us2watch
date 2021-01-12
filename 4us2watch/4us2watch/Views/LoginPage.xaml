@@ -19,11 +19,22 @@
                 <Label HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="Register" TextColor="Blue" TextDecorations="Underline" FontSize="15">
+                            <Span Text="New to the app? Register here" TextColor="Blue" FontSize="Medium" TextDecorations="Underline">
                                 <!--Tap gesture recognizeri so samo za fizično napravo-->
                                 <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding ClickCommand}"
-                                          CommandParameter="https://xamarin.com" />
+                                    <TapGestureRecognizer Tapped="RedirectToRegister"/>
+                                    <!--Spremeni na Tapped-->
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label HorizontalOptions="Center" VerticalOptions="End">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Home" TextColor="blue" FontSize="Medium" TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="RedirectHome"/>
                                 </Span.GestureRecognizers>
                             </Span>
                         </FormattedString>

@@ -21,7 +21,8 @@ namespace _4us2watch.Views
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             BindingContext = this;
-            _menuItemsView = new[] { (View) LabelSlikaTest, LabelTest, LabelSlikaDvaTest, LabelDvaTest };
+            _menuItemsView = new[] { (View)LabelSlikaTest, LabelTest, LabelSlikaDvaTest, LabelDvaTest };
+            CreateAndFillGrid(MovieGrid);
         }
         private const string ExpandAnimationName = "ExpandAnimation";
         private const string CollapseAnimationName = "CollapseAnimation";
@@ -33,30 +34,36 @@ namespace _4us2watch.Views
         private bool _isAnimationRun;
         private double _safeInsetsTop;
 
+        private void CreateAndFillGrid(Grid grid) //Fix dis plis
+        {
+
+            grid.RowDefinitions.Add(new RowDefinition { Height = 200 });
+            grid.RowDefinitions.Add(new RowDefinition { Height = 200 });
+
+            Frame frame = new Frame
+            {
+                BorderColor = Color.Black,
+                HasShadow = true,
+                Content = new Label { Text = "x", HorizontalOptions = LayoutOptions.Center, VerticalOptions = LayoutOptions.Center }
+            };
+            grid.Children.Add(frame, 0, 0);
+            //grid.Children.Add(frame, 0, 1);
+
+        }
         protected override void OnAppearing()
         {
             base.OnAppearing();
             MenuTopRow.Height = MenuBottomRow.Height = Device.Info.ScaledScreenSize.Height * (1 - PageScale) / 2;
         }
-        public ICommand HelpCommand => new Command(onHelpClick);
-        public ICommand LogOutCommand => new Command(onLogOutClick);
-        public ICommand HomeCommand => new Command(onHomeClick);
-        public ICommand FriendsCommand => new Command(OnShowMenu);
-        public ICommand ProfileCommand => new Command(onProfileClick);
-        public ICommand MoviesCommand => new Command(onMoviesClick);
-        public ICommand TVSeriesCommand => new Command(onTVSeriesClick);
-        public ICommand DocumentariesCommand => new Command(onDocumentariesClick);
-        public ICommand AnimeCommand => new Command(onAnimeClick);
-
-        public async void onHelpClick()
+        void HelpCommand(object sender, EventArgs args)
         {
-            await DisplayAlert("Dela", "Dela", "OK");
+            DisplayAlert("Dela", "Dela", "OK");
         }
-        public async void onLogOutClick()
+        void LogOutCommand(object sender, EventArgs args)
         {
-            await DisplayAlert("Dela", "Dela", "OK");
+            DisplayAlert("Dela", "Dela", "OK");
         }
-        public void onHomeClick()
+        void HomeCommand(object sender, EventArgs args)
         {
             if (grid == null)
             {
@@ -64,11 +71,11 @@ namespace _4us2watch.Views
             }
             App.Current.MainPage = new NavigationPage(grid);
         }
-        public async void onFriendsClick()
+        void FriendsCommand(object sender, EventArgs args)
         {
-            await DisplayAlert("Dela", "Dela", "OK");
+            OnShowMenu();
         }
-        public void onProfileClick()
+        void ProfileCommand(object sender, EventArgs args)
         {
             if (profile == null)
             {
@@ -76,21 +83,21 @@ namespace _4us2watch.Views
             }
             App.Current.MainPage = new NavigationPage(profile);
         }
-        public async void onMoviesClick()
+        void MoviesCommand(object sender, EventArgs args)
         {
-            await DisplayAlert("Dela", "Dela", "OK");
+            DisplayAlert("Dela", "Dela", "OK");
         }
-        public async void onTVSeriesClick()
+        void TVSeriesCommand(object sender, EventArgs args)
         {
-            await DisplayAlert("Dela", "Dela", "OK");
+            DisplayAlert("Dela", "Dela", "OK");
         }
-        public async void onDocumentariesClick()
+        void DocumentariesCommand(object sender, EventArgs args)
         {
-            await DisplayAlert("Dela", "Dela", "OK");
+            DisplayAlert("Dela", "Dela", "OK");
         }
-        public async void onAnimeClick()
+        void AnimeCommand(object sender, EventArgs args)
         {
-            await DisplayAlert("Dela", "Dela", "OK");
+            DisplayAlert("Dela", "Dela", "OK");
         }
 
         public async void OnShowMenu()
@@ -172,6 +179,11 @@ namespace _4us2watch.Views
             }
 
             return animation;
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+
         }
     }
 }

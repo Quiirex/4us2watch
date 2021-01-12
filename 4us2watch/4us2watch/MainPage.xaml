@@ -21,10 +21,9 @@
             <Label HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Margin="50,10,50,0">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="Log in with Facebook" TextColor="Blue" TextDecorations="Underline">
+                        <Span Text="Log in with Facebook" TextColor="Blue" FontSize="Medium" TextDecorations="Underline">
                             <Span.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding ClickCommand}"
-                                          CommandParameter="https://xamarin.com" />
+                                <TapGestureRecognizer Tapped="FacebookLogin" />
                             </Span.GestureRecognizers>
                         </Span>
                     </FormattedString>
@@ -34,10 +33,9 @@
             <Label HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="Log in with Google" TextColor="Blue" TextDecorations="Underline">
+                        <Span Text="Log in with Google" TextColor="Blue" FontSize="Medium" TextDecorations="Underline">
                             <Span.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding ClickCommand}"
-                                          CommandParameter="https://xamarin.com" />
+                                <TapGestureRecognizer Tapped="GoogleLogin" />
                             </Span.GestureRecognizers>
                         </Span>
                     </FormattedString>

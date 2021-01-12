@@ -14,6 +14,8 @@ namespace _4us2watch.Views
     [DesignTimeVisible(false)]
     public partial class LoginPage : ContentPage
     {
+        RegistrationPage regis = null;
+        MainPage home = null;
         IAuth auth;
 
         public LoginPage()
@@ -28,10 +30,9 @@ namespace _4us2watch.Views
             string Token = await auth.LoginWithEmailPassword(Email.Text.Replace(" ", string.Empty), Password.Text); //Cleared the error with .Replace that replaces all white spaces in string
             if (Token != "")
             {
-                await DisplayAlert("Authentication successful", "Logged in successfully", "OK");
                 Email.Text = string.Empty; //da ni že vpisano, v primeru da gre nazaj
                 Password.Text = string.Empty;
-                await Navigation.PushAsync(new GenreAssignmentPage()); //spremeni na GenreAssignmentPage, ko vemo, da je prvi login
+                await Navigation.PushAsync(new GenreAssignmentPage()); //Samo na prvi login, FIX DIS
             }
             else
             {
@@ -39,6 +40,22 @@ namespace _4us2watch.Views
                 Password.Text = string.Empty;
                 await DisplayAlert("Authentication failed", "E-mail/password is incorrect. Try again!", "OK");
             }
+        }
+        void RedirectToRegister(object sender, EventArgs e)
+        {
+            if (regis == null)
+            {
+                regis = new RegistrationPage();
+            }
+            App.Current.MainPage = new NavigationPage(regis);
+        }
+        void RedirectHome(object sender, EventArgs e)
+        {
+            if (home == null)
+            {
+                home = new MainPage();
+            }
+            App.Current.MainPage = new NavigationPage(home);
         }
     }
 }

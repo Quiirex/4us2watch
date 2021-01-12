@@ -23,10 +23,20 @@
                 <Label HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="Already have an account?" TextColor="blue" TextDecorations="Underline">
+                            <Span Text="Already have an account?" TextColor="blue" FontSize="Medium" TextDecorations="Underline">
                                 <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding ClickCommand}"
-                                          CommandParameter="https://xamarin.com" />
+                                    <TapGestureRecognizer Tapped="RedirectToLogin"/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label HorizontalOptions="Center" VerticalOptions="End">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Home" TextColor="blue" FontSize="Medium" TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="RedirectHome"/>
                                 </Span.GestureRecognizers>
                             </Span>
                         </FormattedString>

@@ -9,18 +9,30 @@
         <!--Friends list-->
         <Grid BackgroundColor="LightGray">
             <Grid.RowDefinitions>
-                <RowDefinition x:Name="MenuSafeAreaRow" Height="0" /> <!--0-->
-                <RowDefinition x:Name="MenuTopRow" /> <!--1-->
-                <RowDefinition Height="67.5" /> <!--2_Friends-->
-                <RowDefinition Height="20"  /> <!--3_Oseba_Ena-->
-                <RowDefinition Height="20" /> <!--4_Oseba_Dva-->
-                <RowDefinition Height="*" /> <!--5-->
-                <RowDefinition Height="67.5" /> <!--6-->
-                <RowDefinition Height="67.5" /> <!--7-->
-                <RowDefinition Height="67.5" /> <!--8-->
-                <RowDefinition Height="67.5" /> <!--9-->
-                <RowDefinition Height="67.5" /> <!--10-->
-                <RowDefinition x:Name="MenuBottomRow" /> <!--11-->
+                <RowDefinition x:Name="MenuSafeAreaRow" Height="0" />
+                <!--0-->
+                <RowDefinition x:Name="MenuTopRow" />
+                <!--1-->
+                <RowDefinition Height="67.5" />
+                <!--2_Friends-->
+                <RowDefinition Height="20"  />
+                <!--3_Oseba_Ena-->
+                <RowDefinition Height="20" />
+                <!--4_Oseba_Dva-->
+                <RowDefinition Height="*" />
+                <!--5-->
+                <RowDefinition Height="67.5" />
+                <!--6-->
+                <RowDefinition Height="67.5" />
+                <!--7-->
+                <RowDefinition Height="67.5" />
+                <!--8-->
+                <RowDefinition Height="67.5" />
+                <!--9-->
+                <RowDefinition Height="67.5" />
+                <!--10-->
+                <RowDefinition x:Name="MenuBottomRow" />
+                <!--11-->
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -88,83 +100,83 @@
                    FontAttributes="Bold"
                    FontSize="17"
                    TextColor="Black"
-                   /> <!--Dodaj event listener-->
+                   />
+            <!--Dodaj event listener-->
         </Grid>
         <!-- Content view -->
         <Frame x:Name="Page" HasShadow="False" IsClippedToBounds="True" CornerRadius="0">
-            <StackLayout Margin="-20" BackgroundColor="IndianRed">
-                <!--Help, log out-->
-                <StackLayout Margin="0,0,0,20" BackgroundColor="Pink">
-                    <Grid Padding="0,0,0,2.9" Margin="0,5,0,0" ColumnSpacing="0" BackgroundColor="LightGreen">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions RowSpacing="0">
-                            <RowDefinition x:Name="ToolbarSafeAreaRow" Height="0" />
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <Label Grid.Row="1" Text="Help"
+            <!--Help, log out-->
+            <StackLayout Margin="-21">
+                <Grid Padding="0,0,0,2.9" Margin="28,5,28,0" ColumnSpacing="0" BackgroundColor="LightGray">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions RowSpacing="0">
+                        <RowDefinition x:Name="ToolbarSafeAreaRow" Height="0" />
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="1" Text="Help"
                                FontSize="Medium"
-                               TextColor="Black"
+                               TextColor="Blue"
                                HorizontalTextAlignment="Start"
                                Padding="50,-7,0,0">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding HelpCommand}" />
-                            </Label.GestureRecognizers>
-                        </Label>
-                        <Label Grid.Column="1" Grid.Row="1" Text="Log out"
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="HelpCommand" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Grid.Column="1" Grid.Row="1" Text="Log out"
                                FontSize="Medium"
-                               TextColor="Black"
+                               TextColor="Blue"
                                HorizontalTextAlignment="End"
                                Padding="0,-7,50,0">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding LogOutCommand}" />
-                            </Label.GestureRecognizers>
-                        </Label>
-                    </Grid>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="LogOutCommand" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
 
-                    <!--Home, Friends, Profile-->
-                    <Grid Padding="0,0,0,1" ColumnSpacing="0" BackgroundColor="LightGray">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Text="Home"
+                <!--Home, Friends, Profile-->
+                <Grid ColumnSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="Home"
                                FontSize="27"
                                FontAttributes="Bold"
                                TextColor="Black"
                                HorizontalTextAlignment="Start"
                                Padding="30,0,0,0">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding HomeCommand}" />
-                            </Label.GestureRecognizers>
-                        </Label>
-                        <Label Grid.Column="1" Text="Friends"
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="HomeCommand"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Grid.Column="1" Text="Friends"
                                FontSize="27"
                                TextColor="Black"
                                FontAttributes="Bold"
                                HorizontalTextAlignment="Center"
                                Padding="0,0,0,0">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding FriendsCommand}" />
-                            </Label.GestureRecognizers>
-                        </Label>
-                        <!--<Button Grid.Column="0" Grid.Row="1" Clicked="OnShowMenu" Image="menu.png"
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="FriendsCommand"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <!--<Button Grid.Column="0" Grid.Row="1" Clicked="OnShowMenu" Image="menu.png"
                             CornerRadius="0" BackgroundColor="Transparent" />-->
-                        <Label Grid.Column="2" Text="Profile"
+                    <Label Grid.Column="2" Text="Profile"
                                FontSize="27"
                                TextColor="Black"
                                FontAttributes="Bold"
                                HorizontalTextAlignment="End"
                                Padding="0,0,30,0">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding ProfileCommand}" />
-                            </Label.GestureRecognizers>
-                        </Label>
-                    </Grid>
-                    <BoxView
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ProfileCommand" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+                <BoxView
                                 Grid.ColumnSpan="3" 
                                 BackgroundColor="Black" 
                                 HeightRequest="1" 
@@ -172,70 +184,69 @@
                                 HorizontalOptions="FillAndExpand"
                                 Margin="28,0,28,-3"/>
 
-                    <!--Movies, TV Series, Documentaries, Anime-->
-                    <Grid ColumnSpacing="0" Margin="0,0,0,0" BackgroundColor="LightSeaGreen">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Text="Movies"
+                <!--Movies, TV Series, Documentaries, Anime-->
+                <Grid ColumnSpacing="0" Margin="0,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="Movies"
                                FontSize="16"
                                FontAttributes="Bold"
                                TextColor="Black"
                                HorizontalTextAlignment="Start"
                                Padding="30,0,0,0">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding MoviesCommand}" />
-                            </Label.GestureRecognizers>
-                        </Label>
-                        <Label Grid.Column="1" Text="TV Series"
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="MoviesCommand" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Grid.Column="1" Text="TV Series"
                                FontSize="16"
                                TextColor="Black"
                                FontAttributes="Bold"
                                HorizontalTextAlignment="Center"
                                Padding="-30,0,0,0">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding TVSeriesCommand}" />
-                            </Label.GestureRecognizers>
-                        </Label>
-                        <Label Grid.Column="2" Text="Documentaries"
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TVSeriesCommand" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Grid.Column="2" Text="Documentaries"
                                FontSize="16"
                                TextColor="Black"
                                FontAttributes="Bold"
                                HorizontalTextAlignment="Center"
                                Padding="-10,0,0,0">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding DocumentariesCommand}" />
-                            </Label.GestureRecognizers>
-                        </Label>
-                        <Label Grid.Column="3" Text="Anime"
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="DocumentariesCommand" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Grid.Column="3" Text="Anime"
                                FontSize="16"
                                TextColor="Black"
                                FontAttributes="Bold"
                                HorizontalTextAlignment="End"
                                Padding="0,0,30,0">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding AnimeCommand}" />
-                            </Label.GestureRecognizers>
-                        </Label>
-                    </Grid>
-                </StackLayout>
-                <ScrollView Margin="0,10,0,0" BackgroundColor="Aqua">
-                    <Grid Margin="30,0,30,0">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="AnimeCommand" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+                <ScrollView Margin="0,10,0,0">
+                    <Grid x:Name="MovieGrid" Margin="30,0,30,0">
                         <!--TO DO: Opcija za več vrstic. Trenutno ob dodajanju novih vrstic se spacing breaka.-->
-                        <Grid.RowDefinitions>
+                        <!--<Grid.RowDefinitions>
                             <RowDefinition Height="200" />
                             <RowDefinition Height="200" />
                             <RowDefinition Height="200" />
-                        </Grid.RowDefinitions>
+                        </Grid.RowDefinitions>-->
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        <Frame Grid.Row="0" Grid.Column="0" BorderColor="Black" HasShadow="True">
+                        <!--<Frame Grid.Row="0" Grid.Column="0" BorderColor="Black" HasShadow="True">
                             <Label Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
                         </Frame>
 
@@ -257,7 +268,7 @@
 
                         <Frame Grid.Row="2" Grid.Column="1" BorderColor="Black" HasShadow="True">
                             <Label Grid.Row="2" Grid.Column="1" Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
-                        </Frame>
+                        </Frame>-->
                     </Grid>
                 </ScrollView>
             </StackLayout>

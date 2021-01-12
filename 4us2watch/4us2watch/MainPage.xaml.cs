@@ -26,5 +26,13 @@ namespace _4us2watch
         {
             await Navigation.PushAsync(new RegistrationPage());
         }
+        void GoogleLogin(object sender, EventArgs e)
+        {
+            DisplayAlert("dela", "dela", "OK");
+        }
+        void FacebookLogin(object sender, EventArgs e)
+        {
+            DisplayAlert("dela", "dela", "OK");
+        }
     }
 }

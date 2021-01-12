@@ -19,6 +19,8 @@ namespace _4us2watch.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegistrationPage : ContentPage
     {
+        LoginPage login = null;
+        MainPage home = null;
         IAuth auth;
         public RegistrationPage()
         {
@@ -52,7 +54,22 @@ namespace _4us2watch.Views
             {
                 await DisplayAlert("Failed", "Registration unsuccessful, check the credentials", "OK");
             }
-
+        }
+        void RedirectToLogin(object sender, EventArgs e)
+        {
+            if (login == null)
+            {
+                login = new LoginPage();
+            }
+            App.Current.MainPage = new NavigationPage(login);
+        }
+        void RedirectHome(object sender, EventArgs e)
+        {
+            if (home == null)
+            {
+                home = new MainPage();
+            }
+            App.Current.MainPage = new NavigationPage(home);
         }
     }
 }

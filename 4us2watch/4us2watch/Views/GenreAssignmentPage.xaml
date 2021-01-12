@@ -17,7 +17,7 @@
             <Frame HeightRequest="470">
                 <Grid Margin="-20">
                     <Image x:Name="Poster"></Image>
-                    <StackLayout Opacity="0.9" Margin="0,0,0,-10" HorizontalOptions="Start" VerticalOptions="End" HeightRequest="80" WidthRequest="400" BackgroundColor="LightGray">
+                    <StackLayout Opacity="0.9" Margin="0,0,0,-10" HorizontalOptions="Start" VerticalOptions="End" HeightRequest="100" WidthRequest="400" BackgroundColor="LightGray">
                         <Label x:Name="Title" Text="" FontSize="25" TextColor="Black" Margin="10,0,10,0" FontAttributes="bold"/>
                     </StackLayout>
                 </Grid>

@@ -6,18 +6,30 @@
         <!--Friends list-->
         <Grid BackgroundColor="LightGray">
             <Grid.RowDefinitions>
-                <RowDefinition x:Name="MenuSafeAreaRow" Height="0" /> <!--0-->
-                <RowDefinition x:Name="MenuTopRow" /> <!--1-->
-                <RowDefinition Height="67.5" /> <!--2_Friends-->
-                <RowDefinition Height="20"  /> <!--3_Oseba_Ena-->
-                <RowDefinition Height="20" /> <!--4_Oseba_Dva-->
-                <RowDefinition Height="*" /> <!--5-->
-                <RowDefinition Height="67.5" /> <!--6-->
-                <RowDefinition Height="67.5" /> <!--7-->
-                <RowDefinition Height="67.5" /> <!--8-->
-                <RowDefinition Height="67.5" /> <!--9-->
-                <RowDefinition Height="67.5" /> <!--10-->
-                <RowDefinition x:Name="MenuBottomRow" /> <!--11-->
+                <RowDefinition x:Name="MenuSafeAreaRow" Height="0" />
+                <!--0-->
+                <RowDefinition x:Name="MenuTopRow" />
+                <!--1-->
+                <RowDefinition Height="67.5" />
+                <!--2_Friends-->
+                <RowDefinition Height="20"  />
+                <!--3_Oseba_Ena-->
+                <RowDefinition Height="20" />
+                <!--4_Oseba_Dva-->
+                <RowDefinition Height="*" />
+                <!--5-->
+                <RowDefinition Height="67.5" />
+                <!--6-->
+                <RowDefinition Height="67.5" />
+                <!--7-->
+                <RowDefinition Height="67.5" />
+                <!--8-->
+                <RowDefinition Height="67.5" />
+                <!--9-->
+                <RowDefinition Height="67.5" />
+                <!--10-->
+                <RowDefinition x:Name="MenuBottomRow" />
+                <!--11-->
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -84,14 +96,16 @@
                    FontAttributes="Bold"
                    FontSize="17"
                    TextColor="Black"
-                   /> <!--Dodaj event listener-->
+                   />
+            <!--Dodaj event listener-->
         </Grid>
         <!-- Content view -->
         <Frame x:Name="Page" HasShadow="False" IsClippedToBounds="True" CornerRadius="0">
-            <StackLayout Margin="-20" BackgroundColor="IndianRed">
+            <StackLayout Margin="-20">
                 <!--Help, log out-->
-                <StackLayout Margin="0,0,0,20" BackgroundColor="pink">
-                    <Grid ColumnSpacing="0" BackgroundColor="LightGreen"> <!--Needs fixing, gets squished out of bounds (I think)-->
+                <StackLayout Margin="0,0,0,20">
+                    <Grid ColumnSpacing="0">
+                        <!--Needs fixing, gets squished out of bounds (I think)-->
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />
                             <ColumnDefinition />
@@ -106,7 +120,7 @@
                                HorizontalTextAlignment="Start"
                                Padding="50,0,0,0">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding HelpCommand}" />
+                                <TapGestureRecognizer Tapped="HelpCommand" />
                             </Label.GestureRecognizers>
                         </Label>
                         <Label Grid.Column="1" Text="Log out"
@@ -115,13 +129,13 @@
                                HorizontalTextAlignment="End"
                                Padding="0,0,50,0">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding LogOutCommand}" />
+                                <TapGestureRecognizer Tapped="LogOutCommand" />
                             </Label.GestureRecognizers>
                         </Label>
                     </Grid>
 
                     <!--Home, Friends, Profile-->
-                    <Grid ColumnSpacing="0" BackgroundColor="LightGray">
+                    <Grid ColumnSpacing="0" Margin="0,23,0,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />
                             <ColumnDefinition />
@@ -134,7 +148,7 @@
                                HorizontalTextAlignment="Start"
                                Padding="30,0,0,0">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding HomeCommand}" />
+                                <TapGestureRecognizer Tapped="HomeCommand" />
                             </Label.GestureRecognizers>
                         </Label>
                         <Label Grid.Column="1" Text="Friends"
@@ -144,7 +158,7 @@
                                HorizontalTextAlignment="Center"
                                Padding="0,0,0,0">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding FriendsCommand}" />
+                                <TapGestureRecognizer Tapped="FriendsCommand" />
                             </Label.GestureRecognizers>
                         </Label>
                         <Label Grid.Column="2" Text="Profile"
@@ -154,21 +168,20 @@
                                HorizontalTextAlignment="End"
                                Padding="0,0,30,0">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding ProfileCommand}" />
+                                <TapGestureRecognizer Tapped="ProfileCommand"/>
                             </Label.GestureRecognizers>
                         </Label>
-
-                        <BoxView
+                    </Grid>
+                    <BoxView
                                 Grid.ColumnSpan="3" 
                                 BackgroundColor="Black" 
                                 HeightRequest="1" 
                                 VerticalOptions="End" 
                                 HorizontalOptions="FillAndExpand"
-                                Margin="28,0,28,-3"/>
-                    </Grid>
+                                Margin="28,-3,28,-3"/>
 
                     <!--Movies, TV Series, Documentaries, Anime-->
-                    <Grid ColumnSpacing="0" Margin="0,0,0,0" BackgroundColor="LightSeaGreen">
+                    <!--<Grid ColumnSpacing="0" Margin="0,0,0,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />
                             <ColumnDefinition />
@@ -215,12 +228,12 @@
                                 <TapGestureRecognizer Command="{Binding AnimeCommand}" />
                             </Label.GestureRecognizers>
                         </Label>
-                    </Grid>
+                    </Grid>-->
                 </StackLayout>
                 <!--Profile.jpg je default-->
-                <Image Source="profile.jpg" HeightRequest="120" Margin="0,0,0,0"/>
+                <Image Source="profile.jpg" HeightRequest="150" Margin="0,0,0,0"/>
 
-                <StackLayout Margin="30,0,30,30" BackgroundColor="Aqua">
+                <StackLayout Margin="30,0,30,0">
                     <Label FontSize="13" Text="Nickname" TextColor="Black" Margin="10,0,0,0"/>
                     <Entry x:Name="Nickname" Margin="5,0,5,0"/>
                     <Label FontSize="13" Text="Username" TextColor="Black" Margin="10,0,0,0"/>

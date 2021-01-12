@@ -11,12 +11,14 @@ using _4us2watch.Data;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Windows.Input;
 
 namespace _4us2watch.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GenreAssignmentPage : ContentPage
     {
+        int counter = 0;
         // Main api for movies
         public static string MainApi = @"https://api.themoviedb.org/3/movie/popular?api_key=9d2bff12ed955c7f1f74b83187f188ae&language=en-US&page=";
         // Base URL for Image
@@ -25,12 +27,26 @@ namespace _4us2watch.Views
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+            GetFirstMovies();
+            Setup.Text = "Setting up your app (" + counter + "/20)";
+            Title.Text = DbContext.firstMovies[0].Name + " (" + DbContext.firstMovies[0].ReleaseDate.Substring(0, 4) + ")";
+            Poster.Source = ImageLink + "/" + DbContext.firstMovies[0].ImagePath;
+        }
+        void DislikeBtn(object sender, EventArgs args)
+        {
+            //Implement dislike
+            DisplayAlert("NI VŠEČ", "FUJ", "OK");
+        }
+        void LikeBtn(object sender, EventArgs args)
+        {
+            //Implement like
+            DisplayAlert("JE VŠEČ", "NAJS", "OK");
         }
 
         private void GetFirstMovies()
         {
             var random = new Random();
-            var pageNumber = random.Next(1, 51);
+            var pageNumber = random.Next(1, 500);
 
             // API call
             var client = new HttpClient();
@@ -48,7 +64,7 @@ namespace _4us2watch.Views
             }
             else
             {
-                DisplayAlert("Error" ,"The api did not return a success status code", "OK");
+                DisplayAlert("Error", "The api did not return a success status code", "OK");
             }
         }
 

@@ -6,14 +6,67 @@
              mc:Ignorable="d"
              x:Class="_4us2watch.Views.GenreAssignmentPage">
     <ContentPage.Content>
-        <StackLayout>
-            <!--Tukaj se bo prikazalo npr. 20 začetnih filmov/serij (oz. kolko jih recommender rabi) in se bo samo sproti menjavalo-->
-            <!--TO DO: Implementiraj logiko, da vemo, da je prvi login, po tem redirectaj sem.-->
-            <!--TO DO: To se prikaže samo ob prvem loginu, torej moremo keepat track keri login je.-->
-            
-            <Label Text="Genre assignment per user"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="20,10,20,0">
+            <Label x:Name="Setup"
+                   Text=""
+                   VerticalOptions="Start" 
+                   HorizontalOptions="Center"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   TextColor="Black"/>
+            <Frame HeightRequest="470">
+                <Grid Margin="-20">
+                    <Image x:Name="Poster"></Image>
+                    <StackLayout Opacity="0.9" Margin="0,0,0,-10" HorizontalOptions="Start" VerticalOptions="End" HeightRequest="80" WidthRequest="400" BackgroundColor="LightGray">
+                        <Label x:Name="Title" Text="" FontSize="25" TextColor="Black" Margin="10,0,10,0" FontAttributes="bold"/>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90"/>
+                </Grid.RowDefinitions>
+
+                <Frame Margin="45,0,45,0" 
+                       Grid.Column="0"
+                       BorderColor="Black"
+                       CornerRadius="80"
+                       BackgroundColor="White"
+                       HasShadow="True">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="DislikeBtn" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame Margin="45,0,45,0"
+                       Grid.Column="1" 
+                       BorderColor="Black"
+                       CornerRadius="80"
+                       BackgroundColor="White"
+                       HasShadow="True">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="LikeBtn" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <Image Margin="50,14,50,14" 
+                       Grid.Column="0"
+                       Source="x.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="DislikeBtn"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Margin="50,0,50,0" 
+                       Grid.Column="1" 
+                       Source="checkmark.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="LikeBtn"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -26,19 +26,16 @@ namespace _4us2watch.Views
             NavigationPage.SetHasNavigationBar(this, false);
             auth = DependencyService.Get<IAuth>();
         }
-
-        
-
         private async void BtnRegister_Clicked(object sender, EventArgs e)
         {
-            if(password.Text != retypedPassword.Text)
+            if (password.Text != retypedPassword.Text)
             {
                 await DisplayAlert("Error", "Passwords do not match", "OK");
                 return;
             }
 
             var created = await auth.SignUpWithEmailPassword(Email.Text, password.Text);
-           // Console.WriteLine(created);
+            // Console.WriteLine(created);
             if (created)
             {
                 List<string> filmi = new List<string>();

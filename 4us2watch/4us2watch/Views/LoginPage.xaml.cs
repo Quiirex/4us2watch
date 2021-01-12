@@ -28,16 +28,16 @@ namespace _4us2watch.Views
             string Token = await auth.LoginWithEmailPassword(Email.Text.Replace(" ", string.Empty), Password.Text); //Cleared the error with .Replace that replaces all white spaces in string
             if (Token != "")
             {
-                await DisplayAlert("Authentication Succseeded", "You logged in successfully", "OK");
+                await DisplayAlert("Authentication successful", "Logged in successfully", "OK");
                 Email.Text = string.Empty; //da ni že vpisano, v primeru da gre nazaj
                 Password.Text = string.Empty;
-                await Navigation.PushAsync(new ProfilePage()); //spremeni na GenreAssignmentPage, ko vemo, da je prvi login
+                await Navigation.PushAsync(new GenreAssignmentPage()); //spremeni na GenreAssignmentPage, ko vemo, da je prvi login
             }
             else
             {
                 Email.Text = string.Empty;
                 Password.Text = string.Empty;
-                await DisplayAlert("Authentication Failed", "E-mail or password are incorrect. Try again!", "OK");
+                await DisplayAlert("Authentication failed", "E-mail/password is incorrect. Try again!", "OK");
             }
         }
     }

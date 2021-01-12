@@ -8,6 +8,5 @@ namespace _4us2watch.Data
     public static class DbContext
     {
         public static List<Movie> firstMovies = new List<Movie>(); // First genre assignment
-        
     }
 }

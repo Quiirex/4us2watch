@@ -19,7 +19,7 @@ namespace _4us2watch
 
         private async void Login_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new GridPage()); //temporary
+            await Navigation.PushAsync(new GenreAssignmentPage()); //temporary
         }
 
         private async void Register_Clicked(object sender, EventArgs e)

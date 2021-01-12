@@ -13,6 +13,8 @@ namespace _4us2watch.Models
         public string Name { get; set; }
         [JsonProperty("poster_path")]
         public string ImagePath { get; set; }
+        [JsonProperty("release_date")]
+        public string ReleaseDate { get; set; }
         [JsonProperty("genre_ids")]
         public int[] Genre_Ids { get; set; }
     }

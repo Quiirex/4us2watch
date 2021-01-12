@@ -28,19 +28,48 @@ namespace _4us2watch.Views
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             GetFirstMovies();
+            ChangeElements();   
+        }
+
+        private void ChangeElements()
+        {
             Setup.Text = "Setting up your app (" + counter + "/20)";
-            Title.Text = DbContext.firstMovies[0].Name + " (" + DbContext.firstMovies[0].ReleaseDate.Substring(0, 4) + ")";
-            Poster.Source = ImageLink + "/" + DbContext.firstMovies[0].ImagePath;
+            Title.Text = DbContext.firstMovies[counter].Name + " (" + DbContext.firstMovies[counter].ReleaseDate.Substring(0, 4) + ")";
+            Poster.Source = ImageLink + "/" + DbContext.firstMovies[counter].ImagePath;
         }
         void DislikeBtn(object sender, EventArgs args)
         {
             //Implement dislike
-            DisplayAlert("NI VŠEČ", "FUJ", "OK");
+            //DisplayAlert("NI VŠEČ", "FUJ", "OK");
+            try
+            {
+                ++counter;
+                ChangeElements();
+            }
+            catch(Exception e)
+            {
+                // Here is where it will end
+                // The ratings will be implemented when the databse support will be as well
+                //DisplayAlert("End", "End of queue", "OK");
+                Navigation.PushAsync(new GridPage());
+            }
         }
         void LikeBtn(object sender, EventArgs args)
         {
             //Implement like
-            DisplayAlert("JE VŠEČ", "NAJS", "OK");
+            //DisplayAlert("JE VŠEČ", "NAJS", "OK");
+            try
+            {
+                ++counter;
+                ChangeElements();
+            }
+            catch (Exception e)
+            {
+                // Here is where it will end
+                // The ratings will be implemented when the databse support will be as well
+                //DisplayAlert("End", "End of queue", "OK");
+                Navigation.PushAsync(new GridPage());
+            }
         }
 
         private void GetFirstMovies()

@@ -1164,20 +1164,6 @@ C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\
 C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\mipmap-xxxhdpi\launcher_foreground.png
 C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\background.png
 C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\profile.jpg
-C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\daniel_craig.png
-C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\glenn_close.png
-C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\halle_berry.png
-C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\jennifer_aniston.png
-C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\mark_wahlberg.png
-C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\matt_damon.png
-C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\menu.png
-C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\message.png
-C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\michelle_pfeiffer.png
-C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\nicolas_cage.png
-C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\samuel_l_jackson.png
-C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\settings.png
-C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\star.png
-C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\users.png
 C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\uploadflags.txt
 C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\resolvedassemblies.hash
 C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\android\assets\4us2watch.Android.dll
@@ -1666,3 +1652,5 @@ C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\x.png
 C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\checkmark.png
 C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\x.png
+C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\checkmark.png
+C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\x.png

@@ -16,13 +16,15 @@ namespace _4us2watch.Views
     {
         ProfilePage profile = null;
         GridPage grid = null;
-        public GridPage()
+        public string email;
+        public GridPage(string text)
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             BindingContext = this;
             _menuItemsView = new[] { (View)LabelSlikaTest, LabelTest, LabelSlikaDvaTest, LabelDvaTest };
             CreateAndFillGrid(MovieGrid);
+            email = text;
         }
         private const string ExpandAnimationName = "ExpandAnimation";
         private const string CollapseAnimationName = "CollapseAnimation";
@@ -67,7 +69,7 @@ namespace _4us2watch.Views
         {
             if (grid == null)
             {
-                grid = new GridPage();
+                grid = new GridPage(email);
             }
             App.Current.MainPage = new NavigationPage(grid);
         }
@@ -79,7 +81,7 @@ namespace _4us2watch.Views
         {
             if (profile == null)
             {
-                profile = new ProfilePage();
+                profile = new ProfilePage(email);
             }
             App.Current.MainPage = new NavigationPage(profile);
         }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using _4us2watch.Components;
+using _4us2watch.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,12 +17,14 @@ namespace _4us2watch.Views
     {
         ProfilePage profile = null;
         GridPage grid = null;
-        public ProfilePage()
+        string email1;
+        public ProfilePage(string email)
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             BindingContext = this;
             _menuItemsView = new[] { (View)LabelSlikaTest, LabelTest, LabelSlikaDvaTest, LabelDvaTest };
+            email1 = email;
         }
         private const string ExpandAnimationName = "ExpandAnimation";
         private const string CollapseAnimationName = "CollapseAnimation";
@@ -36,6 +40,10 @@ namespace _4us2watch.Views
         {
             base.OnAppearing();
             MenuTopRow.Height = MenuBottomRow.Height = Device.Info.ScaledScreenSize.Height * (1 - PageScale) / 2;
+            User user = ReaderWriter.GetPerson(email1).Result;
+            Username.Text = user.username;
+            Email.Text = user.email;
+            ReaderWriter.UpdatePerson(Username.Text, Email.Text, user.friends, user.movies);
         }
         void HelpCommand(object sender, EventArgs args)
         {
@@ -49,7 +57,7 @@ namespace _4us2watch.Views
         {
             if (grid == null)
             {
-                grid = new GridPage();
+                grid = new GridPage(email1);
             }
             App.Current.MainPage = new NavigationPage(grid);
         }
@@ -61,7 +69,7 @@ namespace _4us2watch.Views
         {
             if (profile == null)
             {
-                profile = new ProfilePage();
+                profile = new ProfilePage(email1);
             }
             App.Current.MainPage = new NavigationPage(profile);
         }

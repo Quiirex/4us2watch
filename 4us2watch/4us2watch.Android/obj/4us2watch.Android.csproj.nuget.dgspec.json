@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\j6bou\\Desktop\\GH\\4us2watch\\4us2watch\\4us2watch.Android\\4us2watch.Android.csproj": {}
+    "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch.Android\\4us2watch.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\j6bou\\Desktop\\GH\\4us2watch\\4us2watch\\4us2watch.Android\\4us2watch.Android.csproj": {
+    "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch.Android\\4us2watch.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\j6bou\\Desktop\\GH\\4us2watch\\4us2watch\\4us2watch.Android\\4us2watch.Android.csproj",
+        "projectUniqueName": "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch.Android\\4us2watch.Android.csproj",
         "projectName": "4us2watch.Android",
-        "projectPath": "C:\\Users\\j6bou\\Desktop\\GH\\4us2watch\\4us2watch\\4us2watch.Android\\4us2watch.Android.csproj",
-        "packagesPath": "C:\\Users\\j6bou\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\j6bou\\Desktop\\GH\\4us2watch\\4us2watch\\4us2watch.Android\\obj\\",
+        "projectPath": "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch.Android\\4us2watch.Android.csproj",
+        "packagesPath": "C:\\Users\\tadej\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\j6bou\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tadej\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "C:\\Users\\j6bou\\Desktop\\GH\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj": {
-                "projectPath": "C:\\Users\\j6bou\\Desktop\\GH\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj"
+              "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj": {
+                "projectPath": "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj"
               }
             }
           }
@@ -90,21 +90,20 @@
         }
       }
     },
-    "C:\\Users\\j6bou\\Desktop\\GH\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj": {
+    "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\j6bou\\Desktop\\GH\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj",
+        "projectUniqueName": "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj",
         "projectName": "4us2watch",
-        "projectPath": "C:\\Users\\j6bou\\Desktop\\GH\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj",
-        "packagesPath": "C:\\Users\\j6bou\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\j6bou\\Desktop\\GH\\4us2watch\\4us2watch\\4us2watch\\obj\\",
+        "projectPath": "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj",
+        "packagesPath": "C:\\Users\\tadej\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\j6bou\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tadej\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -117,7 +116,6 @@
         },
         "frameworks": {
           "netstandard2.0": {
-            "targetAlias": "netstandard2.0",
             "projectReferences": {}
           }
         },
@@ -129,7 +127,6 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
           "dependencies": {
             "FirebaseDatabase.net": {
               "target": "Package",
@@ -164,7 +161,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

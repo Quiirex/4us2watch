@@ -1,4 +1,6 @@
-﻿using System;
+﻿using _4us2watch.Components;
+using _4us2watch.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -27,12 +29,21 @@ namespace _4us2watch.Views
 
         private async void BtnLogIn_Clicked(object sender, EventArgs e)
         {
+            string posta = Email.Text;
             string Token = await auth.LoginWithEmailPassword(Email.Text.Replace(" ", string.Empty), Password.Text); //Cleared the error with .Replace that replaces all white spaces in string
             if (Token != "")
             {
+                User user = ReaderWriter.GetPerson(posta).Result;
+                if(user.movies.Count == 0)
+                {
+                    await Navigation.PushAsync(new GenreAssignmentPage(user.email));
+                }
+                else
+                {
+                    await Navigation.PushAsync(new GridPage(user.email));
+                }
                 Email.Text = string.Empty; //da ni že vpisano, v primeru da gre nazaj
-                Password.Text = string.Empty;
-                await Navigation.PushAsync(new GenreAssignmentPage()); //Samo na prvi login, FIX DIS
+                Password.Text = string.Empty;               
             }
             else
             {

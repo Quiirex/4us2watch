@@ -12,6 +12,7 @@ using _4us2watch.Data;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Windows.Input;
+using _4us2watch.Components;
 
 namespace _4us2watch.Views
 {
@@ -23,12 +24,15 @@ namespace _4us2watch.Views
         public static string MainApi = @"https://api.themoviedb.org/3/movie/popular?api_key=9d2bff12ed955c7f1f74b83187f188ae&language=en-US&page=";
         // Base URL for Image
         public static string ImageLink = @"https://image.tmdb.org/t/p/w500";
-        public GenreAssignmentPage()
+        public string email;
+        public GenreAssignmentPage(string text)
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             GetFirstMovies();
             ChangeElements();
+            email = text;
+            
         }
         private void ChangeElements()
         {
@@ -47,10 +51,11 @@ namespace _4us2watch.Views
             }
             catch (Exception e)
             {
+                User user = ReaderWriter.GetPerson(email).Result;
                 // Here is where it will end
                 // The ratings will be implemented when the databse support will be as well
                 //DisplayAlert("End", "End of queue", "OK");
-                Navigation.PushAsync(new GridPage());
+                Navigation.PushAsync(new GridPage(user.email));
             }
         }
         void LikeBtn(object sender, EventArgs args)
@@ -67,7 +72,7 @@ namespace _4us2watch.Views
                 // Here is where it will end
                 // The ratings will be implemented when the databse support will be as well
                 //DisplayAlert("End", "End of queue", "OK");
-                Navigation.PushAsync(new GridPage());
+                Navigation.PushAsync(new GridPage(email));
             }
         }
 

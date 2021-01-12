@@ -14,7 +14,7 @@ namespace _4us2watch.Components
     {
         private static readonly string ChildName = "Persons";
         static FirebaseClient firebase = new FirebaseClient("https://us2watch-a3e6d-default-rtdb.europe-west1.firebasedatabase.app/");
-        public async Task<List<User>> GetAllPersons()
+        public static async Task<List<User>> GetAllPersons()
         {
             return (await firebase
             .Child(ChildName)
@@ -37,7 +37,7 @@ namespace _4us2watch.Components
             .Child(ChildName)
             .PostAsync(uporabnikSer);
         }
-        public async Task<User> GetPerson(string email)
+        public static async Task<User> GetPerson(string email)
         {
             var allPersons = await GetAllPersons();
             await firebase

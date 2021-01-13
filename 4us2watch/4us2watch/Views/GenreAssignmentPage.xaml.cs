@@ -25,6 +25,7 @@ namespace _4us2watch.Views
         // Base URL for Image
         public static string ImageLink = @"https://image.tmdb.org/t/p/w500";
         public string email;
+        public List<string> filmiList = new List<string>();
         public GenreAssignmentPage(string text)
         {
             InitializeComponent();
@@ -40,39 +41,43 @@ namespace _4us2watch.Views
             Setup.Text = "Setting up your app (" + counter + "/20)";
             Title.Text = DbContext.firstMovies[counter].Name + " (" + DbContext.firstMovies[counter].ReleaseDate.Substring(0, 4) + ")";
         }
-        void DislikeBtn(object sender, EventArgs args)
+        async void DislikeBtn(object sender, EventArgs args)
         {
+            User user = await ReaderWriter.GetPerson(email);
             //Implement dislike
             //DisplayAlert("NI VŠEČ", "FUJ", "OK");
             try
-            {
+            {               
                 ++counter;
                 ChangeElements();
             }
             catch (Exception e)
             {
-                User user = ReaderWriter.GetPerson(email).Result;
+                await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, filmiList);
                 // Here is where it will end
                 // The ratings will be implemented when the databse support will be as well
                 //DisplayAlert("End", "End of queue", "OK");
-                Navigation.PushAsync(new GridPage(user.email));
+                await Navigation.PushAsync(new GridPage(user.email));
             }
         }
-        void LikeBtn(object sender, EventArgs args)
+        async void LikeBtn(object sender, EventArgs args)
         {
+            User user = await ReaderWriter.GetPerson(email);           
             //Implement like
             //DisplayAlert("JE VŠEČ", "NAJS", "OK");
             try
             {
+                filmiList.Add(DbContext.firstMovies[counter].idMovie.ToString());
                 ++counter;
                 ChangeElements();
             }
             catch (Exception e)
             {
+                await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, filmiList);
                 // Here is where it will end
                 // The ratings will be implemented when the databse support will be as well
                 //DisplayAlert("End", "End of queue", "OK");
-                Navigation.PushAsync(new GridPage(email));
+                await Navigation.PushAsync(new GridPage(user.email));
             }
         }
 

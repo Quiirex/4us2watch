@@ -29,11 +29,10 @@ namespace _4us2watch.Views
 
         private async void BtnLogIn_Clicked(object sender, EventArgs e)
         {
-            string posta = Email.Text;
             string Token = await auth.LoginWithEmailPassword(Email.Text.Replace(" ", string.Empty), Password.Text); //Cleared the error with .Replace that replaces all white spaces in string
             if (Token != "")
             {
-                User user = ReaderWriter.GetPerson(posta).Result;
+                User user = await ReaderWriter.GetPerson(Email.Text);
                 if(user.movies.Count == 0)
                 {
                     await Navigation.PushAsync(new GenreAssignmentPage(user.email));

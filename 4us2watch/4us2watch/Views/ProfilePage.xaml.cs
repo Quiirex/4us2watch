@@ -18,6 +18,7 @@ namespace _4us2watch.Views
         ProfilePage profile = null;
         GridPage grid = null;
         string email1;
+        User user;
         public ProfilePage(string email)
         {
             InitializeComponent();
@@ -36,14 +37,13 @@ namespace _4us2watch.Views
         private bool _isAnimationRun;
         private double _safeInsetsTop;
 
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
             MenuTopRow.Height = MenuBottomRow.Height = Device.Info.ScaledScreenSize.Height * (1 - PageScale) / 2;
-            User user = ReaderWriter.GetPerson(email1).Result;
+            user = await ReaderWriter.GetPerson(email1);
             Username.Text = user.username;
-            Email.Text = user.email;
-            ReaderWriter.UpdatePerson(Username.Text, Email.Text, user.friends, user.movies);
+            Email.Text = user.email; 
         }
         void HelpCommand(object sender, EventArgs args)
         {
@@ -170,5 +170,10 @@ namespace _4us2watch.Views
 
             return animation;
         }
+        private async void BtnSave_Clicked(object sender, EventArgs e)
+        {
+            await ReaderWriter.UpdatePerson(Username.Text, Email.Text, user.friends, user.movies);
+        }
+        
     }
 }

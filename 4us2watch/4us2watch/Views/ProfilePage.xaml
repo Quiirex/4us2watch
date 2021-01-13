@@ -233,13 +233,13 @@
                 <!--Profile.jpg je default-->
                 <Image Source="profile.jpg" HeightRequest="150" Margin="0,0,0,0"/>
 
-                <StackLayout Margin="30,0,30,0">
-                    <Label FontSize="13" Text="Nickname" TextColor="Black" Margin="10,0,0,0"/>
-                    <Entry x:Name="Nickname" Margin="5,0,5,0"/>
+                <StackLayout Margin="30,30,30,0">
+                    <!--<Label FontSize="13" Text="Nickname" TextColor="Black" Margin="10,0,0,0"/>
+                    <Entry x:Name="Nickname" Margin="5,0,5,0"/>-->
                     <Label FontSize="13" Text="Username" TextColor="Black" Margin="10,0,0,0"/>
                     <Entry x:Name="Username" Margin="5,0,5,0"/>
                     <Label FontSize="13" Text="Email" TextColor="Black" Margin="10,0,0,0"/>
-                    <Entry x:Name="Email" IsPassword="True" Margin="5,0,5,0"/>
+                    <Entry x:Name="Email" IsPassword="False" Margin="5,0,5,0"/>
                     <Label FontSize="13" Text="Password" TextColor="Black" Margin="10,0,0,0"/>
                     <Entry x:Name="Password" IsPassword="True" Margin="5,0,5,0"/>
                     <Label FontSize="13" x:Name="error" Text="Error" TextColor="Red" Margin="10" IsVisible="Hidden"/>

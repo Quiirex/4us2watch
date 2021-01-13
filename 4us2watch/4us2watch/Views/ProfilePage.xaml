@@ -139,19 +139,18 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />
                             <ColumnDefinition />
-                            <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <Label Grid.Column="0" Text="Home"
                                FontSize="27"
                                FontAttributes="Bold"
                                TextColor="Black"
-                               HorizontalTextAlignment="Start"
-                               Padding="30,0,0,0">
+                               HorizontalTextAlignment="Center"
+                               Padding="40,0,0,0">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="HomeCommand" />
                             </Label.GestureRecognizers>
                         </Label>
-                        <Label Grid.Column="1" Text="Friends"
+                        <!--<Label Grid.Column="1" Text="Friends"
                                FontSize="27"
                                TextColor="Black"
                                FontAttributes="Bold"
@@ -160,13 +159,13 @@
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="FriendsCommand" />
                             </Label.GestureRecognizers>
-                        </Label>
-                        <Label Grid.Column="2" Text="Profile"
+                        </Label>-->
+                        <Label Grid.Column="1" Text="Profile"
                                FontSize="27"
                                TextColor="Black"
                                FontAttributes="Bold"
-                               HorizontalTextAlignment="End"
-                               Padding="0,0,30,0">
+                               HorizontalTextAlignment="Center"
+                               Padding="0,0,40,0">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="ProfileCommand"/>
                             </Label.GestureRecognizers>
@@ -239,7 +238,7 @@
                     <Label FontSize="13" Text="Username" TextColor="Black" Margin="10,0,0,0"/>
                     <Entry x:Name="Username" Margin="5,0,5,0"/>
                     <Label FontSize="13" Text="Email" TextColor="Black" Margin="10,0,0,0"/>
-                    <Entry x:Name="Email" IsPassword="False" Margin="5,0,5,0"/>
+                    <Entry x:Name="Email" IsPassword="False" IsReadOnly="true" Margin="5,0,5,0"/>
                     <Label FontSize="13" Text="Password" TextColor="Black" Margin="10,0,0,0"/>
                     <Entry x:Name="Password" IsPassword="True" Margin="5,0,5,0"/>
                     <Label FontSize="13" x:Name="error" Text="Error" TextColor="Red" Margin="10" IsVisible="Hidden"/>

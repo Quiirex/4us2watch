@@ -120,7 +120,8 @@
                                FontSize="Medium"
                                TextColor="Blue"
                                HorizontalTextAlignment="Start"
-                               Padding="50,-7,0,0">
+                               Padding="50,-7,0,0"
+                               TextDecorations="Underline">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="HelpCommand" />
                         </Label.GestureRecognizers>
@@ -129,7 +130,8 @@
                                FontSize="Medium"
                                TextColor="Blue"
                                HorizontalTextAlignment="End"
-                               Padding="0,-7,50,0">
+                               Padding="0,-7,50,0"
+                               TextDecorations="Underline">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="LogOutCommand" />
                         </Label.GestureRecognizers>

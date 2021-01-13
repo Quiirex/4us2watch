@@ -26,6 +26,8 @@ namespace _4us2watch.Views
         public static string ImageLink = @"https://image.tmdb.org/t/p/w500";
         public string email;
         public List<string> filmiList = new List<string>();
+        public Queue<Movie> MoviesQueue;
+        private Movie CurrentMovie;
         public GenreAssignmentPage(string text)
         {
             InitializeComponent();
@@ -37,48 +39,61 @@ namespace _4us2watch.Views
         }
         private void ChangeElements()
         {
-            Poster.Source = ImageLink + "/" + DbContext.firstMovies[counter].ImagePath;
+            CurrentMovie = MoviesQueue.Dequeue();
+            Poster.Source = ImageLink + "/" + CurrentMovie.ImagePath;
             Setup.Text = "Setting up your app (" + counter + "/20)";
-            Title.Text = DbContext.firstMovies[counter].Name + " (" + DbContext.firstMovies[counter].ReleaseDate.Substring(0, 4) + ")";
+            Title.Text = CurrentMovie.Name + " (" + CurrentMovie.ReleaseDate.Substring(0, 4) + ")";
         }
         async void DislikeBtn(object sender, EventArgs args)
         {
-            User user = await ReaderWriter.GetPerson(email);
+            var user = await ReaderWriter.GetPerson(email);
+            
             //Implement dislike
             //DisplayAlert("NI VŠEČ", "FUJ", "OK");
             try
             {               
                 ++counter;
+                if (MoviesQueue.Count == 0)
+                {
+                    await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, filmiList);
+                    await Navigation.PushAsync(new GridPage(user.email));
+                    return;
+                    // Here is where it will end
+                    // The ratings will be implemented when the databse support will be as well
+                }
                 ChangeElements();
             }
             catch (Exception e)
             {
-                await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, filmiList);
-                // Here is where it will end
-                // The ratings will be implemented when the databse support will be as well
-                //DisplayAlert("End", "End of queue", "OK");
-                await Navigation.PushAsync(new GridPage(user.email));
+                await DisplayAlert("Error", "There has been an unexcpected ERROR please try again later", "OK");
             }
         }
         async void LikeBtn(object sender, EventArgs args)
         {
-            User user = await ReaderWriter.GetPerson(email);           
+            var user = await ReaderWriter.GetPerson(email);
             //Implement like
             //DisplayAlert("JE VŠEČ", "NAJS", "OK");
+            
             try
             {
-                filmiList.Add(DbContext.firstMovies[counter].idMovie.ToString());
+                filmiList.Add(CurrentMovie.idMovie.ToString());
                 ++counter;
+                if (MoviesQueue.Count == 0)
+                {
+                    await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, filmiList);
+                    await Navigation.PushAsync(new GridPage(user.email));
+                    return;
+                    // Here is where it will end
+                    // The ratings will be implemented when the databse support will be as well
+                }
                 ChangeElements();
             }
             catch (Exception e)
             {
-                await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, filmiList);
-                // Here is where it will end
-                // The ratings will be implemented when the databse support will be as well
-                //DisplayAlert("End", "End of queue", "OK");
-                await Navigation.PushAsync(new GridPage(user.email));
+                await DisplayAlert("Error", "There has been an unexcpected ERROR please try again later", "OK");
             }
+
+
         }
 
         private void GetFirstMovies()
@@ -96,9 +111,9 @@ namespace _4us2watch.Views
             {
                 var convertedString = response.Content.ReadAsStringAsync();
                 var data = JsonConvert.DeserializeObject<MoviePage>(convertedString.Result);
-                DbContext.firstMovies = data.Results.ToList(); // Fiting data into the static list
+                MoviesQueue = new Queue<Movie>(data.Results); // Fiting movies to queue
+ 
                 //ReplaceElements(Database.Movies[Counter]);
-
             }
             else
             {

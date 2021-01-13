@@ -182,10 +182,5 @@ namespace _4us2watch.Views
 
             return animation;
         }
-
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
-        {
-
-        }
     }
 }

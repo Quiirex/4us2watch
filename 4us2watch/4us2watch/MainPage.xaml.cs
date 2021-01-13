@@ -19,7 +19,7 @@ namespace _4us2watch
 
         private async void Login_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ProfilePage("j6.bountyhounter@gmail.com"));
+            await Navigation.PushAsync(new GridPage("dela"));
         }
 
         private async void Register_Clicked(object sender, EventArgs e)

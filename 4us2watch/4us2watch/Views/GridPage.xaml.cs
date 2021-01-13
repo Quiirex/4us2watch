@@ -22,8 +22,9 @@ namespace _4us2watch.Views
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             BindingContext = this;
-            _menuItemsView = new[] { (View)LabelSlikaTest, LabelTest, LabelSlikaDvaTest, LabelDvaTest };
+            //_menuItemsView = new[] { (View)LabelSlikaTest, LabelTest, LabelSlikaDvaTest, LabelDvaTest };
             CreateAndFillGrid(MovieGrid);
+            FillFriendsList(Friends);
             email = text;
         }
         private const string ExpandAnimationName = "ExpandAnimation";
@@ -32,25 +33,57 @@ namespace _4us2watch.Views
         private const int AnimationDuration = 600;
         private const double PageScale = 0.9;
         private const double PageTranslation = 0.35;
-        private readonly IEnumerable<View> _menuItemsView;
+        //private IEnumerable<View> _menuItemsView;
         private bool _isAnimationRun;
         private double _safeInsetsTop;
 
+        void onAddFriendClick(object sender, EventArgs args)
+        {
+            //Implement loser
+            //friendsEntry je vnosno polje
+            DisplayAlert("dela", "dela", "ok");
+        }
+        private void FillFriendsList(Grid grid)
+        {
+            //foreach (var friend in List<Friends>)
+            //{
+            Image img = new Image
+            {
+                Source = "profile.jpg", //profilna uporabnika
+                HeightRequest = 20,
+                VerticalOptions = LayoutOptions.End,
+                HorizontalOptions = LayoutOptions.Center
+            };
+            Label lbl = new Label
+            {
+                Text = "Username Here", //spremeni pol v username
+                FontSize = 17,
+                TextColor = Color.Black,
+                HorizontalOptions = LayoutOptions.Start,
+                VerticalOptions = LayoutOptions.Start,
+            };
+            grid.Children.Add(img, 0, 3); //column, row
+            grid.Children.Add(lbl, 1, 3);
+            Grid.SetColumnSpan(lbl, 2);
+            //}
+        }
         private void CreateAndFillGrid(Grid grid) //Fix dis plis
         {
-
-            grid.RowDefinitions.Add(new RowDefinition { Height = 200 });
-            grid.RowDefinitions.Add(new RowDefinition { Height = 200 });
-
-            Frame frame = new Frame
+            for (int i = 0; i < 10; i++)
             {
-                BorderColor = Color.Black,
-                HasShadow = true,
-                Content = new Label { Text = "x", HorizontalOptions = LayoutOptions.Center, VerticalOptions = LayoutOptions.Center }
-            };
-            grid.Children.Add(frame, 0, 0);
-            //grid.Children.Add(frame, 0, 1);
+                grid.RowDefinitions.Add(new RowDefinition { Height = 230 });
 
+                for (int j = 0; j < 2; j++)
+                {
+                    Frame frame = new Frame
+                    {
+                        BorderColor = Color.Black,
+                        HasShadow = true,
+                        Content = new Image { Source = "https://image.tmdb.org/t/p/w500/kBHLlbBEKLXlZFHG5y6aveGUwXy.jpg", Margin = (-20) }
+                    };
+                    grid.Children.Add(frame, j, i); //row, column
+                }
+            }
         }
         protected override void OnAppearing()
         {
@@ -131,7 +164,7 @@ namespace _4us2watch.Views
 
         private Animation GetExpandAnimation()
         {
-            var iconAnimationTime = (1 - SlideAnimationDuration) / _menuItemsView.Count();
+            //var iconAnimationTime = (1 - SlideAnimationDuration) / _menuItemsView.Count();
             var animation = new Animation
             {
                 {0, SlideAnimationDuration, new Animation(v => ToolbarSafeAreaRow.Height = v, _safeInsetsTop, 0)},
@@ -147,16 +180,16 @@ namespace _4us2watch.Views
                 {0, SlideAnimationDuration, new Animation(v => Page.CornerRadius = (float) v, 0, 5)}
             };
 
-            foreach (var view in _menuItemsView)
-            {
-                var index = _menuItemsView.IndexOf(view);
-                animation.Add(SlideAnimationDuration + iconAnimationTime * index - 0.05,
-                    SlideAnimationDuration + iconAnimationTime * (index + 1) - 0.05, new Animation(
-                        v => view.Opacity = (float)v, 0, 1));
-                animation.Add(SlideAnimationDuration + iconAnimationTime * index,
-                    SlideAnimationDuration + iconAnimationTime * (index + 1), new Animation(
-                        v => view.TranslationY = (float)v, -10, 0));
-            }
+            //foreach (var view in _menuItemsView)
+            //{
+            //    var index = _menuItemsView.IndexOf(view);
+            //    animation.Add(SlideAnimationDuration + iconAnimationTime * index - 0.05,
+            //        SlideAnimationDuration + iconAnimationTime * (index + 1) - 0.05, new Animation(
+            //            v => view.Opacity = (float)v, 0, 1));
+            //    animation.Add(SlideAnimationDuration + iconAnimationTime * index,
+            //        SlideAnimationDuration + iconAnimationTime * (index + 1), new Animation(
+            //            v => view.TranslationY = (float)v, -10, 0));
+            //}
 
             return animation;
         }
@@ -172,13 +205,13 @@ namespace _4us2watch.Views
                 {0, 1, new Animation(v => Page.CornerRadius = (float) v, 5, 0)}
             };
 
-            foreach (var view in _menuItemsView)
-            {
-                animation.Add(0, 1, new Animation(
-                    v => view.Opacity = (float)v, 1, 0));
-                animation.Add(0, 1, new Animation(
-                    v => view.TranslationY = (float)v, 0, -10));
-            }
+            //foreach (var view in _menuItemsView)
+            //{
+            //    animation.Add(0, 1, new Animation(
+            //        v => view.Opacity = (float)v, 1, 0));
+            //    animation.Add(0, 1, new Animation(
+            //        v => view.TranslationY = (float)v, 0, -10));
+            //}
 
             return animation;
         }

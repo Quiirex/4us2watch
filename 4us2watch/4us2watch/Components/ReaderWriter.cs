@@ -45,6 +45,16 @@ namespace _4us2watch.Components
             .OnceAsync<User>();
             return allPersons.FirstOrDefault(a => a.email == email);
         }
+
+        public static async Task<User> GetPersonByUsername(string Username)
+        {
+            var allPersons = await GetAllPersons();
+            await firebase
+            .Child(ChildName)
+            .OnceAsync<User>();
+            return allPersons.FirstOrDefault(x => x.username == Username);
+        }
+
         public static async Task UpdatePerson(string _username, string _email, List<string> _friends, List<string> _movies)
         {
             var toUpdatePerson = (await firebase
@@ -55,6 +65,21 @@ namespace _4us2watch.Components
             .Child(toUpdatePerson.Key)
             .PutAsync(new User() { username = _username, email = _email, friends = _friends, movies = _movies });
         }
+
+        public static async Task UpdateFriendsList(string _email, User user)
+        {
+            var toUpdatePerson = (await firebase
+            .Child(ChildName)
+            .OnceAsync<User>()).FirstOrDefault(x => x.Object.email == _email);
+
+            toUpdatePerson.Object.friends.Add(user.username);
+
+            await firebase
+            .Child(ChildName)
+            .Child(toUpdatePerson.Key)
+            .PutAsync(toUpdatePerson.Object);
+        }
+
         public async Task DeletePerson(string email)
         {
             var toDeletePerson = (await firebase

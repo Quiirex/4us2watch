@@ -1,4 +1,6 @@
-﻿using System;
+﻿using _4us2watch.Components;
+using _4us2watch.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,9 +25,9 @@ namespace _4us2watch.Views
             NavigationPage.SetHasNavigationBar(this, false);
             BindingContext = this;
             //_menuItemsView = new[] { (View)LabelSlikaTest, LabelTest, LabelSlikaDvaTest, LabelDvaTest };
-            CreateAndFillGrid(MovieGrid);
-            FillFriendsList(Friends);
+            //CreateAndFillGrid(MovieGrid);
             email = text;
+            FillFriendsList(Friends);
         }
         private const string ExpandAnimationName = "ExpandAnimation";
         private const string CollapseAnimationName = "CollapseAnimation";
@@ -37,35 +39,57 @@ namespace _4us2watch.Views
         private bool _isAnimationRun;
         private double _safeInsetsTop;
 
-        void onAddFriendClick(object sender, EventArgs args)
+        private async void onAddFriendClick(object sender, EventArgs args)
         {
             //Implement loser
             //friendsEntry je vnosno polje
-            DisplayAlert("dela", "dela", "ok");
+            var response = await ReaderWriter.GetPersonByUsername(friendsEntry.Text);
+            if(response == null)
+            {
+               await DisplayAlert("User not found", "The user you are searching for was not found", "OK");
+                return;
+            }
+            await ReaderWriter.UpdateFriendsList(email, response);
+            FillFriendsList(Friends);
+            //DisplayAlert("dela", "dela", "ok");
         }
-        private void FillFriendsList(Grid grid)
+        private async void FillFriendsList(Grid grid)
         {
-            //foreach (var friend in List<Friends>)
-            //{
-            Image img = new Image
+            try
             {
-                Source = "profile.jpg", //profilna uporabnika
-                HeightRequest = 20,
-                VerticalOptions = LayoutOptions.End,
-                HorizontalOptions = LayoutOptions.Center
-            };
-            Label lbl = new Label
+                var user =  await ReaderWriter.GetPerson(email);
+                var counter = 3;
+                if (user == null)
+                {
+                    return;
+                }
+                foreach (var friend in user.friends)
+                {
+                    Image img = new Image
+                    {
+                        Source = "profile.jpg", //profilna uporabnika
+                        HeightRequest = 20,
+                        VerticalOptions = LayoutOptions.End,
+                        HorizontalOptions = LayoutOptions.Center
+                    };
+                    Label lbl = new Label
+                    {
+                        Text = friend, //spremeni pol v username
+                        FontSize = 17,
+                        TextColor = Color.Black,
+                        HorizontalOptions = LayoutOptions.Start,
+                        VerticalOptions = LayoutOptions.Start,
+                    };
+                    grid.Children.Add(img, 0, counter); //column, row
+                    grid.Children.Add(lbl, 1, counter);
+                    Grid.SetColumnSpan(lbl, 2);
+                    counter++;
+                }
+            }
+            catch(Exception e)
             {
-                Text = "Username Here", //spremeni pol v username
-                FontSize = 17,
-                TextColor = Color.Black,
-                HorizontalOptions = LayoutOptions.Start,
-                VerticalOptions = LayoutOptions.Start,
-            };
-            grid.Children.Add(img, 0, 3); //column, row
-            grid.Children.Add(lbl, 1, 3);
-            Grid.SetColumnSpan(lbl, 2);
-            //}
+                await DisplayAlert("Exception", e.Message, "OLKEJ");
+            }
         }
         private void CreateAndFillGrid(Grid grid) //Fix dis plis
         {

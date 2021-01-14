@@ -43,10 +43,24 @@ namespace _4us2watch.Views
         {
             //Implement loser
             //friendsEntry je vnosno polje
+            var user = await ReaderWriter.GetPerson(email);
             var response = await ReaderWriter.GetPersonByUsername(friendsEntry.Text);
-            if(response == null)
+            if(response == null || user.email == response.email) //Dodal da nemores dodat sebe.
             {
                await DisplayAlert("User not found", "The user you are searching for was not found", "OK");
+               return;
+            }
+            foreach(string a in user.friends)
+            {
+                if(a == response.username) //Da nemoreš dodat večkrat.
+                {
+                    await DisplayAlert("User already friend", "The user you are searching for is alreadly in your friend list", "OK");
+                    return;
+                }
+            }
+            if(user.friends.Count >= 20)
+            {
+                await DisplayAlert("Max friends", "You can only have max 19 friends", "OK"); //max frendov
                 return;
             }
             await ReaderWriter.UpdateFriendsList(email, response);

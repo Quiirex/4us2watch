@@ -25,7 +25,7 @@ namespace _4us2watch.Views
             NavigationPage.SetHasNavigationBar(this, false);
             BindingContext = this;
             //_menuItemsView = new[] { (View)LabelSlikaTest, LabelTest, LabelSlikaDvaTest, LabelDvaTest };
-            //CreateAndFillGrid(MovieGrid);
+            CreateAndFillGrid(MovieGrid);
             email = text;
             FillFriendsList(Friends);
         }

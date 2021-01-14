@@ -10,20 +10,36 @@
         <Grid x:Name="Friends" BackgroundColor="WhiteSmoke">
             <Grid.RowDefinitions>
                 <RowDefinition x:Name="MenuSafeAreaRow" Height="0" />
+                <!--reserved-->
                 <!--0-->
                 <RowDefinition x:Name="MenuTopRow" />
+                <!--reserved-->
                 <!--1-->
                 <RowDefinition Height="67.5" />
+                <!--reserved-->
                 <!--2_Friends-->
                 <RowDefinition Height="20"  />
-                <!--3_Oseba_Ena-->
                 <RowDefinition Height="20" />
-                <!--4_Oseba_Dva-->
-                <RowDefinition Height="*" />
-                <!--5-->
-                <RowDefinition Height="200" />
-
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <!--19 je zadnji-->
+                <RowDefinition Height="0" />
+                <!--reserved-->
                 <RowDefinition Height="50" />
+                <!--reserved-->
                 <!--10-->
                 <RowDefinition x:Name="MenuBottomRow" />
                 <!--11-->
@@ -39,7 +55,7 @@
             <Label Grid.Row="2" 
                    Grid.Column="1"
                    HorizontalOptions="Center" 
-                   VerticalOptions="Start" 
+                   VerticalOptions="Center" 
                    Text="Friends"
                    FontSize="25"
                    FontAttributes="Bold"
@@ -83,7 +99,7 @@
                    TextColor="Black"
                    Opacity="0"
                    />-->
-            <Entry Grid.Row="10" 
+            <Entry Grid.Row="21" 
                    Grid.ColumnSpan="2"
                    HorizontalOptions="Center" 
                    VerticalOptions="Start" 
@@ -91,13 +107,13 @@
                    x:Name="friendsEntry"
                    />
             <Button Text=">" 
-                    Grid.Row="10"
+                    Grid.Row="21"
                     Grid.Column="2"
                     CornerRadius="20"
                     Margin="-13,0,4,0"
                     Clicked="onAddFriendClick"
                     />
-            <Label Grid.Row="11" 
+            <Label Grid.Row="22" 
                    Grid.Column="1" 
                    HorizontalOptions="Center" 
                    VerticalOptions="Start" 
@@ -110,81 +126,82 @@
             <!--Dodaj event listener-->
         </Grid>
         <!-- Content view -->
-        <Frame x:Name="Page" BackgroundColor="Red">
+        <Frame x:Name="Page">
             <!--Help, log out-->
-            <StackLayout Margin="-21">
-                <Grid Padding="0,0,0,2.9" Margin="28,5,28,0" ColumnSpacing="0" BackgroundColor="LightGray">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions RowSpacing="0">
-                        <RowDefinition x:Name="ToolbarSafeAreaRow" Height="0" />
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Label Grid.Row="1" Text="Help"
+            <AbsoluteLayout Margin="-21">
+                <StackLayout>
+                    <Grid Padding="0,0,0,2.9" Margin="28,5,28,0" ColumnSpacing="0" BackgroundColor="LightGray">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions RowSpacing="0">
+                            <RowDefinition x:Name="ToolbarSafeAreaRow" Height="0" />
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="1" Text="Help"
                                FontSize="Medium"
                                TextColor="Blue"
                                HorizontalTextAlignment="Start"
                                Padding="50,-7,0,0"
                                TextDecorations="Underline">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="HelpCommand" />
-                        </Label.GestureRecognizers>
-                    </Label>
-                    <Label Grid.Column="1" Grid.Row="1" Text="Log out"
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="HelpCommand" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label Grid.Column="1" Grid.Row="1" Text="Log out"
                                FontSize="Medium"
                                TextColor="Blue"
                                HorizontalTextAlignment="End"
                                Padding="0,-7,50,0"
                                TextDecorations="Underline">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="LogOutCommand" />
-                        </Label.GestureRecognizers>
-                    </Label>
-                </Grid>
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="LogOutCommand" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
 
-                <!--Home, Friends, Profile-->
-                <Grid ColumnSpacing="0" BackgroundColor="Yellow">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" Text="Home"
+                    <!--Home, Friends, Profile-->
+                    <Grid ColumnSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Text="Home"
                                FontSize="27"
                                FontAttributes="Bold"
                                TextColor="Black"
                                HorizontalTextAlignment="Start"
                                Padding="30,0,0,0">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="HomeCommand"/>
-                        </Label.GestureRecognizers>
-                    </Label>
-                    <Label Grid.Column="1" Text="Friends"
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="HomeCommand"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label Grid.Column="1" Text="Friends"
                                FontSize="27"
                                TextColor="Black"
                                FontAttributes="Bold"
                                HorizontalTextAlignment="Center"
                                Padding="0,0,0,0">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="FriendsCommand"/>
-                        </Label.GestureRecognizers>
-                    </Label>
-                    <!--<Button Grid.Column="0" Grid.Row="1" Clicked="OnShowMenu" Image="menu.png"
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="FriendsCommand"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <!--<Button Grid.Column="0" Grid.Row="1" Clicked="OnShowMenu" Image="menu.png"
                             CornerRadius="0" BackgroundColor="Transparent" />-->
-                    <Label Grid.Column="2" Text="Profile"
+                        <Label Grid.Column="2" Text="Profile"
                                FontSize="27"
                                TextColor="Black"
                                FontAttributes="Bold"
                                HorizontalTextAlignment="End"
                                Padding="0,0,30,0">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="ProfileCommand" />
-                        </Label.GestureRecognizers>
-                    </Label>
-                </Grid>
-                <BoxView
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ProfileCommand" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                    <BoxView
                                 Grid.ColumnSpan="3" 
                                 BackgroundColor="Black" 
                                 HeightRequest="1" 
@@ -192,94 +209,123 @@
                                 HorizontalOptions="FillAndExpand"
                                 Margin="28,0,28,-3"/>
 
-                <!--Movies, TV Series, Documentaries, Anime-->
-                <Grid ColumnSpacing="0" Margin="0,0,0,0" BackgroundColor="LightGreen">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" Text="Movies"
+                    <!--Movies, TV Series, Documentaries, Anime-->
+                    <Grid ColumnSpacing="0" Margin="0,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Text="Movies"
                                FontSize="16"
                                FontAttributes="Bold"
                                TextColor="Black"
                                HorizontalTextAlignment="Start"
                                Padding="30,0,0,0">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="MoviesCommand" />
-                        </Label.GestureRecognizers>
-                    </Label>
-                    <Label Grid.Column="1" Text="TV Series"
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="MoviesCommand" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label Grid.Column="1" Text="TV Series"
                                FontSize="16"
                                TextColor="Black"
                                FontAttributes="Bold"
                                HorizontalTextAlignment="Center"
                                Padding="-30,0,0,0">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TVSeriesCommand" />
-                        </Label.GestureRecognizers>
-                    </Label>
-                    <Label Grid.Column="2" Text="Documentaries"
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TVSeriesCommand" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label Grid.Column="2" Text="Documentaries"
                                FontSize="16"
                                TextColor="Black"
                                FontAttributes="Bold"
                                HorizontalTextAlignment="Center"
                                Padding="-10,0,0,0">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="DocumentariesCommand" />
-                        </Label.GestureRecognizers>
-                    </Label>
-                    <Label Grid.Column="3" Text="Anime"
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="DocumentariesCommand" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label Grid.Column="3" Text="Anime"
                                FontSize="16"
                                TextColor="Black"
                                FontAttributes="Bold"
                                HorizontalTextAlignment="End"
                                Padding="0,0,30,0">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="AnimeCommand" />
-                        </Label.GestureRecognizers>
-                    </Label>
-                </Grid>
-                <ScrollView Margin="0,50,0,0" BackgroundColor="Blue">
-                    <Grid x:Name="MovieGrid" Margin="40,0,0,0">
-                        <!--TO DO: Opcija za več vrstic. Trenutno ob dodajanju novih vrstic se spacing breaka.-->
-                        <!--<Grid.RowDefinitions>
-                            <RowDefinition Height="200" />
-                            <RowDefinition Height="200" />
-                            <RowDefinition Height="200" />
-                        </Grid.RowDefinitions>-->
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="160"/>
-                            <ColumnDefinition Width="160"/>
-                        </Grid.ColumnDefinitions>
-
-                        <!--<Frame Grid.Row="0" Grid.Column="0" BorderColor="Black" HasShadow="True">
-                            <Label Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
-                        </Frame>
-
-                        <Frame Grid.Row="0" Grid.Column="1" BorderColor="Black" HasShadow="True">
-                            <Label Grid.Column="1" Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
-                        </Frame>
-
-                        <Frame Grid.Row="1" Grid.Column="0" BorderColor="Black" HasShadow="True">
-                            <Label Grid.Row="1" Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
-                        </Frame>
-
-                        <Frame Grid.Row="1" Grid.Column="1" BorderColor="Black" HasShadow="True">
-                            <Label Grid.Row="1" Grid.Column="1" Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
-                        </Frame>
-
-                        <Frame Grid.Row="2" Grid.Column="0" BorderColor="Black" HasShadow="True">
-                            <Label Grid.Row="2" Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
-                        </Frame>
-
-                        <Frame Grid.Row="2" Grid.Column="1" BorderColor="Black" HasShadow="True">
-                            <Label Grid.Row="2" Grid.Column="1" Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
-                        </Frame>-->
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="AnimeCommand" />
+                            </Label.GestureRecognizers>
+                        </Label>
                     </Grid>
-                </ScrollView>
-            </StackLayout>
+                </StackLayout>
+                <StackLayout Margin="21,110,21,0" AbsoluteLayout.LayoutBounds = "0,0,1,1" AbsoluteLayout.LayoutFlags = "All">
+                    <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Grid Padding="21,0,0,0" x:Name="MovieGrid" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <!--<Grid.RowDefinitions>
+                                <RowDefinition Height="200"/>
+                                <RowDefinition Height="200"/>
+                                <RowDefinition Height="200"/>
+                                <RowDefinition Height="200"/>
+                                <RowDefinition Height="200"/>
+                                <RowDefinition Height="200"/>
+                            </Grid.RowDefinitions>-->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="160"/>
+                                <ColumnDefinition Width="160"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--<Frame Grid.Row="0" Grid.Column="0" BorderColor="Black" HasShadow="True">
+                                <Label Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
+                            </Frame>
+
+                            <Frame Grid.Row="0" Grid.Column="1" BorderColor="Black" HasShadow="True">
+                                <Label Grid.Column="1" Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
+                            </Frame>
+
+                            <Frame Grid.Row="1" Grid.Column="0" BorderColor="Black" HasShadow="True">
+                                <Label Grid.Row="1" Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
+                            </Frame>
+
+                            <Frame Grid.Row="1" Grid.Column="1" BorderColor="Black" HasShadow="True">
+                                <Label Grid.Row="1" Grid.Column="1" Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
+                            </Frame>
+
+                            <Frame Grid.Row="2" Grid.Column="0" BorderColor="Black" HasShadow="True">
+                                <Label Grid.Row="2" Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
+                            </Frame>
+
+                            <Frame Grid.Row="2" Grid.Column="1" BorderColor="Black" HasShadow="True">
+                                <Label Grid.Row="2" Grid.Column="1" Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
+                            </Frame>
+
+                            <Frame Grid.Row="3" Grid.Column="0" BorderColor="Black" HasShadow="True">
+                                <Label Grid.Row="3" Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
+                            </Frame>
+
+                            <Frame Grid.Row="3" Grid.Column="1" BorderColor="Black" HasShadow="True">
+                                <Label Grid.Row="3" Grid.Column="1" Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
+                            </Frame>
+
+                            <Frame Grid.Row="4" Grid.Column="0" BorderColor="Black" HasShadow="True">
+                                <Label Grid.Row="4" Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
+                            </Frame>
+
+                            <Frame Grid.Row="4" Grid.Column="1" BorderColor="Black" HasShadow="True">
+                                <Label Grid.Row="4" Grid.Column="1" Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
+                            </Frame>
+
+                            <Frame Grid.Row="5" Grid.Column="0" BorderColor="Black" HasShadow="True">
+                                <Label Grid.Row="5" Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
+                            </Frame>
+
+                            <Frame Grid.Row="5" Grid.Column="1" BorderColor="Black" HasShadow="True">
+                                <Label Grid.Row="5" Grid.Column="1" Text="x" HorizontalOptions="Center" VerticalOptions="Center" />
+                            </Frame>-->
+                        </Grid>
+                    </ScrollView>
+                </StackLayout>
+            </AbsoluteLayout>
         </Frame>
     </Grid>
 </ContentPage>

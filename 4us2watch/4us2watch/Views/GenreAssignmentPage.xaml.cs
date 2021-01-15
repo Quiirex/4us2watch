@@ -35,7 +35,7 @@ namespace _4us2watch.Views
             GetFirstMovies();
             ChangeElements();
             email = text;
-            
+
         }
         private void ChangeElements()
         {
@@ -47,9 +47,9 @@ namespace _4us2watch.Views
         async void DislikeBtn(object sender, EventArgs args)
         {
             var user = await ReaderWriter.GetPerson(email);
-            
+
             try
-            {               
+            {
                 ++counter;
                 if (MoviesQueue.Count == 0)
                 {
@@ -71,7 +71,7 @@ namespace _4us2watch.Views
             var user = await ReaderWriter.GetPerson(email);
             //Implement like
             //DisplayAlert("JE VŠEČ", "NAJS", "OK");
-            
+
             try
             {
                 movieList.Add(CurrentMovie.idMovie.ToString());
@@ -110,7 +110,7 @@ namespace _4us2watch.Views
                 var convertedString = response.Content.ReadAsStringAsync();
                 var data = JsonConvert.DeserializeObject<MoviePage>(convertedString.Result);
                 MoviesQueue = new Queue<Movie>(data.Results); // Fiting movies to queue
- 
+
                 //ReplaceElements(Database.Movies[Counter]);
             }
             else
@@ -136,5 +136,6 @@ namespace _4us2watch.Views
         //        MessageBox.Show("The api did not return a success status code");
         //    }
         //}
+        protected override bool OnBackButtonPressed() => true; //da ne more backoutat, ker se ruši navigacija
     }
 }

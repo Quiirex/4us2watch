@@ -1076,7 +1076,6 @@ C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\lp\
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\lp\34\jl\files.cache
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\lp\46\jl\files.cache
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\profile.jpg
-C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\background.png
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\lp\36\jl\files.cache
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\lp\40\jl\files.cache
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\lp\48\jl\files.cache
@@ -1654,3 +1653,6 @@ C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\
 C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\x.png
 C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\checkmark.png
 C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\x.png
+C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\novilogo.png
+C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\facebooklogin.jpg
+C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\googlelogin.jpg

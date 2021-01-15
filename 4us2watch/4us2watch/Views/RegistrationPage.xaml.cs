@@ -71,5 +71,6 @@ namespace _4us2watch.Views
             }
             App.Current.MainPage = new NavigationPage(home);
         }
+        protected override bool OnBackButtonPressed() => true; //da ne more backoutat, ker se ruši navigacija
     }
 }

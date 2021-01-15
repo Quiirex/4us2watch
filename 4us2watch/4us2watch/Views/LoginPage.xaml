@@ -9,13 +9,13 @@
         <StackLayout HorizontalOptions="FillAndExpand">
             <Label Text="Login" TextColor="Black" FontAttributes="Bold" FontSize="30" VerticalOptions="Center" HorizontalOptions="Center" Margin="10,110,10,0"/>
             <StackLayout HorizontalOptions="FillAndExpand" Margin="20,70,20,0">
-                <Label FontSize="18" Text="Email" TextColor="Black" Margin="10,0,0,0"/>
+                <Label FontSize="18" Text="E-mail" TextColor="Black" Margin="10,0,0,0" FontAttributes="Bold"/>
                 <Entry x:Name="Email" Margin="5,0,5,0"/>
-                <Label FontSize="18" Text="Password" TextColor="Black" Margin="10,0,0,0"/>
+                <Label FontSize="18" Text="Password" TextColor="Black" Margin="10,0,0,0" FontAttributes="Bold"/>
                 <Entry x:Name="Password" IsPassword="True" Margin="5,0,5,0"/>
                 <Label x:Name="warning" Text="Invalid credentials" TextColor="Red" Margin="10" IsVisible="Hidden"/>
-                <Button BorderColor="Black" BorderWidth="1" x:Name="BtnLogIn" Text="Login" BackgroundColor="White" Margin="100,43,100,10" TextColor="Black" CornerRadius="20" Clicked="BtnLogIn_Clicked"/>
-
+                <Button BorderColor="Black" BorderWidth="1" x:Name="BtnLogIn" Text="Login" BackgroundColor="White" Margin="100,43,100,10" TextColor="Black" CornerRadius="20" Clicked="BtnLogIn_Clicked" />
+                <ActivityIndicator x:Name="activityIndicator" IsRunning="{Binding isBusy}" VerticalOptions="Center" HorizontalOptions="Center" Color="Black"/>
                 <Label HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
                     <Label.FormattedText>
                         <FormattedString>

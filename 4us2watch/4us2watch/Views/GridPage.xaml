@@ -105,8 +105,9 @@
                    VerticalOptions="Start" 
                    Placeholder="Add friends.."
                    x:Name="friendsEntry"
+                   TextColor="Black"
                    />
-            <Button Text=">" 
+            <Button Text="+" 
                     Grid.Row="21"
                     Grid.Column="2"
                     CornerRadius="20"
@@ -121,8 +122,11 @@
                    TextDecorations="Underline"
                    FontAttributes="Bold"
                    FontSize="17"
-                   TextColor="Blue"
-                   />
+                   TextColor="Blue">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="LogOutCommand" />
+                </Label.GestureRecognizers>
+            </Label>
             <!--Dodaj event listener-->
         </Grid>
         <!-- Content view -->
@@ -130,7 +134,7 @@
             <!--Help, log out-->
             <AbsoluteLayout Margin="-21">
                 <StackLayout>
-                    <Grid Padding="0,0,0,2.9" Margin="28,5,28,0" ColumnSpacing="0" BackgroundColor="LightGray">
+                    <Grid Padding="0,0,0,2.9" Margin="28,5,28,0" ColumnSpacing="0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />
                             <ColumnDefinition />
@@ -261,7 +265,7 @@
                 </StackLayout>
                 <StackLayout Margin="21,110,21,0" AbsoluteLayout.LayoutBounds = "0,0,1,1" AbsoluteLayout.LayoutFlags = "All">
                     <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                        <Grid Padding="21,0,0,0" x:Name="MovieGrid" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Grid Padding="9,0,0,0" x:Name="MovieGrid" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ColumnSpacing="5" RowSpacing="5">
                             <!--<Grid.RowDefinitions>
                                 <RowDefinition Height="200"/>
                                 <RowDefinition Height="200"/>
@@ -271,8 +275,8 @@
                                 <RowDefinition Height="200"/>
                             </Grid.RowDefinitions>-->
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="160"/>
-                                <ColumnDefinition Width="160"/>
+                                <ColumnDefinition Width="175"/>
+                                <ColumnDefinition Width="175"/>
                             </Grid.ColumnDefinitions>
 
                             <!--<Frame Grid.Row="0" Grid.Column="0" BorderColor="Black" HasShadow="True">

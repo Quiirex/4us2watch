@@ -17,5 +17,7 @@ namespace _4us2watch.Models
         public string ReleaseDate { get; set; }
         [JsonProperty("genre_ids")]
         public int[] Genre_Ids { get; set; }
+        [JsonProperty("overview")]
+        public string Overview { get; set; }
     }
 }

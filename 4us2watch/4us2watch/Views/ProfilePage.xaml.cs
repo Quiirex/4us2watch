@@ -43,16 +43,16 @@ namespace _4us2watch.Views
             //MenuTopRow.Height = MenuBottomRow.Height = Device.Info.ScaledScreenSize.Height * (1 - PageScale) / 2;
             user = await ReaderWriter.GetPerson(email1);
             Username.Text = user.username;
-            Email.Text = user.email; 
+            Email.Text = user.email;
         }
-        void HelpCommand(object sender, EventArgs args)
-        {
-            DisplayAlert("Dela", "Dela", "OK");
-        }
-        void LogOutCommand(object sender, EventArgs args)
-        {
-            DisplayAlert("Dela", "Dela", "OK");
-        }
+        //void HelpCommand(object sender, EventArgs args)
+        //{
+        //    DisplayAlert("Dela", "Implementiraj me", "OK");
+        //}
+        //void LogOutCommand(object sender, EventArgs args)
+        //{
+        //    DisplayAlert("Dela", "Implementiraj me", "OK");
+        //}
         void HomeCommand(object sender, EventArgs args)
         {
             if (grid == null)
@@ -73,22 +73,22 @@ namespace _4us2watch.Views
             }
             App.Current.MainPage = new NavigationPage(profile);
         }
-        void MoviesCommand(object sender, EventArgs args)
-        {
-            DisplayAlert("Dela", "Dela", "OK");
-        }
-        void TVSeriesCommand(object sender, EventArgs args)
-        {
-            DisplayAlert("Dela", "Dela", "OK");
-        }
-        void DocumentariesCommand(object sender, EventArgs args)
-        {
-            DisplayAlert("Dela", "Dela", "OK");
-        }
-        void AnimeCommand(object sender, EventArgs args)
-        {
-            DisplayAlert("Dela", "Dela", "OK");
-        }
+        //void MoviesCommand(object sender, EventArgs args)
+        //{
+        //    DisplayAlert("Rabim event handler", "Implementiraj me", "OK");
+        //}
+        //void TVSeriesCommand(object sender, EventArgs args)
+        //{
+        //    DisplayAlert("Dela", "Implementiraj me", "OK");
+        //}
+        //void DocumentariesCommand(object sender, EventArgs args)
+        //{
+        //    DisplayAlert("Dela", "Implementiraj me", "OK");
+        //}
+        //void AnimeCommand(object sender, EventArgs args)
+        //{
+        //    DisplayAlert("Dela", "Implementiraj me", "OK");
+        //}
 
         //public async void OnShowMenu()
         //{
@@ -172,8 +172,28 @@ namespace _4us2watch.Views
         //}
         private async void BtnSave_Clicked(object sender, EventArgs e)
         {
-            await ReaderWriter.UpdatePerson(Username.Text, Email.Text, user.friends, user.movies);
+            bool decision = await DisplayAlert("Update user credentials", "Are you sure you want to update your user credentials?", "Yes", "No");
+            if (decision == true)
+            {
+                await ReaderWriter.UpdatePerson(Username.Text, Email.Text, user.friends, user.movies);
+            }
+            else
+            {
+                //nič
+            };
         }
-        
+        private async void BtnRecal_Clicked(object sender, EventArgs e)
+        {
+            bool decision = await DisplayAlert("Recommendation recalibration", "Are you sure you want to recalibrate your movie recommendations?", "Yes", "No");
+            if (decision == true)
+            {
+                //Implementiraj rekalibracijo
+            }
+            else
+            {
+                //nič
+            };
+        }
+        protected override bool OnBackButtonPressed() => true; //da ne more backoutat, ker se ruši navigacija
     }
 }

@@ -119,18 +119,12 @@
                                TextColor="Black"
                                HorizontalTextAlignment="Start"
                                Padding="50,0,0,0">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="HelpCommand" />
-                            </Label.GestureRecognizers>
                         </Label>
                         <Label Grid.Column="1" Text="Log out"
                                FontSize="Medium"
                                TextColor="Black"
                                HorizontalTextAlignment="End"
                                Padding="0,0,50,0">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="LogOutCommand" />
-                            </Label.GestureRecognizers>
                         </Label>
                     </Grid>
 
@@ -231,8 +225,7 @@
                 </StackLayout>
                 <!--Profile.jpg je default-->
                 <Image Source="profile.jpg" HeightRequest="150" Margin="0,0,0,0"/>
-
-                <StackLayout Margin="30,30,30,0">
+                <StackLayout Margin="30,10,30,0">
                     <!--<Label FontSize="13" Text="Nickname" TextColor="Black" Margin="10,0,0,0"/>
                     <Entry x:Name="Nickname" Margin="5,0,5,0"/>-->
                     <Label FontSize="13" Text="Username" TextColor="Black" Margin="10,0,0,0"/>
@@ -243,7 +236,7 @@
                     <Entry x:Name="Password" IsPassword="True" Margin="5,0,5,0"/>
                     <Label FontSize="13" x:Name="error" Text="Error" TextColor="Red" Margin="10" IsVisible="Hidden"/>
                     <Button BorderColor="Black" BorderWidth="1" x:Name="BtnSave" Text="Save" BackgroundColor="White" Margin="100,25,100,0" TextColor="Black" CornerRadius="20" Clicked="BtnSave_Clicked"/>
-                    <!--Add event handler for save button-->
+                    <Button BorderColor="Black" BorderWidth="1" x:Name="BtnRecalibrate" Text="Recalibrate recommendations" BackgroundColor="White" Margin="80,10,80,0" TextColor="Black" CornerRadius="20" Clicked="BtnRecal_Clicked"/>
                 </StackLayout>
             </StackLayout>
         </Frame>

@@ -23,6 +23,8 @@ namespace _4us2watch.Views
         public LoginPage()
         {
             InitializeComponent();
+            BtnLogIn.IsEnabled = true;
+            activityIndicator.IsRunning = false;
             NavigationPage.SetHasNavigationBar(this, false);
             auth = DependencyService.Get<IAuth>();
         }
@@ -31,17 +33,25 @@ namespace _4us2watch.Views
         {
             try
             {
+                BtnLogIn.IsEnabled = false;
+                activityIndicator.IsRunning = true;
                 string Token = await auth.LoginWithEmailPassword(Email.Text.Replace(" ", string.Empty), Password.Text); //Cleared the error with .Replace that replaces all white spaces in string
                 if (Token != "")
                 {
                     var user = await ReaderWriter.GetPerson(Email.Text);
                     if (user.movies.Count == 0)
                     {
+                        activityIndicator.IsRunning = true;
                         await Navigation.PushAsync(new GenreAssignmentPage(user.email));
+                        activityIndicator.IsRunning = false;
+                        BtnLogIn.IsEnabled = true;
                     }
                     else
                     {
+                        activityIndicator.IsRunning = true;
                         await Navigation.PushAsync(new GridPage(user.email));
+                        activityIndicator.IsRunning = false;
+                        BtnLogIn.IsEnabled = true;
                     }
                     Email.Text = string.Empty; //da ni že vpisano, v primeru da gre nazaj
                     Password.Text = string.Empty;
@@ -50,11 +60,15 @@ namespace _4us2watch.Views
                 {
                     Email.Text = string.Empty;
                     Password.Text = string.Empty;
+                    BtnLogIn.IsEnabled = true;
+                    activityIndicator.IsRunning = false;
                     await DisplayAlert("Authentication failed", "E-mail/password is incorrect. Try again!", "OK");
                 }
             }
             catch
             {
+                BtnLogIn.IsEnabled = true;
+                activityIndicator.IsRunning = false;
                 await DisplayAlert("Authentication failed", "E-mail/password is incorrect. Try again!", "OK");
             }
         }
@@ -74,5 +88,6 @@ namespace _4us2watch.Views
             }
             App.Current.MainPage = new NavigationPage(home);
         }
+        protected override bool OnBackButtonPressed() => true; //da ne more backoutat, ker se ruši navigacija
     }
 }

@@ -21,6 +21,7 @@ namespace _4us2watch.Views
     {
         ProfilePage profile = null;
         GridPage grid = null;
+        LoginPage lgnpg = null;
         public string email;
         public string MainApi = "https://api.themoviedb.org/3/movie/";
         public GridPage(string text)
@@ -46,29 +47,39 @@ namespace _4us2watch.Views
 
         private async void onAddFriendClick(object sender, EventArgs args)
         {
-            //Implement loser
-            //friendsEntry je vnosno polje
             var user = await ReaderWriter.GetPerson(email);
             var response = await ReaderWriter.GetPersonByUsername(friendsEntry.Text);
-            if(response == null || user.email == response.email) //Dodal da nemores dodat sebe.
+            if (response == null || user.email == response.email) //Dodal da nemores dodat sebe.
             {
-               await DisplayAlert("User not found", "The user you are searching for was not found", "OK");
-               return;
-            }
-            foreach(string a in user.friends)
-            {
-                if(a == response.username) //Da nemoreš dodat večkrat.
+                if (string.IsNullOrWhiteSpace(friendsEntry.Text))
                 {
-                    await DisplayAlert("User already friend", "The user you are searching for is alreadly in your friend list", "OK");
+                    await DisplayAlert("Error", "Enter a username first!", "OK");
+                    return;
+                }
+                else
+                {
+                    await DisplayAlert("User not found", "The user you searched for not found!", "OK");
+                    friendsEntry.Text = "";
                     return;
                 }
             }
-            if(user.friends.Count >= 20)
+            foreach (string a in user.friends)
             {
-                await DisplayAlert("Max friends", "You can only have max 19 friends", "OK"); //max frendov
+                if (a == response.username) //Da nemoreš dodat večkrat.
+                {
+                    await DisplayAlert("Already friends", "The user is already your friend!", "OK");
+                    friendsEntry.Text = "";
+                    return;
+                }
+            }
+            if (user.friends.Count >= 20)
+            {
+                await DisplayAlert("Friend limit reached", "You have reached the maximum number of friends!", "OK"); //max frendov
+                friendsEntry.Text = "";
                 return;
             }
             await ReaderWriter.UpdateFriendsList(email, response);
+            friendsEntry.Text = "";
             FillFriendsList(Friends);
             //DisplayAlert("dela", "dela", "ok");
         }
@@ -82,7 +93,7 @@ namespace _4us2watch.Views
             var pageNumber = 1;
             var mainQueue = new Queue<Movie>();
             //var movieId = MovieIds[0]; // Lets first see for the first one and lets see how it goes
-            foreach(var MovieId in MovieIds)
+            foreach (var MovieId in MovieIds)
             {
                 var concatAPI = MainApi + MovieId + KeyApi;
                 var client = new HttpClient();
@@ -95,7 +106,7 @@ namespace _4us2watch.Views
                     var convertedString = response.Content.ReadAsStringAsync();
                     var data = JsonConvert.DeserializeObject<MoviePage>(convertedString.Result);
                     data.Results.Skip(Math.Max(0, data.Results.Count() - 10)); // This takes only the first 10 movies in the API call
-                    foreach(var movie in data.Results)
+                    foreach (var movie in data.Results)
                     {
                         mainQueue.Enqueue(movie);
                     }
@@ -105,13 +116,13 @@ namespace _4us2watch.Views
                     DisplayAlert("Error", "The api did not return a success status code", "OK");
                 }
             }
-            return  mainQueue;
+            return mainQueue;
         }
         private async void FillFriendsList(Grid grid)
         {
             try
             {
-                var user =  await ReaderWriter.GetPerson(email);
+                var user = await ReaderWriter.GetPerson(email);
                 var counter = 3;
                 if (user == null)
                 {
@@ -122,25 +133,43 @@ namespace _4us2watch.Views
                     Image img = new Image
                     {
                         Source = "profile.jpg", //profilna uporabnika
-                        HeightRequest = 20,
+                        HeightRequest = 25,
                         VerticalOptions = LayoutOptions.End,
                         HorizontalOptions = LayoutOptions.Center
                     };
                     Label lbl = new Label
                     {
                         Text = friend, //spremeni pol v username
-                        FontSize = 17,
+                        FontSize = 18,
                         TextColor = Color.Black,
                         HorizontalOptions = LayoutOptions.Start,
                         VerticalOptions = LayoutOptions.Start,
+                        Padding = new Thickness(0, -3, 0, 0)
                     };
+                    var eventOnTap = new TapGestureRecognizer();
+                    eventOnTap.Tapped += async (s, e) =>
+                    {
+                        bool decision = await DisplayAlert(friend, "What would you like to do?", "Display movies you both like", "Remove friend");
+                        if (decision == true)
+                        {
+                            await DisplayAlert("Rabim event handler", "Implementiraj me", "OK");
+                            //Implement display of shared liked movies and refresh the grid
+                        }
+                        else
+                        {
+                            await DisplayAlert("Rabim event handler", "Implementiraj me", "OK");
+                            //Implement the function to remove a friend
+                        }
+                    };
+                    lbl.GestureRecognizers.Add(eventOnTap);
+
                     grid.Children.Add(img, 0, counter); //column, row
                     grid.Children.Add(lbl, 1, counter);
                     Grid.SetColumnSpan(lbl, 2);
                     counter++;
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 await DisplayAlert("Exception", e.Message, "OLKEJ");
             }
@@ -153,11 +182,11 @@ namespace _4us2watch.Views
             var fixedMovieQueueCount = movieQueue.Count;
             for (int i = 0; i < fixedMovieQueueCount / 2 + fixedMovieQueueCount % 2; i++)
             {
-                grid.RowDefinitions.Add(new RowDefinition { Height = 230 });
+                grid.RowDefinitions.Add(new RowDefinition { Height = 260 });
 
                 for (int j = 0; j < 2; j++)
                 {
-                    if(movieQueue.Count < 1)
+                    if (movieQueue.Count < 1)
                     {
                         return;
                     }
@@ -166,8 +195,21 @@ namespace _4us2watch.Views
                     {
                         BorderColor = Color.Black,
                         HasShadow = true,
-                        Content = new Image { Source = "https://image.tmdb.org/t/p/w500" + currentMovie.ImagePath, Margin = (-20) }
+                        Padding = 0,
+                        Margin = 0,
+                        Content = new Image
+                        {
+                            Source = "https://image.tmdb.org/t/p/w500" + currentMovie.ImagePath,
+                            Aspect = Aspect.AspectFill
+                        }
                     };
+                    var eventOnTap = new TapGestureRecognizer();
+                    eventOnTap.Tapped += (s, e) =>
+                    {
+                        DisplayAlert(currentMovie.Name + " (" + currentMovie.ReleaseDate.Substring(0, 4) + ")", currentMovie.Overview, "Close");
+                    };
+                    frame.GestureRecognizers.Add(eventOnTap);
+
                     grid.Children.Add(frame, j, i); //row, column
                 }
             }
@@ -179,19 +221,30 @@ namespace _4us2watch.Views
         }
         void HelpCommand(object sender, EventArgs args)
         {
-            DisplayAlert("Dela", "Dela", "OK");
+            DisplayAlert("Help", "The movies displayed in the grid below are the result of your choices in the liking/disliking the movies we've shown you" +
+                " at your first log in passed into our recommendation system. \nIf you wish to know more about a movie you see in the grid, just tap it! \nIf you'd like to recalibrate your recommendations, go to your " +
+                "profile page and tap the 'recommendation recalibration' button. \nIf you'd like to see which movies you and your friends share, add a friend, tap on their name in the friends list " +
+                "and select the 'Display movies you both like' option.", "OK");
         }
-        void LogOutCommand(object sender, EventArgs args)
+        async void LogOutCommand(object sender, EventArgs args)
         {
-            DisplayAlert("Dela", "Dela", "OK");
+            bool decision = await DisplayAlert("Log out", "Are you sure you want to log out?", "Yes", "No");
+            if (decision == true)
+            {
+                if (lgnpg == null)
+                {
+                    lgnpg = new LoginPage();
+                }
+                App.Current.MainPage = new NavigationPage(lgnpg);
+            }
+            else
+            {
+                //nič
+            };
         }
         void HomeCommand(object sender, EventArgs args)
         {
-            if (grid == null)
-            {
-                grid = new GridPage(email);
-            }
-            App.Current.MainPage = new NavigationPage(grid);
+            //Pusti
         }
         void FriendsCommand(object sender, EventArgs args)
         {
@@ -207,19 +260,19 @@ namespace _4us2watch.Views
         }
         void MoviesCommand(object sender, EventArgs args)
         {
-            DisplayAlert("Dela", "Dela", "OK");
+            DisplayAlert("Rabim event handler", "Implementiraj me", "OK");
         }
         void TVSeriesCommand(object sender, EventArgs args)
         {
-            DisplayAlert("Dela", "Dela", "OK");
+            DisplayAlert("Rabim event handler", "Implementiraj me", "OK");
         }
         void DocumentariesCommand(object sender, EventArgs args)
         {
-            DisplayAlert("Dela", "Dela", "OK");
+            DisplayAlert("Rabim event handler", "Implementiraj me", "OK");
         }
         void AnimeCommand(object sender, EventArgs args)
         {
-            DisplayAlert("Dela", "Dela", "OK");
+            DisplayAlert("Rabim event handler", "Implementiraj me", "OK");
         }
 
         public async void OnShowMenu()
@@ -302,5 +355,6 @@ namespace _4us2watch.Views
 
             return animation;
         }
+        protected override bool OnBackButtonPressed() => true; //da ne more backoutat, ker se ruši navigacija
     }
 }

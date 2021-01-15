@@ -1,8 +1,11 @@
 ﻿using _4us2watch.Components;
 using _4us2watch.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -19,18 +22,20 @@ namespace _4us2watch.Views
         ProfilePage profile = null;
         GridPage grid = null;
         public string email;
+        public string MainApi = "https://api.themoviedb.org/3/movie/";
         public GridPage(string text)
         {
             InitializeComponent();
+            email = text;
             NavigationPage.SetHasNavigationBar(this, false);
             BindingContext = this;
             //_menuItemsView = new[] { (View)LabelSlikaTest, LabelTest, LabelSlikaDvaTest, LabelDvaTest };
             CreateAndFillGrid(MovieGrid);
-            email = text;
             FillFriendsList(Friends);
         }
         private const string ExpandAnimationName = "ExpandAnimation";
         private const string CollapseAnimationName = "CollapseAnimation";
+        private const string KeyApi = "/recommendations?api_key=9d2bff12ed955c7f1f74b83187f188ae&language=en-US&page=";
         private const double SlideAnimationDuration = 0.25;
         private const int AnimationDuration = 600;
         private const double PageScale = 0.9;
@@ -66,6 +71,41 @@ namespace _4us2watch.Views
             await ReaderWriter.UpdateFriendsList(email, response);
             FillFriendsList(Friends);
             //DisplayAlert("dela", "dela", "ok");
+        }
+
+        private Queue<Movie> FillTheQueueWithMovies(List<string> MovieIds)
+        {
+            // TO DO: Fill the queue with the recommandations of the user
+            // 10 Movies on one recomandation 
+            // If the user doesn't like any movie or only one out of 20 get him a genre assignment page again with diffrent movies 
+            //var random = new Random();
+            var pageNumber = 1;
+            var mainQueue = new Queue<Movie>();
+            //var movieId = MovieIds[0]; // Lets first see for the first one and lets see how it goes
+            foreach(var MovieId in MovieIds)
+            {
+                var concatAPI = MainApi + MovieId + KeyApi;
+                var client = new HttpClient();
+                client.BaseAddress = new Uri(concatAPI);
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var response = client.GetAsync(concatAPI + pageNumber.ToString()).Result; // Main result for API
+                if (response.IsSuccessStatusCode)
+                {
+                    var convertedString = response.Content.ReadAsStringAsync();
+                    var data = JsonConvert.DeserializeObject<MoviePage>(convertedString.Result);
+                    data.Results.Skip(Math.Max(0, data.Results.Count() - 10)); // This takes only the first 10 movies in the API call
+                    foreach(var movie in data.Results)
+                    {
+                        mainQueue.Enqueue(movie);
+                    }
+                }
+                else
+                {
+                    DisplayAlert("Error", "The api did not return a success status code", "OK");
+                }
+            }
+            return  mainQueue;
         }
         private async void FillFriendsList(Grid grid)
         {
@@ -105,19 +145,28 @@ namespace _4us2watch.Views
                 await DisplayAlert("Exception", e.Message, "OLKEJ");
             }
         }
-        private void CreateAndFillGrid(Grid grid) //Fix dis plis
+        private async void CreateAndFillGrid(Grid grid)
         {
-            for (int i = 0; i < 10; i++)
+            // First we need to get the movies the user liked
+            var userMovies = await ReaderWriter.GetUserMovies(email);
+            var movieQueue = FillTheQueueWithMovies(userMovies);
+            var fixedMovieQueueCount = movieQueue.Count;
+            for (int i = 0; i < fixedMovieQueueCount / 2 + fixedMovieQueueCount % 2; i++)
             {
                 grid.RowDefinitions.Add(new RowDefinition { Height = 230 });
 
                 for (int j = 0; j < 2; j++)
                 {
+                    if(movieQueue.Count < 1)
+                    {
+                        return;
+                    }
+                    var currentMovie = movieQueue.Dequeue();
                     Frame frame = new Frame
                     {
                         BorderColor = Color.Black,
                         HasShadow = true,
-                        Content = new Image { Source = "https://image.tmdb.org/t/p/w500/kBHLlbBEKLXlZFHG5y6aveGUwXy.jpg", Margin = (-20) }
+                        Content = new Image { Source = "https://image.tmdb.org/t/p/w500" + currentMovie.ImagePath, Margin = (-20) }
                     };
                     grid.Children.Add(frame, j, i); //row, column
                 }

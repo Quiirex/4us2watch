@@ -80,6 +80,15 @@ namespace _4us2watch.Components
             .PutAsync(toUpdatePerson.Object);
         }
 
+        public static async Task<List<string>> GetUserMovies(string _email)
+        {
+            var userMovie = (await firebase
+            .Child(ChildName)
+            .OnceAsync<User>()).FirstOrDefault(x => x.Object.email == _email);
+
+            return userMovie.Object.movies;
+        }
+
         public async Task DeletePerson(string email)
         {
             var toDeletePerson = (await firebase

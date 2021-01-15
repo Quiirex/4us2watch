@@ -48,8 +48,6 @@ namespace _4us2watch.Views
         {
             var user = await ReaderWriter.GetPerson(email);
             
-            //Implement dislike
-            //DisplayAlert("NI VŠEČ", "FUJ", "OK");
             try
             {               
                 ++counter;

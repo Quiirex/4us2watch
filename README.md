@@ -6,7 +6,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/Quiirex/4us2watch">
-    <img src="https://c0.klipartz.com/pngpicture/779/81/sticker-png-logo-brand-random-icons-angle-text.png" alt="Logo" width="150" height="150">
+    <img src="https://cdn.discordapp.com/attachments/773448163368370186/799648340027244544/Logo.png" alt="Logo" width="150" height="150">
   </a>
 
   <h1 align="center">4us2watch</h1>

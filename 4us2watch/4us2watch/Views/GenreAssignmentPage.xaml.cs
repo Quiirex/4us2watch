@@ -25,7 +25,7 @@ namespace _4us2watch.Views
         // Base URL for Image
         public static string ImageLink = @"https://image.tmdb.org/t/p/w500";
         public string email;
-        public List<string> filmiList = new List<string>();
+        public List<string> movieList = new List<string>();
         public Queue<Movie> MoviesQueue;
         private Movie CurrentMovie;
         public GenreAssignmentPage(string text)
@@ -55,7 +55,7 @@ namespace _4us2watch.Views
                 ++counter;
                 if (MoviesQueue.Count == 0)
                 {
-                    await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, filmiList);
+                    await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, movieList);
                     await Navigation.PushAsync(new GridPage(user.email));
                     return;
                     // Here is where it will end
@@ -76,11 +76,11 @@ namespace _4us2watch.Views
             
             try
             {
-                filmiList.Add(CurrentMovie.idMovie.ToString());
+                movieList.Add(CurrentMovie.idMovie.ToString());
                 ++counter;
                 if (MoviesQueue.Count == 0)
                 {
-                    await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, filmiList);
+                    await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, movieList);
                     await Navigation.PushAsync(new GridPage(user.email));
                     return;
                     // Here is where it will end

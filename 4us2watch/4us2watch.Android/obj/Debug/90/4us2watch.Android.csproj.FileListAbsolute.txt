@@ -1161,7 +1161,6 @@ C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\
 C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\mipmap-xxhdpi\launcher_foreground.png
 C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\mipmap-xxxhdpi\icon.png
 C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\mipmap-xxxhdpi\launcher_foreground.png
-C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\background.png
 C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\profile.jpg
 C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\uploadflags.txt
 C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\resolvedassemblies.hash
@@ -1656,3 +1655,6 @@ C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\novilogo.png
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\facebooklogin.jpg
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\googlelogin.jpg
+C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\novilogo.png
+C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\facebooklogin.jpg
+C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\googlelogin.jpg

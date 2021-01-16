@@ -157,7 +157,9 @@ namespace _4us2watch.Views
                         }
                         else
                         {
-                            await DisplayAlert("Rabim event handler", "Implementiraj me", "OK");
+                            user.friends.Remove(friend);
+                            await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, user.movies);//frenda izbriše iz podatkovne baze vendar ne iz lista, nič ne dela.
+                            //await DisplayAlert("Rabim event handler", "Implementiraj me", "OK");
                             //Implement the function to remove a friend
                         }
                     };
@@ -171,7 +173,7 @@ namespace _4us2watch.Views
             }
             catch (Exception e)
             {
-                await DisplayAlert("Exception", e.Message, "OLKEJ");
+                await DisplayAlert("Exception", e.Message, "OKEJ");
             }
         }
         private async void CreateAndFillGrid(Grid grid)

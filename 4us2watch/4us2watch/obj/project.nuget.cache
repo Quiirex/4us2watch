@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YbgkqFObkIfxC7/Qx6XUg1BnkVktyWbqa1My/xtTwWao2wY31kYPtkf7+di0rf40+cgBjaEpJurj8V/edPo3Rw==",
+  "dgSpecHash": "BKjWBFw/ciEc3E4G+WOoqAHAIOww1wnWCXYaXPHo6W+HUEwvKiGaW37Uq5Vub+/dGc3md1Ivu+m1ecN9WvOJnQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\PunisherTFB\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\PunisherTFB\\.nuget\\packages\\litedb\\4.1.4\\litedb.4.1.4.nupkg.sha512",
     "C:\\Users\\PunisherTFB\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\PunisherTFB\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\PunisherTFB\\.nuget\\packages\\morelinq\\3.3.2\\morelinq.3.3.2.nupkg.sha512",
     "C:\\Users\\PunisherTFB\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\PunisherTFB\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\PunisherTFB\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",

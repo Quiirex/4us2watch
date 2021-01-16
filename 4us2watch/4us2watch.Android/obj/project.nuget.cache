@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "m1Aa/LKtCtzl67Q4Kx7dCcDJ/JH7z2nV5bVcbsMc33BBJjNd7QDiXx0Ktri5y5noFlxnwMPyIqPwT+nqStTwMQ==",
+  "dgSpecHash": "JwXoAgxmgijK/iTNAWM8z0U+t829HTgUMYnVT+ZKckpRFqcbXsFVCbnYmSZXKgXy4OORLOFwMaLpLZfM3fQmyA==",
   "success": true,
   "projectFilePath": "C:\\Users\\PunisherTFB\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch.Android\\4us2watch.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PunisherTFB\\.nuget\\packages\\firebasedatabase.net\\4.0.4\\firebasedatabase.net.4.0.4.nupkg.sha512",
     "C:\\Users\\PunisherTFB\\.nuget\\packages\\litedb\\4.1.4\\litedb.4.1.4.nupkg.sha512",
     "C:\\Users\\PunisherTFB\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\PunisherTFB\\.nuget\\packages\\morelinq\\3.3.2\\morelinq.3.3.2.nupkg.sha512",
     "C:\\Users\\PunisherTFB\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\PunisherTFB\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\PunisherTFB\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",

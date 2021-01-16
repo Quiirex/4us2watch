@@ -13,6 +13,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
+using MoreLinq;
 
 namespace _4us2watch.Views
 {
@@ -24,6 +25,7 @@ namespace _4us2watch.Views
         LoginPage lgnpg = null;
         public string email;
         public string MainApi = "https://api.themoviedb.org/3/movie/";
+        List<Movie> UserMovies;
         public GridPage(string text)
         {
             InitializeComponent();
@@ -116,7 +118,7 @@ namespace _4us2watch.Views
                     DisplayAlert("Error", "The api did not return a success status code", "OK");
                 }
             }
-            return mainQueue;
+            return new Queue<Movie>(mainQueue.DistinctBy(x => x.Name));
         }
         private async void FillFriendsList(Grid grid)
         {
@@ -152,8 +154,19 @@ namespace _4us2watch.Views
                         bool decision = await DisplayAlert(friend, "What would you like to do?", "Display movies you both like", "Remove friend");
                         if (decision == true)
                         {
-                            await DisplayAlert("Rabim event handler", "Implementiraj me", "OK");
+
                             //Implement display of shared liked movies and refresh the grid
+                            // OUR LAST CHUNK OF CODE
+                            var friendMovies = FillTheQueueWithMovies(await ReaderWriter.GetUserMoviesByUsername(friend)).ToList();
+
+                            // Two lists of movie rec. (friendMovies, UserMovies) what now?
+                            
+                            UserMovies.AddRange(friendMovies);
+                            var avgOfList = UserMovies.Select(x => x.Popularity).DefaultIfEmpty(0).Average();
+                            var finalList = UserMovies.Where(x => x.Popularity > avgOfList).ToList();
+                            MovieGrid.Children.Clear();
+                            
+                            RefreshGrid(MovieGrid, finalList);
                         }
                         else
                         {
@@ -178,8 +191,6 @@ namespace _4us2watch.Views
                                 grid.Children.Remove(image);
                                 break;
                             }
-
-                            
                         }
                     };
                     lbl.GestureRecognizers.Add(eventOnTap);
@@ -195,14 +206,13 @@ namespace _4us2watch.Views
                 await DisplayAlert("Exception", e.Message, "OKEJ");
             }
         }
-
-        
-
         private async void CreateAndFillGrid(Grid grid)
         {
             // First we need to get the movies the user liked
             var userMovies = await ReaderWriter.GetUserMovies(email);
             var movieQueue = FillTheQueueWithMovies(userMovies);
+            UserMovies = movieQueue.ToList();
+            movieQueue = new Queue<Movie>(movieQueue.Where(x => x.ImagePath != null));
             var fixedMovieQueueCount = movieQueue.Count;
             for (int i = 0; i < fixedMovieQueueCount / 2 + fixedMovieQueueCount % 2; i++)
             {
@@ -215,6 +225,47 @@ namespace _4us2watch.Views
                         return;
                     }
                     var currentMovie = movieQueue.Dequeue();
+                    Frame frame = new Frame
+                    {
+                        BorderColor = Color.Black,
+                        HasShadow = true,
+                        Padding = 0,
+                        Margin = 0,
+                        Content = new Image
+                        {
+                            Source = "https://image.tmdb.org/t/p/w500" + currentMovie.ImagePath,
+                            Aspect = Aspect.AspectFill
+                        }
+                    };
+                    var eventOnTap = new TapGestureRecognizer();
+                    eventOnTap.Tapped += (s, e) =>
+                    {
+                        DisplayAlert(currentMovie.Name + " (" + currentMovie.ReleaseDate.Substring(0, 4) + ")", currentMovie.Overview, "Close");
+                    };
+                    frame.GestureRecognizers.Add(eventOnTap);
+
+                    grid.Children.Add(frame, j, i); //row, column
+                }
+            }
+        }
+
+        private void RefreshGrid(Grid grid, List<Movie> movies)
+        {
+            var mainQueue = new Queue<Movie>(movies);
+            mainQueue = new Queue<Movie>(mainQueue.Where(x => x.ImagePath != null));
+            var fixedMovieQueueCount = mainQueue.Count;
+
+            for (int i = 0; i < fixedMovieQueueCount / 2 + fixedMovieQueueCount % 2; i++)
+            {
+                grid.RowDefinitions.Add(new RowDefinition { Height = 260 });
+
+                for (int j = 0; j < 2; j++)
+                {
+                    if (mainQueue.Count < 1)
+                    {
+                        return;
+                    }
+                    var currentMovie = mainQueue.Dequeue();
                     Frame frame = new Frame
                     {
                         BorderColor = Color.Black,

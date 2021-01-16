@@ -19,5 +19,9 @@ namespace _4us2watch.Models
         public int[] Genre_Ids { get; set; }
         [JsonProperty("overview")]
         public string Overview { get; set; }
+        [JsonProperty("popularity")]
+        public double Popularity { get; set; }
+        [JsonProperty("vote_average")]
+        public double Vote_Average { get; set; }
     }
 }

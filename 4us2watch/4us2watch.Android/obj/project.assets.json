@@ -38,6 +38,15 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "morelinq/3.3.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MoreLinq.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MoreLinq.dll": {}
+        }
+      },
       "NETStandard.Library/2.0.3": {
         "type": "package",
         "dependencies": {
@@ -1089,7 +1098,8 @@
           "FirebaseDatabase.net": "4.0.4",
           "Xamarin.Essentials": "1.6.0",
           "Xamarin.Firebase.Core": "60.1142.1",
-          "Xamarin.Forms": "4.8.0.1821"
+          "Xamarin.Forms": "4.8.0.1821",
+          "morelinq": "3.3.2"
         },
         "compile": {
           "bin/placeholder/4us2watch.dll": {}
@@ -1146,6 +1156,27 @@
         "microsoft.netcore.platforms.1.1.0.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json"
+      ]
+    },
+    "morelinq/3.3.2": {
+      "sha512": "MQc8GppZJLmjvcpEdf3EkC6ovsp7gRWt2e5mC7dcIOrgwSc+yjFd3JQ0iRqr3XrUT6rb/phv0IkEmBtbfVA7AQ==",
+      "type": "package",
+      "path": "morelinq/3.3.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "COPYING.txt",
+        "lib/net451/MoreLinq.dll",
+        "lib/net451/MoreLinq.pdb",
+        "lib/net451/MoreLinq.xml",
+        "lib/netstandard1.0/MoreLinq.dll",
+        "lib/netstandard1.0/MoreLinq.pdb",
+        "lib/netstandard1.0/MoreLinq.xml",
+        "lib/netstandard2.0/MoreLinq.dll",
+        "lib/netstandard2.0/MoreLinq.pdb",
+        "lib/netstandard2.0/MoreLinq.xml",
+        "morelinq.3.3.2.nupkg.sha512",
+        "morelinq.nuspec"
       ]
     },
     "NETStandard.Library/2.0.3": {
@@ -2887,7 +2918,8 @@
       "Xamarin.Essentials >= 1.6.0",
       "Xamarin.Firebase.Auth >= 60.1142.1",
       "Xamarin.Firebase.Core >= 60.1142.1",
-      "Xamarin.Forms >= 4.8.0.1821"
+      "Xamarin.Forms >= 4.8.0.1821",
+      "morelinq >= 3.3.2"
     ]
   },
   "packageFolders": {
@@ -2980,6 +3012,10 @@
           "Xamarin.Forms": {
             "target": "Package",
             "version": "[4.8.0.1821, )"
+          },
+          "morelinq": {
+            "target": "Package",
+            "version": "[3.3.2, )"
           }
         }
       }

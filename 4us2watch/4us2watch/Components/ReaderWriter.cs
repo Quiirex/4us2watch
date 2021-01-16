@@ -89,6 +89,15 @@ namespace _4us2watch.Components
             return userMovie.Object.movies;
         }
 
+        public static async Task<List<string>> GetUserMoviesByUsername(string username)
+        {
+            var userMovie = (await firebase
+            .Child(ChildName)
+            .OnceAsync<User>()).FirstOrDefault(x => x.Object.username == username);
+
+            return userMovie.Object.movies;
+        }
+
         public async Task DeletePerson(string email)
         {
             var toDeletePerson = (await firebase

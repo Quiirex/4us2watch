@@ -34,8 +34,6 @@ C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\Views\ProfilePage.xaml.g.cs
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\4us2watch.csprojAssemblyReference.cache
 C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\Views\ProfilePage.xaml.g.cs
-C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\4us2watch.csproj.CoreCompileInputs.cache
-C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch\bin\Debug\netstandard2.0\4us2watch.deps.json
 C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch\bin\Debug\netstandard2.0\4us2watch.dll
 C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch\bin\Debug\netstandard2.0\ref\4us2watch.dll
@@ -55,3 +53,5 @@ C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstand
 C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\4us2watch.pdb
 C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\4us2watch.csproj.CoreCompileInputs.cache
 C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\4us2watch.csproj.CoreCompileInputs.cache
+C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\XamlC.stamp

@@ -1660,3 +1660,5 @@ C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\
 C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\novilogo.png
 C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\facebooklogin.jpg
 C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\res\drawable\googlelogin.jpg
+C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\android\assets\MoreLinq.dll
+C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\android\assets\MoreLinq.pdb

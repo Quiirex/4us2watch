@@ -27,13 +27,13 @@ namespace _4us2watch
         {
             await Navigation.PushAsync(new RegistrationPage());
         }
-        void googleLogin(object sender, EventArgs e)
-        {
-            DisplayAlert("Rabim event handler", "Implementiraj me", "OK");
-        }
-        void facebookLogin(object sender, EventArgs e)
-        {
-            DisplayAlert("Rabim event handler", "Implementiraj me", "OK");
-        }
+        //void googleLogin(object sender, EventArgs e)
+        //{
+        //    DisplayAlert("Rabim event handler", "Implementiraj me", "OK");
+        //}
+        //void facebookLogin(object sender, EventArgs e)
+        //{
+        //    DisplayAlert("Rabim event handler", "Implementiraj me", "OK");
+        //}
     }
 }

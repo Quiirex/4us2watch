@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using _4us2watch.Components;
+using Rg.Plugins.Popup.Services;
 
 namespace _4us2watch.Views
 {
@@ -30,29 +31,38 @@ namespace _4us2watch.Views
         }
         private async void BtnRegister_Clicked(object sender, EventArgs e)
         {
-            if (password.Text != retypedPassword.Text)
-            {
-                await DisplayAlert("Error", "Passwords do not match", "OK");
-                return;
-            }
+            await PopupNavigation.Instance.PushAsync(new BusyPopUp());
 
-            var created = await auth.SignUpWithEmailPassword(Email.Text, password.Text);
-            // Console.WriteLine(created);
-            if (created)
+            try
             {
-                List<string> filmi = new List<string>();
-                List<string> frendi = new List<string>();
-                await ReaderWriter.AddPerson(Username.Text, Email.Text, filmi, frendi);
-                //await ReaderWriter.UpdatePerson(Username.Text, Email.Text, filmi, frendi);
+                if (password.Text != retypedPassword.Text)
+                {
+                    await DisplayAlert("Error", "Passwords do not match", "OK");
+                    return;
+                }
 
-                await DisplayAlert("Success", "Registration successful", "OK");
-                await Navigation.PushAsync(new LoginPage()); //vrni na login, ko je registracija uspešna
-                                                             //await Navigation.PopAsync();
-                                                             // Firebase
+                var created = await auth.SignUpWithEmailPassword(Email.Text, password.Text);
+                // Console.WriteLine(created);
+                if (created)
+                {
+                    List<string> filmi = new List<string>();
+                    List<string> frendi = new List<string>();
+                    await ReaderWriter.AddPerson(Username.Text, Email.Text, filmi, frendi);
+                    //await ReaderWriter.UpdatePerson(Username.Text, Email.Text, filmi, frendi);
+
+                    await DisplayAlert("Success", "Registration successful", "OK");
+                    await Navigation.PushAsync(new LoginPage()); //vrni na login, ko je registracija uspešna
+                                                                 //await Navigation.PopAsync();
+                                                                 // Firebase
+                }
+                else
+                {
+                    await DisplayAlert("Failed", "Registration unsuccessful, check the credentials", "OK");
+                }
             }
-            else
+            finally
             {
-                await DisplayAlert("Failed", "Registration unsuccessful, check the credentials", "OK");
+                await PopupNavigation.Instance.PopAsync();
             }
         }
         void RedirectToLogin(object sender, EventArgs e)

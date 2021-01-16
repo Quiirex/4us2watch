@@ -13,6 +13,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Windows.Input;
 using _4us2watch.Components;
+using Rg.Plugins.Popup.Services;
 
 namespace _4us2watch.Views
 {
@@ -53,17 +54,24 @@ namespace _4us2watch.Views
                 ++counter;
                 if (MoviesQueue.Count == 0)
                 {
-                    await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, movieList);
-                    await Navigation.PushAsync(new GridPage(user.email));
-                    return;
-                    // Here is where it will end
-                    // The ratings will be implemented when the databse support will be as well
+                    await PopupNavigation.Instance.PushAsync(new BusyPopUp());
+
+                    try
+                    {
+                        await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, movieList);
+                        await Navigation.PushAsync(new GridPage(user.email));
+                        return;
+                    }
+                    finally
+                    {
+                        await PopupNavigation.Instance.PopAsync();
+                    }
                 }
                 ChangeElements();
             }
             catch (Exception e)
             {
-                await DisplayAlert("Error", "There has been an unexcpected ERROR please try again later", "OK");
+                await DisplayAlert("Error", "There has been an unexpected error. Please try again!", "OK");
             }
         }
         async void LikeBtn(object sender, EventArgs args)
@@ -78,17 +86,24 @@ namespace _4us2watch.Views
                 ++counter;
                 if (MoviesQueue.Count == 0)
                 {
-                    await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, movieList);
-                    await Navigation.PushAsync(new GridPage(user.email));
-                    return;
-                    // Here is where it will end
-                    // The ratings will be implemented when the databse support will be as well
+                    await PopupNavigation.Instance.PushAsync(new BusyPopUp());
+
+                    try
+                    {
+                        await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, movieList);
+                        await Navigation.PushAsync(new GridPage(user.email));
+                        return;
+                    }
+                    finally
+                    {
+                        await PopupNavigation.Instance.PopAsync();
+                    }
                 }
                 ChangeElements();
             }
             catch (Exception e)
             {
-                await DisplayAlert("Error", "There has been an unexcpected ERROR please try again later", "OK");
+                await DisplayAlert("Error", "There has been an unexpected error. Please try again!", "OK");
             }
 
 

@@ -1,5 +1,6 @@
 ﻿using _4us2watch.Components;
 using _4us2watch.Models;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,13 +54,22 @@ namespace _4us2watch.Views
         //{
         //    DisplayAlert("Dela", "Implementiraj me", "OK");
         //}
-        void HomeCommand(object sender, EventArgs args)
+        async void HomeCommand(object sender, EventArgs args)
         {
-            if (grid == null)
+            await PopupNavigation.Instance.PushAsync(new BusyPopUp());
+
+            try
             {
-                grid = new GridPage(email1);
+                if (grid == null)
+                {
+                    grid = new GridPage(email1);
+                }
+                App.Current.MainPage = new NavigationPage(grid);
             }
-            App.Current.MainPage = new NavigationPage(grid);
+            finally
+            {
+                await PopupNavigation.Instance.PopAsync();
+            }
         }
         //void FriendsCommand(object sender, EventArgs args)
         //{
@@ -175,7 +185,16 @@ namespace _4us2watch.Views
             bool decision = await DisplayAlert("Update user credentials", "Are you sure you want to update your user credentials?", "Yes", "No");
             if (decision == true)
             {
-                await ReaderWriter.UpdatePerson(Username.Text, Email.Text, user.friends, user.movies);
+                await PopupNavigation.Instance.PushAsync(new BusyPopUp());
+
+                try
+                {
+                    await ReaderWriter.UpdatePerson(Username.Text, Email.Text, user.friends, user.movies);
+                }
+                finally
+                {
+                    await PopupNavigation.Instance.PopAsync();
+                }
             }
             else
             {
@@ -187,9 +206,18 @@ namespace _4us2watch.Views
             bool decision = await DisplayAlert("Recommendation recalibration", "Are you sure you want to recalibrate your movie recommendations?", "Yes", "No");
             if (decision == true)
             {
-                user.movies.Clear();
-                await ReaderWriter.UpdatePerson(Username.Text, Email.Text, user.friends, user.movies);
-                await Navigation.PushAsync(new GenreAssignmentPage(user.email));
+                await PopupNavigation.Instance.PushAsync(new BusyPopUp());
+
+                try
+                {
+                    user.movies.Clear();
+                    await ReaderWriter.UpdatePerson(Username.Text, Email.Text, user.friends, user.movies);
+                    await Navigation.PushAsync(new GenreAssignmentPage(user.email));
+                }
+                finally
+                {
+                    await PopupNavigation.Instance.PopAsync();
+                }
             }
             else
             {

@@ -83,7 +83,7 @@ namespace _4us2watch.Views
             await ReaderWriter.UpdateFriendsList(email, response);
             friendsEntry.Text = "";
             FillFriendsList(Friends);
-            //DisplayAlert("dela", "dela", "ok");
+            await DisplayAlert("Success", "Friend added!", "Close");
         }
 
         private Queue<Movie> FillTheQueueWithMovies(List<string> MovieIds)
@@ -151,8 +151,9 @@ namespace _4us2watch.Views
                     var eventOnTap = new TapGestureRecognizer();
                     eventOnTap.Tapped += async (s, e) =>
                     {
-                        bool decision = await DisplayAlert(friend, "What would you like to do?", "Display movies you both like", "Remove friend");
-                        if (decision == true)
+                        string action = await DisplayActionSheet ("What would you like to do with your friend " + friend + "?", "Cancel", null, "Display movies you both like", "Remove friend");
+                        //bool decision = await DisplayAlert(friend, "What would you like to do?", "Display movies you both like", "Remove friend");
+                        if (action == "Display movies you both like")
                         {
 
                             //Implement display of shared liked movies and refresh the grid
@@ -160,19 +161,19 @@ namespace _4us2watch.Views
                             var friendMovies = FillTheQueueWithMovies(await ReaderWriter.GetUserMoviesByUsername(friend)).ToList();
 
                             // Two lists of movie rec. (friendMovies, UserMovies) what now?
-                            
+
                             UserMovies.AddRange(friendMovies);
                             var avgOfList = UserMovies.Select(x => x.Popularity).DefaultIfEmpty(0).Average();
                             var finalList = UserMovies.Where(x => x.Popularity > avgOfList).ToList();
                             MovieGrid.Children.Clear();
-                            
+
                             RefreshGrid(MovieGrid, finalList);
                         }
-                        else
+                        else if (action == "Remove friend")
                         {
                             user.friends.Remove(friend);
                             await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, user.movies);
-                            
+
                             // To remove from the list once its removed from the databse
                             var button = (BindableObject)s;
                             var row = Grid.GetRow(button);
@@ -181,16 +182,21 @@ namespace _4us2watch.Views
                             //assuming the image is in column 1
                             var result = grid.Children.Where(c => Grid.GetRow(c) == row && Grid.GetColumn(c) == column);
                             var resultImg = grid.Children.Where(x => Grid.GetRow(x) == row && Grid.GetColumn(x) == column - 1);
-                            foreach(var label in result)
+                            foreach (var label in result)
                             {
                                 grid.Children.Remove(label);
                                 break;
                             }
-                            foreach(var image in resultImg)
+                            foreach (var image in resultImg)
                             {
                                 grid.Children.Remove(image);
                                 break;
                             }
+                            await DisplayAlert("Success", "User successfully removed from your friends list", "Close");
+                        }
+                        else
+                        {
+                            return;
                         }
                     };
                     lbl.GestureRecognizers.Add(eventOnTap);
@@ -203,7 +209,7 @@ namespace _4us2watch.Views
             }
             catch (Exception e)
             {
-                await DisplayAlert("Exception", e.Message, "OKEJ");
+                await DisplayAlert("Exception", e.Message, "Ok");
             }
         }
         private async void CreateAndFillGrid(Grid grid)

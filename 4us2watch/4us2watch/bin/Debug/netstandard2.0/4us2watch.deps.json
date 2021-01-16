@@ -11,6 +11,7 @@
         "dependencies": {
           "FirebaseDatabase.net": "4.0.4",
           "NETStandard.Library": "2.0.3",
+          "Rg.Plugins.Popup": "2.0.0.10",
           "Xamarin.Essentials": "1.6.0",
           "Xamarin.Firebase.Core": "60.1142.1",
           "Xamarin.Forms": "4.8.0.1821",
@@ -65,6 +66,17 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "11.0.0.0",
             "fileVersion": "11.0.2.21924"
+          }
+        }
+      },
+      "Rg.Plugins.Popup/2.0.0.10": {
+        "dependencies": {
+          "Xamarin.Forms": "4.8.0.1821"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Rg.Plugins.Popup.dll": {
+            "assemblyVersion": "2.0.0.10",
+            "fileVersion": "2.0.0.10"
           }
         }
       },
@@ -239,6 +251,13 @@
       "sha512": "sha512-IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
       "path": "newtonsoft.json/11.0.2",
       "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
+    },
+    "Rg.Plugins.Popup/2.0.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zsAM5InbgG41MqAuGIRiox7+oDMVWTcKLpO39UCRQjZQEblkDsjIvxBIBALWHCBP6F/xf9CrPlyXOzQQGYVcEA==",
+      "path": "rg.plugins.popup/2.0.0.10",
+      "hashPath": "rg.plugins.popup.2.0.0.10.nupkg.sha512"
     },
     "System.IO/4.3.0": {
       "type": "package",

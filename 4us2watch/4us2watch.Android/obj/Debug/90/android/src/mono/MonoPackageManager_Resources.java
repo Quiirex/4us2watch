@@ -9,6 +9,7 @@ public class MonoPackageManager_Resources {
 		"LiteDB.dll",
 		"MoreLinq.dll",
 		"Newtonsoft.Json.dll",
+		"Rg.Plugins.Popup.dll",
 		"System.Reactive.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",

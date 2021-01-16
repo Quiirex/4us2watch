@@ -17,6 +17,7 @@
   <ItemGroup>
     <PackageReference Include="FirebaseDatabase.net" Version="4.0.4" />
     <PackageReference Include="morelinq" Version="3.3.2" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.10" />
     <PackageReference Include="Xamarin.Firebase.Core" Version="60.1142.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1821" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.0" />
@@ -29,6 +30,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\BusyPopUp.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\GenreAssignmentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

@@ -8,16 +8,16 @@
         <Image Source="novilogo.png" Margin="80,40,100,0" WidthRequest="150" HeightRequest="250"/>
         <!--<Label VerticalOptions="Center" HorizontalOptions="Center" Text="4us2watch" FontSize="50" FontAttributes="Bold" TextColor="Black"/>-->
         <!--<Label FontFamily="Montserrat" VerticalOptions="Center" HorizontalOptions="Center" Text="Welcome" FontSize="40" FontAttributes="Bold" TextColor="Black" Margin="50,30,50,0"/>-->
-        <Label TextColor="Black" VerticalOptions="Center" Margin="50,0,50,0" HorizontalTextAlignment="Center" FontSize="20">
+        <Label TextColor="Black" VerticalOptions="Center" Margin="50,10,50,0" HorizontalTextAlignment="Center" FontSize="20">
             <Label.Text>
                 <!--Landing page welcome text-->
                 Struggle finding movies with your date? Your friends? This is the solution for you!
             </Label.Text>
         </Label>
-        <Button BorderWidth="1" BorderColor="Black" Text="Login" VerticalOptions="Center" MinimumHeightRequest="50" MinimumWidthRequest="20" Margin="50,20,50,0" x:Name="Login" Clicked="Login_Clicked" CornerRadius="20" BackgroundColor="White"/>
+        <Button BorderWidth="1" BorderColor="Black" Text="Login" VerticalOptions="Center" MinimumHeightRequest="50" MinimumWidthRequest="20" Margin="50,80,50,0" x:Name="Login" Clicked="Login_Clicked" CornerRadius="20" BackgroundColor="White"/>
         <Button BorderWidth="1" BorderColor="Black" Text="Register" VerticalOptions="Center" MinimumHeightRequest="50" MinimumWidthRequest="20" Margin="50,10,50,0" x:Name="Register" Clicked="Register_Clicked" CornerRadius="20" BackgroundColor="White"/>
 
-        <Image Margin="0,20,0,5" HeightRequest="37" Source="googleLogin.jpg">
+        <!--<Image Margin="0,20,0,5" HeightRequest="37" Source="googleLogin.jpg">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="googleLogin" />
             </Image.GestureRecognizers>
@@ -26,7 +26,7 @@
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="facebookLogin" />
             </Image.GestureRecognizers>
-        </Image>
+        </Image>-->
 
         <!--<StackLayout HorizontalOptions="CenterAndExpand">
             <Label HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Margin="50,0,50,0">

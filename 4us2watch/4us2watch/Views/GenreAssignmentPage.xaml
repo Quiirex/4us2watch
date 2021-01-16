@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="_4us2watch.Views.GenreAssignmentPage">
-    <ContentPage.Content>
+    <ContentPage.Content BackgroundColor="White">
         <StackLayout Margin="20,10,20,0">
             <Label x:Name="Setup"
                    Text=""

@@ -158,9 +158,28 @@ namespace _4us2watch.Views
                         else
                         {
                             user.friends.Remove(friend);
-                            await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, user.movies);//frenda izbriše iz podatkovne baze vendar ne iz lista, nič ne dela.
-                            //await DisplayAlert("Rabim event handler", "Implementiraj me", "OK");
-                            //Implement the function to remove a friend
+                            await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, user.movies);
+                            
+                            // To remove from the list once its removed from the databse
+                            var button = (BindableObject)s;
+                            var row = Grid.GetRow(button);
+                            var column = Grid.GetColumn(button);
+                            var getgrid = button as Grid;
+                            //assuming the image is in column 1
+                            var result = grid.Children.Where(c => Grid.GetRow(c) == row && Grid.GetColumn(c) == column);
+                            var resultImg = grid.Children.Where(x => Grid.GetRow(x) == row && Grid.GetColumn(x) == column - 1);
+                            foreach(var label in result)
+                            {
+                                grid.Children.Remove(label);
+                                break;
+                            }
+                            foreach(var image in resultImg)
+                            {
+                                grid.Children.Remove(image);
+                                break;
+                            }
+
+                            
                         }
                     };
                     lbl.GestureRecognizers.Add(eventOnTap);
@@ -176,6 +195,9 @@ namespace _4us2watch.Views
                 await DisplayAlert("Exception", e.Message, "OKEJ");
             }
         }
+
+        
+
         private async void CreateAndFillGrid(Grid grid)
         {
             // First we need to get the movies the user liked

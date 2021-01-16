@@ -187,7 +187,9 @@ namespace _4us2watch.Views
             bool decision = await DisplayAlert("Recommendation recalibration", "Are you sure you want to recalibrate your movie recommendations?", "Yes", "No");
             if (decision == true)
             {
-                //Implementiraj rekalibracijo
+                user.movies.Clear();
+                await ReaderWriter.UpdatePerson(Username.Text, Email.Text, user.friends, user.movies);
+                await Navigation.PushAsync(new GenreAssignmentPage(user.email));
             }
             else
             {

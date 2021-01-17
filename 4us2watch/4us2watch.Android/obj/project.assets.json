@@ -2988,24 +2988,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tadej\\.nuget\\packages\\": {},
+    "C:\\Users\\j6bou\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch.Android\\4us2watch.Android.csproj",
+      "projectUniqueName": "C:\\Users\\j6bou\\Desktop\\GH\\4us2watch\\4us2watch\\4us2watch.Android\\4us2watch.Android.csproj",
       "projectName": "4us2watch.Android",
-      "projectPath": "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch.Android\\4us2watch.Android.csproj",
-      "packagesPath": "C:\\Users\\tadej\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch.Android\\obj\\",
+      "projectPath": "C:\\Users\\j6bou\\Desktop\\GH\\4us2watch\\4us2watch\\4us2watch.Android\\4us2watch.Android.csproj",
+      "packagesPath": "C:\\Users\\j6bou\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\j6bou\\Desktop\\GH\\4us2watch\\4us2watch\\4us2watch.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\tadej\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\j6bou\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -3019,8 +3019,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj": {
-              "projectPath": "C:\\Users\\tadej\\Documents\\GitHub\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj"
+            "C:\\Users\\j6bou\\Desktop\\GH\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj": {
+              "projectPath": "C:\\Users\\j6bou\\Desktop\\GH\\4us2watch\\4us2watch\\4us2watch\\4us2watch.csproj"
             }
           }
         }

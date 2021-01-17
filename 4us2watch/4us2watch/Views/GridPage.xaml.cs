@@ -14,6 +14,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 using MoreLinq;
+using Rg.Plugins.Popup.Services;
 
 namespace _4us2watch.Views
 {
@@ -33,7 +34,7 @@ namespace _4us2watch.Views
             NavigationPage.SetHasNavigationBar(this, false);
             BindingContext = this;
             //_menuItemsView = new[] { (View)LabelSlikaTest, LabelTest, LabelSlikaDvaTest, LabelDvaTest };
-            CreateAndFillGrid(MovieGrid,0);
+            CreateAndFillGrid(MovieGrid, 0);
             FillFriendsList(Friends);
         }
         private const string ExpandAnimationName = "ExpandAnimation";
@@ -151,48 +152,63 @@ namespace _4us2watch.Views
                     var eventOnTap = new TapGestureRecognizer();
                     eventOnTap.Tapped += async (s, e) =>
                     {
-                        string action = await DisplayActionSheet ("What would you like to do with your friend " + friend + "?", "Cancel", null, "Display movies you both like", "Remove friend");
+                        string action = await DisplayActionSheet("What would you like to do with your friend " + friend + "?", "Cancel", null, "Display movies you both like", "Remove friend");
                         //bool decision = await DisplayAlert(friend, "What would you like to do?", "Display movies you both like", "Remove friend");
                         if (action == "Display movies you both like")
                         {
+                            await PopupNavigation.Instance.PushAsync(new BusyPopUp());
 
-                            //Implement display of shared liked movies and refresh the grid
-                            // OUR LAST CHUNK OF CODE
-                            var friendMovies = FillTheQueueWithMovies(await ReaderWriter.GetUserMoviesByUsername(friend)).ToList();
+                            try
+                            {
+                                var friendMovies = FillTheQueueWithMovies(await ReaderWriter.GetUserMoviesByUsername(friend)).ToList();
 
-                            // Two lists of movie rec. (friendMovies, UserMovies) what now?
+                                // Two lists of movie rec. (friendMovies, UserMovies) what now?
 
-                            UserMovies.AddRange(friendMovies);
-                            var avgOfList = UserMovies.Select(x => x.Popularity).DefaultIfEmpty(0).Average();
-                            var finalList = UserMovies.Where(x => x.Popularity > avgOfList).ToList();
-                            MovieGrid.Children.Clear();
+                                UserMovies.AddRange(friendMovies);
+                                var avgOfList = UserMovies.Select(x => x.Popularity).DefaultIfEmpty(0).Average();
+                                var finalList = UserMovies.Where(x => x.Popularity > avgOfList).ToList();
+                                MovieGrid.Children.Clear();
 
-                            RefreshGrid(MovieGrid, finalList);
+                                RefreshGrid(MovieGrid, finalList);
+                            }
+                            finally
+                            {
+                                await PopupNavigation.Instance.PopAsync();
+                            }
                         }
                         else if (action == "Remove friend")
                         {
-                            user.friends.Remove(friend);
-                            await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, user.movies);
+                            await PopupNavigation.Instance.PushAsync(new BusyPopUp());
 
-                            // To remove from the list once its removed from the databse
-                            var button = (BindableObject)s;
-                            var row = Grid.GetRow(button);
-                            var column = Grid.GetColumn(button);
-                            var getgrid = button as Grid;
-                            //assuming the image is in column 1
-                            var result = grid.Children.Where(c => Grid.GetRow(c) == row && Grid.GetColumn(c) == column);
-                            var resultImg = grid.Children.Where(x => Grid.GetRow(x) == row && Grid.GetColumn(x) == column - 1);
-                            foreach (var label in result)
+                            try
                             {
-                                grid.Children.Remove(label);
-                                break;
+                                user.friends.Remove(friend);
+                                await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, user.movies);
+
+                                // To remove from the list once its removed from the databse
+                                var button = (BindableObject)s;
+                                var row = Grid.GetRow(button);
+                                var column = Grid.GetColumn(button);
+                                var getgrid = button as Grid;
+                                //assuming the image is in column 1
+                                var result = grid.Children.Where(c => Grid.GetRow(c) == row && Grid.GetColumn(c) == column);
+                                var resultImg = grid.Children.Where(x => Grid.GetRow(x) == row && Grid.GetColumn(x) == column - 1);
+                                foreach (var label in result)
+                                {
+                                    grid.Children.Remove(label);
+                                    break;
+                                }
+                                foreach (var image in resultImg)
+                                {
+                                    grid.Children.Remove(image);
+                                    break;
+                                }
+                                await DisplayAlert("Success", "User successfully removed from your friends list", "Close");
                             }
-                            foreach (var image in resultImg)
+                            finally
                             {
-                                grid.Children.Remove(image);
-                                break;
+                                await PopupNavigation.Instance.PopAsync();
                             }
-                            await DisplayAlert("Success", "User successfully removed from your friends list", "Close");
                         }
                         else
                         {

@@ -14,9 +14,19 @@
                 Struggle finding movies with your date? Your friends? This is the solution for you!
             </Label.Text>
         </Label>
-        <Button BorderWidth="1" BorderColor="Black" Text="Login" VerticalOptions="Center" MinimumHeightRequest="50" MinimumWidthRequest="20" Margin="50,80,50,0" x:Name="Login" Clicked="Login_Clicked" CornerRadius="20" BackgroundColor="White"/>
+        <Button BorderWidth="1" BorderColor="Black" Text="Login" VerticalOptions="Center" MinimumHeightRequest="50" MinimumWidthRequest="20" Margin="50,50,50,0" x:Name="Login" Clicked="Login_Clicked" CornerRadius="20" BackgroundColor="White"/>
         <Button BorderWidth="1" BorderColor="Black" Text="Register" VerticalOptions="Center" MinimumHeightRequest="50" MinimumWidthRequest="20" Margin="50,10,50,0" x:Name="Register" Clicked="Register_Clicked" CornerRadius="20" BackgroundColor="White"/>
-
+        <Label HorizontalOptions="Center" Margin="50,20,50,0">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="About us" TextColor="Blue" FontSize="Medium" TextDecorations="Underline">
+                        <Span.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="AboutUsClicked" />
+                        </Span.GestureRecognizers>
+                    </Span>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
         <!--<Image Margin="0,20,0,5" HeightRequest="37" Source="googleLogin.jpg">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="googleLogin" />

@@ -27,6 +27,11 @@ namespace _4us2watch
         {
             await Navigation.PushAsync(new RegistrationPage());
         }
+
+        private async void AboutUsClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AboutPage());
+        }
         //void googleLogin(object sender, EventArgs e)
         //{
         //    DisplayAlert("Rabim event handler", "Implementiraj me", "OK");

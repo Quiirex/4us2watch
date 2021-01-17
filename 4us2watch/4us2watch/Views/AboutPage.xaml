@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_4us2watch.Views.AboutPage">
+    <ContentPage.Content BackgroundColor="White">
+        <StackLayout VerticalOptions="Center">
+            <Label FontSize="16" TextColor="Black" Text="Razvoj mobilnih rešitev"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label FontSize="16" TextColor="Black" Text="ITK (VS)"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label FontSize="16" TextColor="Black" Text="4us2watch - Version 1.0"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label FontSize="16" TextColor="Black" Text="2020 © Luka Mlinarič Fekonja, Rok Tkalčič, Tadej Korošec"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

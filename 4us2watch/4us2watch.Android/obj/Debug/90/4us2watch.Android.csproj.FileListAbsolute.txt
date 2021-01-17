@@ -1668,3 +1668,9 @@ C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\and
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\android\assets\Rg.Plugins.Popup.pdb
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\android\src\crc643dd37f507f3d9710\PopupPageRenderer.java
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\android\src\crc64fdbeeba101bd56dc\RgGestureDetectorListener.java
+C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\android\assets\MoreLinq.dll
+C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\android\assets\MoreLinq.pdb
+C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\android\assets\Rg.Plugins.Popup.dll
+C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\android\assets\Rg.Plugins.Popup.pdb
+C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\android\src\crc643dd37f507f3d9710\PopupPageRenderer.java
+C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch.Android\obj\Debug\90\android\src\crc64fdbeeba101bd56dc\RgGestureDetectorListener.java

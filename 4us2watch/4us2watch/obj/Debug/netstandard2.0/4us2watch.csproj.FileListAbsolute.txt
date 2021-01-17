@@ -55,3 +55,4 @@ C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstand
 C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\4us2watch.csproj.CoreCompileInputs.cache
 C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\Views\BusyPopUp.xaml.g.cs
+C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\Views\BusyPopUp.xaml.g.cs

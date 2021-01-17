@@ -20,6 +20,7 @@ namespace _4us2watch.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GenreAssignmentPage : ContentPage
     {
+        int likecounter = 0;
         int counter = 1;
         // Main api for movies
         public static string MainApi = @"https://api.themoviedb.org/3/movie/popular?api_key=9d2bff12ed955c7f1f74b83187f188ae&language=en-US&page=";
@@ -29,6 +30,7 @@ namespace _4us2watch.Views
         public List<string> movieList = new List<string>();
         public Queue<Movie> MoviesQueue;
         private Movie CurrentMovie;
+        GenreAssignmentPage restart = null;
         public GenreAssignmentPage(string text)
         {
             InitializeComponent();
@@ -58,9 +60,40 @@ namespace _4us2watch.Views
 
                     try
                     {
-                        await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, movieList);
-                        await Navigation.PushAsync(new GridPage(user.email));
-                        return;
+                        if(likecounter == 0)
+                        {
+                            await DisplayAlert("Thats awkward", "You didn't like any movies, well time to start over with fresh movies.", "OK");
+                            if (restart == null)
+                            {
+                                restart = new GenreAssignmentPage(user.email);
+                            }
+                            App.Current.MainPage = new NavigationPage(restart);
+
+                        }
+                        else if(likecounter < 10)
+                        {
+                            bool decision = await DisplayAlert("Thats awkward", "You only liked less than 10 movies would you like to start over?", "Yes", "No");
+                            if (decision == true)
+                            {
+                                if(restart == null)
+                                {
+                                    restart = new GenreAssignmentPage(user.email);   
+                                }
+                                App.Current.MainPage = new NavigationPage(restart);
+                            }
+                            else
+                            {
+                                await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, movieList);
+                                await Navigation.PushAsync(new GridPage(user.email));
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, movieList);
+                            await Navigation.PushAsync(new GridPage(user.email));
+                            return;
+                        }
                     }
                     finally
                     {
@@ -84,15 +117,32 @@ namespace _4us2watch.Views
             {
                 movieList.Add(CurrentMovie.idMovie.ToString());
                 ++counter;
+                likecounter++;
                 if (MoviesQueue.Count == 0)
                 {
                     await PopupNavigation.Instance.PushAsync(new BusyPopUp());
 
                     try
                     {
-                        await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, movieList);
-                        await Navigation.PushAsync(new GridPage(user.email));
-                        return;
+                        if (likecounter > 10)
+                        {
+                            bool decision = await DisplayAlert("Thats awkward", "You only liked less than 10 movies would you like to start over?", "Yes", "No");
+                            if (decision == true)
+                            {
+                                if (restart == null)
+                                {
+                                    restart = new GenreAssignmentPage(user.email);
+                                }
+                                App.Current.MainPage = new NavigationPage(restart);
+                            }
+                            else
+                            {
+                                await ReaderWriter.UpdatePerson(user.username, user.email, user.friends, movieList);
+                                await Navigation.PushAsync(new GridPage(user.email));
+                                return;
+                            }
+                        }
+
                     }
                     finally
                     {

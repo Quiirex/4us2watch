@@ -350,9 +350,26 @@ namespace _4us2watch.Views
                 //nič
             };
         }
-        void HomeCommand(object sender, EventArgs args)
+        async void HomeCommand(object sender, EventArgs args)
         {
-            //Pusti
+            bool decision = await DisplayAlert("Refresh", "Are you sure you want to refresh your recommendations?", "Yes", "No");
+            if (decision == true)
+            {
+                await PopupNavigation.Instance.PushAsync(new BusyPopUp());
+
+                try
+                {
+                    CreateAndFillGrid(MovieGrid, 0);
+                }
+                finally
+                {
+                    await PopupNavigation.Instance.PopAsync();
+                }
+            }
+            else
+            {
+                //nič
+            };
         }
         void FriendsCommand(object sender, EventArgs args)
         {
@@ -366,21 +383,57 @@ namespace _4us2watch.Views
             }
             App.Current.MainPage = new NavigationPage(profile);
         }
-        void AdventureCommand(object sender, EventArgs args)//Adventure
+        async void AdventureCommand(object sender, EventArgs args)//Adventure
         {
-            CreateAndFillGrid(MovieGrid, 12);
+            await PopupNavigation.Instance.PushAsync(new BusyPopUp());
+
+            try
+            {
+                CreateAndFillGrid(MovieGrid, 12);
+            }
+            finally
+            {
+                await PopupNavigation.Instance.PopAsync();
+            }
         }
-        void ActionCommand(object sender, EventArgs args)//Action
+        async void ActionCommand(object sender, EventArgs args)//Action
         {
-            CreateAndFillGrid(MovieGrid, 28);
+            await PopupNavigation.Instance.PushAsync(new BusyPopUp());
+
+            try
+            {
+                CreateAndFillGrid(MovieGrid, 28);
+            }
+            finally
+            {
+                await PopupNavigation.Instance.PopAsync();
+            }
         }
-        void ComedyCommand(object sender, EventArgs args)//Comedy
+        async void ComedyCommand(object sender, EventArgs args)//Comedy
         {
-            CreateAndFillGrid(MovieGrid, 35);
+            await PopupNavigation.Instance.PushAsync(new BusyPopUp());
+
+            try
+            {
+                CreateAndFillGrid(MovieGrid, 35);
+            }
+            finally
+            {
+                await PopupNavigation.Instance.PopAsync();
+            }
         }
-        void HorrorCommand(object sender, EventArgs args)//Horror
+        async void HorrorCommand(object sender, EventArgs args)//Horror
         {
-            CreateAndFillGrid(MovieGrid, 27);
+            await PopupNavigation.Instance.PushAsync(new BusyPopUp());
+
+            try
+            {
+                CreateAndFillGrid(MovieGrid, 27);
+            }
+            finally
+            {
+                await PopupNavigation.Instance.PopAsync();
+            }
         }
 
         public async void OnShowMenu()

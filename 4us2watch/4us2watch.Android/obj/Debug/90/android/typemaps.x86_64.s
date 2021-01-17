@@ -18403,9 +18403,9 @@ map_java_to_managed:
 	.quad	.L.java_type_name.1706
 	.quad	0
 	.quad	.L.java_type_name.1707
-	.quad	.L.managed_type_name.1920
+	.quad	0
 	.quad	.L.java_type_name.1708
-	.quad	.L.managed_type_name.1919
+	.quad	0
 	.quad	.L.java_type_name.1709
 	.quad	.L.managed_type_name.1918
 	.quad	.L.java_type_name.1710
@@ -23093,7 +23093,7 @@ map_java_to_managed:
 	.quad	.L.java_type_name.4051
 	.quad	0
 	.quad	.L.java_type_name.4052
-	.quad	.L.managed_type_name.4411
+	.quad	0
 	.quad	.L.java_type_name.4053
 	.quad	.L.managed_type_name.4412
 	.quad	.L.java_type_name.4054
@@ -23883,7 +23883,7 @@ map_java_to_managed:
 	.quad	.L.java_type_name.4446
 	.quad	.L.managed_type_name.4853
 	.quad	.L.java_type_name.4447
-	.quad	0
+	.quad	.L.managed_type_name.4864
 	.quad	.L.java_type_name.4448
 	.quad	.L.managed_type_name.4863
 	.quad	.L.java_type_name.4449
@@ -23909,7 +23909,7 @@ map_java_to_managed:
 	.quad	.L.java_type_name.4459
 	.quad	.L.managed_type_name.4869
 	.quad	.L.java_type_name.4460
-	.quad	.L.managed_type_name.4870
+	.quad	0
 	.quad	.L.java_type_name.4461
 	.quad	0
 	.quad	.L.java_type_name.4462
@@ -23921,9 +23921,9 @@ map_java_to_managed:
 	.quad	.L.java_type_name.4465
 	.quad	0
 	.quad	.L.java_type_name.4466
-	.quad	.L.managed_type_name.4877
+	.quad	0
 	.quad	.L.java_type_name.4467
-	.quad	.L.managed_type_name.4878
+	.quad	0
 	.quad	.L.java_type_name.4468
 	.quad	.L.managed_type_name.4879
 	.quad	.L.java_type_name.4469
@@ -27079,7 +27079,7 @@ map_java_to_managed:
 	.quad	.L.java_type_name.6044
 	.quad	.L.managed_type_name.6121
 	.quad	.L.java_type_name.6045
-	.quad	0
+	.quad	.L.managed_type_name.2571
 	.quad	.L.java_type_name.6046
 	.quad	.L.managed_type_name.2572
 	.quad	.L.java_type_name.6047
@@ -27103,7 +27103,7 @@ map_java_to_managed:
 	.quad	.L.java_type_name.6056
 	.quad	.L.managed_type_name.2564
 	.quad	.L.java_type_name.6057
-	.quad	0
+	.quad	.L.managed_type_name.2566
 	.quad	.L.java_type_name.6058
 	.quad	.L.managed_type_name.2565
 	.quad	.L.java_type_name.6059
@@ -27163,7 +27163,7 @@ map_java_to_managed:
 	.quad	.L.java_type_name.6086
 	.quad	.L.managed_type_name.6316
 	.quad	.L.java_type_name.6087
-	.quad	0
+	.quad	.L.managed_type_name.2569
 	.quad	.L.java_type_name.6088
 	.quad	.L.managed_type_name.2567
 	.quad	.L.java_type_name.6089
@@ -27173,7 +27173,7 @@ map_java_to_managed:
 	.quad	.L.java_type_name.6091
 	.quad	.L.managed_type_name.2577
 	.quad	.L.java_type_name.6092
-	.quad	0
+	.quad	.L.managed_type_name.2576
 	.quad	.L.java_type_name.6093
 	.quad	.L.managed_type_name.6317
 	.quad	.L.java_type_name.6094

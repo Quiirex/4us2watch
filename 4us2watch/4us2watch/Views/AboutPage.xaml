@@ -13,7 +13,7 @@
             <Label FontSize="16" TextColor="Black" Text="4us2watch - Version 1.0"
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" />
-            <Label FontSize="16" TextColor="Black" Text="2020 © Luka Mlinarič Fekonja, Rok Tkalčič, Tadej Korošec"
+            <Label FontSize="16" TextColor="Black" Text="2021 © Luka Mlinarič Fekonja, Rok Tkalčič, Tadej Korošec"
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" />
         </StackLayout>

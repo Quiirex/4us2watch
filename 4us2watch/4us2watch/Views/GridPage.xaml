@@ -221,44 +221,44 @@
                             <ColumnDefinition />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Text="Movies"
+                        <Label Grid.Column="0" Text="Adventure"
                                FontSize="16"
                                FontAttributes="Bold"
                                TextColor="Black"
                                HorizontalTextAlignment="Start"
                                Padding="30,0,0,0">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="MoviesCommand" />
+                                <TapGestureRecognizer Tapped="AdventureCommand" />
                             </Label.GestureRecognizers>
                         </Label>
-                        <Label Grid.Column="1" Text="TV Series"
+                        <Label Grid.Column="1" Text="Action"
                                FontSize="16"
                                TextColor="Black"
                                FontAttributes="Bold"
                                HorizontalTextAlignment="Center"
                                Padding="-30,0,0,0">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="TVSeriesCommand" />
+                                <TapGestureRecognizer Tapped="ActionCommand" />
                             </Label.GestureRecognizers>
                         </Label>
-                        <Label Grid.Column="2" Text="Documentaries"
+                        <Label Grid.Column="2" Text="Comedy"
                                FontSize="16"
                                TextColor="Black"
                                FontAttributes="Bold"
                                HorizontalTextAlignment="Center"
                                Padding="-10,0,0,0">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="DocumentariesCommand" />
+                                <TapGestureRecognizer Tapped="ComedyCommand" />
                             </Label.GestureRecognizers>
                         </Label>
-                        <Label Grid.Column="3" Text="Anime"
+                        <Label Grid.Column="3" Text="Horror"
                                FontSize="16"
                                TextColor="Black"
                                FontAttributes="Bold"
                                HorizontalTextAlignment="End"
                                Padding="0,0,30,0">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="AnimeCommand" />
+                                <TapGestureRecognizer Tapped="HorrorCommand" />
                             </Label.GestureRecognizers>
                         </Label>
                     </Grid>

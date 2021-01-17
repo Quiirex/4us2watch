@@ -33,7 +33,7 @@ namespace _4us2watch.Views
             NavigationPage.SetHasNavigationBar(this, false);
             BindingContext = this;
             //_menuItemsView = new[] { (View)LabelSlikaTest, LabelTest, LabelSlikaDvaTest, LabelDvaTest };
-            CreateAndFillGrid(MovieGrid);
+            CreateAndFillGrid(MovieGrid,0);
             FillFriendsList(Friends);
         }
         private const string ExpandAnimationName = "ExpandAnimation";
@@ -212,13 +212,25 @@ namespace _4us2watch.Views
                 await DisplayAlert("Exception", e.Message, "Ok");
             }
         }
-        private async void CreateAndFillGrid(Grid grid)
+        private async void CreateAndFillGrid(Grid grid, int moviegenre)
         {
+
             // First we need to get the movies the user liked
             var userMovies = await ReaderWriter.GetUserMovies(email);
             var movieQueue = FillTheQueueWithMovies(userMovies);
             UserMovies = movieQueue.ToList();
             movieQueue = new Queue<Movie>(movieQueue.Where(x => x.ImagePath != null));
+
+            if (moviegenre != 0)
+            {
+                if (movieQueue.Any(x => x.Genre_Ids.Contains(moviegenre)))
+                {
+                    movieQueue = new Queue<Movie>(movieQueue.Where(x => x.Genre_Ids.Contains(moviegenre)));
+                }
+            }
+
+
+
             var fixedMovieQueueCount = movieQueue.Count;
             for (int i = 0; i < fixedMovieQueueCount / 2 + fixedMovieQueueCount % 2; i++)
             {
@@ -339,21 +351,21 @@ namespace _4us2watch.Views
             }
             App.Current.MainPage = new NavigationPage(profile);
         }
-        void MoviesCommand(object sender, EventArgs args)
+        void AdventureCommand(object sender, EventArgs args)//Adventure
         {
-            DisplayAlert("Rabim event handler", "Implementiraj me", "OK");
+            CreateAndFillGrid(MovieGrid, 12);
         }
-        void TVSeriesCommand(object sender, EventArgs args)
+        void ActionCommand(object sender, EventArgs args)//Action
         {
-            DisplayAlert("Rabim event handler", "Implementiraj me", "OK");
+            CreateAndFillGrid(MovieGrid, 28);
         }
-        void DocumentariesCommand(object sender, EventArgs args)
+        void ComedyCommand(object sender, EventArgs args)//Comedy
         {
-            DisplayAlert("Rabim event handler", "Implementiraj me", "OK");
+            CreateAndFillGrid(MovieGrid, 35);
         }
-        void AnimeCommand(object sender, EventArgs args)
+        void HorrorCommand(object sender, EventArgs args)//Horror
         {
-            DisplayAlert("Rabim event handler", "Implementiraj me", "OK");
+            CreateAndFillGrid(MovieGrid, 27);
         }
 
         public async void OnShowMenu()

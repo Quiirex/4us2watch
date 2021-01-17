@@ -164,9 +164,9 @@ namespace _4us2watch.Views
 
                                 // Two lists of movie rec. (friendMovies, UserMovies) what now?
 
-                                UserMovies.AddRange(friendMovies);
-                                var avgOfList = UserMovies.Select(x => x.Popularity).DefaultIfEmpty(0).Average();
-                                var finalList = UserMovies.Where(x => x.Popularity > avgOfList).ToList();
+                                var commonList = friendMovies.Concat(UserMovies).ToList();
+                                var avgOfList = commonList.Select(x => x.Vote_Average).DefaultIfEmpty(0).Average();
+                                var finalList = commonList.Where(x => x.Vote_Average > avgOfList).ToList();
                                 MovieGrid.Children.Clear();
 
                                 RefreshGrid(MovieGrid, finalList);
@@ -191,7 +191,7 @@ namespace _4us2watch.Views
                                 var column = Grid.GetColumn(button);
                                 var getgrid = button as Grid;
                                 //assuming the image is in column 1
-                                var result = grid.Children.Where(c => Grid.GetRow(c) == row && Grid.GetColumn(c) == column);
+                                var result = grid.Children.Where(x => Grid.GetRow(x) == row && Grid.GetColumn(x) == column);
                                 var resultImg = grid.Children.Where(x => Grid.GetRow(x) == row && Grid.GetColumn(x) == column - 1);
                                 foreach (var label in result)
                                 {
@@ -235,7 +235,7 @@ namespace _4us2watch.Views
             var userMovies = await ReaderWriter.GetUserMovies(email);
             var movieQueue = FillTheQueueWithMovies(userMovies);
             UserMovies = movieQueue.ToList();
-            movieQueue = new Queue<Movie>(movieQueue.Where(x => x.ImagePath != null));
+            movieQueue = new Queue<Movie>(movieQueue.Where(x => x.ImagePath != null).OrderBy(x => Guid.NewGuid()));
 
             if (moviegenre != 0)
             {
@@ -244,8 +244,6 @@ namespace _4us2watch.Views
                     movieQueue = new Queue<Movie>(movieQueue.Where(x => x.Genre_Ids.Contains(moviegenre)));
                 }
             }
-
-
 
             var fixedMovieQueueCount = movieQueue.Count;
             for (int i = 0; i < fixedMovieQueueCount / 2 + fixedMovieQueueCount % 2; i++)
@@ -286,7 +284,8 @@ namespace _4us2watch.Views
         private void RefreshGrid(Grid grid, List<Movie> movies)
         {
             var mainQueue = new Queue<Movie>(movies);
-            mainQueue = new Queue<Movie>(mainQueue.Where(x => x.ImagePath != null));
+            // movieQueue = new Queue<Movie>(movieQueue.Where(x => x.ImagePath != null).OrderBy(x => Guid.NewGuid()));
+            mainQueue = new Queue<Movie>(mainQueue.Where(x => x.ImagePath != null).OrderBy(x => Guid.NewGuid()));
             var fixedMovieQueueCount = mainQueue.Count;
 
             for (int i = 0; i < fixedMovieQueueCount / 2 + fixedMovieQueueCount % 2; i++)

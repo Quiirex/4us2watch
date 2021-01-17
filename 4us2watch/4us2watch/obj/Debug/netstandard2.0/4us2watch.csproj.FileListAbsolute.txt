@@ -58,3 +58,5 @@ C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0
 C:\Users\tadej\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\Views\BusyPopUp.xaml.g.cs
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\4us2watch.csprojAssemblyReference.cache
 C:\Users\j6bou\Desktop\GH\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
+C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
+C:\Users\PunisherTFB\Documents\GitHub\4us2watch\4us2watch\4us2watch\obj\Debug\netstandard2.0\Views\BusyPopUp.xaml.g.cs

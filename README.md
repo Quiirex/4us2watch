@@ -12,7 +12,7 @@
   <h1 align="center">4us2watch</h1>
 
   <p align="center">
-    Android mobile application for movie and tv series suggestions amidst users.
+    Android mobile application for movie suggestions amidst users.
   <br/>
   <br/>
     <a href="https://github.com/Quiirex/4us2watch/issues">Report Bug</a>

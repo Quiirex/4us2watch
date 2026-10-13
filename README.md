@@ -5,32 +5,17 @@
 
 <br />
 <p align="center">
-  <a href="https://github.com/Quiirex/4us2watch">
-    <img src="https://cdn.discordapp.com/attachments/773448163368370186/799648340027244544/Logo.png" alt="Logo" width="150" height="150">
-  </a>
-
   <h1 align="center">4us2watch</h1>
-
   <p align="center">
     Android mobile application for movie suggestions amidst users.
-  <br/>
-  <br/>
-    <a href="https://github.com/Quiirex/4us2watch/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/Quiirex/4us2watch/issues">Request Feature</a>
   </p>
 </p>
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<p align="center">
-Our idea was born out of a problem that many people face. It is sometimes (or often) hard
-to decide what you would like to watch with your friends, family or partners,
-for every person has their own taste and desires. We decided to design and make this
-an application that would work in the way so that a user would pick movies/tv series that they enjoy
-which would then be passed to our recommender algorithm, which would in turn store genres liked by the user
-and would compare genres liked by one user with another and then recommend movies/tv series based on the genre to said users.
+<p>
+Picking something to watch with friends, family, or a partner is often difficult because everyone’s tastes differ. Our app solves this by having each user select titles they enjoy, learning their preferred genres, and recommending movies and series that match the whole group.
 </p>
 
 
